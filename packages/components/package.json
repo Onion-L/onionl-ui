@@ -4,9 +4,6 @@
   "description": "components",
   "main": "index.ts",
   "module": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "peerDependencies": {
     "vue": "^3.0.0"
   },

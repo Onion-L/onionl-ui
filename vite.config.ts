@@ -1,16 +1,16 @@
-import { defineConfig } from 'vite'
+import { resolve } from 'node:path'
 import vue from '@vitejs/plugin-vue'
-import UnoCSS from 'unocss/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import { resolve } from 'path'
+import UnoCSS from 'unocss/vite'
+import { defineConfig } from 'vite'
 
 const rollupOptions = {
   external: ['vue'],
   output: {
     globals: {
-      vue: 'Vue'
-    }
-  }
+      vue: 'Vue',
+    },
+  },
 }
 
 export default defineConfig({
@@ -24,8 +24,8 @@ export default defineConfig({
       entry: resolve(__dirname, 'packages/components/index.ts'),
       name: 'OnionlUI',
       fileName: 'onionl-ui',
-      formats: ['es', 'cjs', 'umd']
-    }
+      formats: ['es', 'cjs', 'umd'],
+    },
   },
 
   plugins: [vue(), vueJsx(), UnoCSS()],
@@ -33,7 +33,7 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './packages'),
       'onionl-ui': resolve(__dirname, './packages/components'),
-      '@onionl-ui/utils': resolve(__dirname, './packages/utils')
-    }
-  }
+      '@onionl-ui/utils': resolve(__dirname, './packages/utils'),
+    },
+  },
 })

@@ -1,13 +1,13 @@
-<template>
-  <button>
-    <slot></slot>
-  </button>
-</template>
-
 <script lang="ts" setup>
 defineOptions({
-  name: 'OlButton'
+  name: 'OlButton',
 })
 </script>
+
+<template>
+  <button>
+    <slot />
+  </button>
+</template>
 
 <style></style>

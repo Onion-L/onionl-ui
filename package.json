@@ -2,9 +2,17 @@
   "name": "onionl-ui",
   "type": "module",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "license": "ISC",
+  "description": "Just a component library",
+  "author": "Onion-L",
+  "license": "MIT",
+  "homepage": "https://github.com/Onion-L/onionl-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onion-L/onionl-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Onion-L/onionl-ui/issues"
+  },
   "keywords": [],
   "main": "index.js",
   "scripts": {
@@ -14,6 +22,36 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
+  },
+  "dependencies": {
+    "eslint-compat-utils": "^0.6.3",
+    "eslint-config-flat-gitignore": "^0.3.0",
+    "eslint-flat-config-utils": "^0.4.0",
+    "eslint-import-resolver-node": "^0.3.9",
+    "eslint-json-compat-utils": "^0.2.1",
+    "eslint-merge-processors": "^0.1.0",
+    "eslint-plugin-antfu": "^2.7.0",
+    "eslint-plugin-command": "^0.2.6",
+    "eslint-plugin-es-x": "^7.8.0",
+    "eslint-plugin-import-x": "^4.4.2",
+    "eslint-plugin-jsdoc": "^50.5.0",
+    "eslint-plugin-jsonc": "^2.18.2",
+    "eslint-plugin-n": "^17.13.2",
+    "eslint-plugin-no-only-tests": "^3.3.0",
+    "eslint-plugin-perfectionist": "^3.9.1",
+    "eslint-plugin-regexp": "^2.7.0",
+    "eslint-plugin-toml": "^0.11.1",
+    "eslint-plugin-unicorn": "^56.0.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "eslint-plugin-vue": "^9.31.0",
+    "eslint-plugin-yml": "^1.15.0",
+    "eslint-processor-vue-blocks": "^0.1.2",
+    "eslint-scope": "^8.2.0",
+    "eslint-visitor-keys": "^4.2.0",
+    "jsonc-eslint-parser": "^2.4.0",
+    "toml-eslint-parser": "^0.10.0",
+    "vue-eslint-parser": "^9.4.3",
+    "yaml-eslint-parser": "^1.2.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.9.1",
@@ -35,11 +73,9 @@
     "vue": "^3.5.13"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ],
-    "*.{json,css,md}": [
-      "eslint --fix"
-    ]
+    "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }

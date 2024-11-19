@@ -7,7 +7,8 @@ export default defineConfig({
   plugins: [vue(), UnoCSS()],
   resolve: {
     alias: {
-      '@onionl-ui': resolve(__dirname, '../packages/components'),
+      'onionl-ui': resolve(__dirname, '../packages/components'),
+      '@onionl-ui/utils': resolve(__dirname, '../packages/utils'),
     },
   },
 })

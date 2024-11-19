@@ -1,0 +1,7 @@
+{
+  "name": "@onionl-ui/utils",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "module": "index.ts",
+  "types": "index.ts"
+}

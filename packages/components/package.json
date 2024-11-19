@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "components",
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [],
   "main": "index.ts",
   "module": "index.ts",

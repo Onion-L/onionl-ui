@@ -7,6 +7,91 @@ settings:
 importers:
 
   .:
+    dependencies:
+      eslint-compat-utils:
+        specifier: ^0.6.3
+        version: 0.6.3(eslint@9.15.0(jiti@1.21.6))
+      eslint-config-flat-gitignore:
+        specifier: ^0.3.0
+        version: 0.3.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-flat-config-utils:
+        specifier: ^0.4.0
+        version: 0.4.0
+      eslint-import-resolver-node:
+        specifier: ^0.3.9
+        version: 0.3.9
+      eslint-json-compat-utils:
+        specifier: ^0.2.1
+        version: 0.2.1(eslint@9.15.0(jiti@1.21.6))(jsonc-eslint-parser@2.4.0)
+      eslint-merge-processors:
+        specifier: ^0.1.0
+        version: 0.1.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-antfu:
+        specifier: ^2.7.0
+        version: 2.7.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-command:
+        specifier: ^0.2.6
+        version: 0.2.6(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-es-x:
+        specifier: ^7.8.0
+        version: 7.8.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-import-x:
+        specifier: ^4.4.2
+        version: 4.4.2(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
+      eslint-plugin-jsdoc:
+        specifier: ^50.5.0
+        version: 50.5.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-jsonc:
+        specifier: ^2.18.2
+        version: 2.18.2(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-n:
+        specifier: ^17.13.2
+        version: 17.13.2(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-no-only-tests:
+        specifier: ^3.3.0
+        version: 3.3.0
+      eslint-plugin-perfectionist:
+        specifier: ^3.9.1
+        version: 3.9.1(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)(vue-eslint-parser@9.4.3(eslint@9.15.0(jiti@1.21.6)))
+      eslint-plugin-regexp:
+        specifier: ^2.7.0
+        version: 2.7.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-toml:
+        specifier: ^0.11.1
+        version: 0.11.1(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-unicorn:
+        specifier: ^56.0.0
+        version: 56.0.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-unused-imports:
+        specifier: ^4.1.4
+        version: 4.1.4(@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-vue:
+        specifier: ^9.31.0
+        version: 9.31.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-yml:
+        specifier: ^1.15.0
+        version: 1.15.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-processor-vue-blocks:
+        specifier: ^0.1.2
+        version: 0.1.2(@vue/compiler-sfc@3.5.13)(eslint@9.15.0(jiti@1.21.6))
+      eslint-scope:
+        specifier: ^8.2.0
+        version: 8.2.0
+      eslint-visitor-keys:
+        specifier: ^4.2.0
+        version: 4.2.0
+      jsonc-eslint-parser:
+        specifier: ^2.4.0
+        version: 2.4.0
+      toml-eslint-parser:
+        specifier: ^0.10.0
+        version: 0.10.0
+      vue-eslint-parser:
+        specifier: ^9.4.3
+        version: 9.4.3(eslint@9.15.0(jiti@1.21.6))
+      yaml-eslint-parser:
+        specifier: ^1.2.3
+        version: 1.2.3
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^3.9.1
@@ -66,8 +151,16 @@ importers:
         specifier: ^3.0.0
         version: 3.5.13(typescript@5.6.3)
 
+  packages/utils: {}
+
   play:
     dependencies:
+      '@onionl-ui/utils':
+        specifier: workspace:*
+        version: link:../packages/utils
+      onionl-ui:
+        specifier: workspace:*
+        version: link:../packages/components
       vue:
         specifier: ^3.5.12
         version: 3.5.13(typescript@5.6.3)
@@ -795,55 +888,46 @@ packages:
     resolution: {integrity: sha512-6npqOKEPRZkLrMcvyC/32OzJ2srdPzCylJjiTJT2c0bwwSGm7nz2F9mNQ1WrAqCBZROcQn91Fno+khFhVijmFA==}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.27.2':
     resolution: {integrity: sha512-V9Xg6eXtgBtHq2jnuQwM/jr2mwe2EycnopO8cbOvpzFuySCGtKlPCI3Hj9xup/pJK5Q0388qfZZy2DqV2J8ftw==}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.27.2':
     resolution: {integrity: sha512-uCFX9gtZJoQl2xDTpRdseYuNqyKkuMDtH6zSrBTA28yTfKyjN9hQ2B04N5ynR8ILCoSDOrG/Eg+J2TtJ1e/CSA==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.27.2':
     resolution: {integrity: sha512-/PU9P+7Rkz8JFYDHIi+xzHabOu9qEWR07L5nWLIUsvserrxegZExKCi2jhMZRd0ATdboKylu/K5yAXbp7fYFvA==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.27.2':
     resolution: {integrity: sha512-eCHmol/dT5odMYi/N0R0HC8V8QE40rEpkyje/ZAXJYNNoSfrObOvG/Mn+s1F/FJyB7co7UQZZf6FuWnN6a7f4g==}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.27.2':
     resolution: {integrity: sha512-DEP3Njr9/ADDln3kNi76PXonLMSSMiCir0VHXxmGSHxCxDfQ70oWjHcJGfiBugzaqmYdTC7Y+8Int6qbnxPBIQ==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-s390x-gnu@4.27.2':
     resolution: {integrity: sha512-NHGo5i6IE/PtEPh5m0yw5OmPMpesFnzMIS/lzvN5vknnC1sXM5Z/id5VgcNPgpD+wHmIcuYYgW+Q53v+9s96lQ==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.27.2':
     resolution: {integrity: sha512-PaW2DY5Tan+IFvNJGHDmUrORadbe/Ceh8tQxi8cmdQVCCYsLoQo2cuaSj+AU+YRX8M4ivS2vJ9UGaxfuNN7gmg==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.27.2':
     resolution: {integrity: sha512-dOlWEMg2gI91Qx5I/HYqOD6iqlJspxLcS4Zlg3vjk1srE67z5T2Uz91yg/qA8sY0XcwQrFzWWiZhMNERylLrpQ==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.27.2':
     resolution: {integrity: sha512-euMIv/4x5Y2/ImlbGl88mwKNXDsvzbWUlT7DFky76z2keajCtcbAsN9LUdmk31hAoVmJJYSThgdA0EsPeTr1+w==}

@@ -14,7 +14,6 @@ export default {
         "perf", // 优化相关
         "test", // 测试用例修改
         "chore", // 其他修改
-        "revert", // 回滚
         "build", // 编译相关的修改
         "ci", // CI相关修改
       ],

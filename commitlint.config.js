@@ -10,6 +10,7 @@ export default {
         'fix', // 修复bug
         'docs', // 文档修改
         'style', // 代码格式修改
+        'lint', // lint相关
         'refactor', // 代码重构
         'perf', // 优化相关
         'test', // 测试用例修改

@@ -45,9 +45,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-        
+
       - name: Run test
-        run: pnpm run test 
+        run: pnpm run test
 
   build:
     runs-on: ubuntu-latest

@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { resolve } from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -27,7 +28,6 @@ export default defineConfig({
       formats: ['es', 'cjs', 'umd'],
     },
   },
-
   plugins: [vue(), vueJsx(), UnoCSS()],
   resolve: {
     alias: {
@@ -35,5 +35,10 @@ export default defineConfig({
       'onionl-ui': resolve(__dirname, './packages/components'),
       '@onionl-ui/utils': resolve(__dirname, './packages/utils'),
     },
+  },
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+    testTransformMode: { web: ['/.[tj]sx?$/'] },
   },
 })

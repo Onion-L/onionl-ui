@@ -21,6 +21,7 @@
     "type-check": "vue-tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "test": "vitest",
     "prepare": "husky"
   },
   "dependencies": {
@@ -48,6 +49,7 @@
     "eslint-processor-vue-blocks": "^0.1.2",
     "eslint-scope": "^8.2.0",
     "eslint-visitor-keys": "^4.2.0",
+    "happy-dom": "^15.11.6",
     "jsonc-eslint-parser": "^2.4.0",
     "toml-eslint-parser": "^0.10.0",
     "vue-eslint-parser": "^9.4.3",
@@ -62,6 +64,7 @@
     "@unocss/preset-uno": "^0.64.1",
     "@vitejs/plugin-vue": "^5.2.0",
     "@vitejs/plugin-vue-jsx": "^4.1.0",
+    "@vue/test-utils": "^2.4.6",
     "eslint": "^9.15.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
@@ -70,6 +73,7 @@
     "unocss": "^0.64.1",
     "vite": "^5.4.11",
     "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.5",
     "vue": "^3.5.13"
   },
   "lint-staged": {

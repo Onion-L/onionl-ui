@@ -25,6 +25,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "eslint-compat-utils": "^0.6.3",
     "eslint-config-flat-gitignore": "^0.3.0",
     "eslint-flat-config-utils": "^0.4.0",
@@ -69,6 +70,7 @@
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
+    "tsup": "^8.3.5",
     "typescript": "^5.6.3",
     "unocss": "^0.64.1",
     "vite": "^5.4.11",

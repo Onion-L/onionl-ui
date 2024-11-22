@@ -1,5 +1,4 @@
-import type { Preset } from 'unocss'
-import { rules } from './rules'
+import { type Preset, presetUno } from 'unocss'
 import { getSafelist } from './safelist'
 import { shortcuts } from './shortcuts'
 import { theme } from './theme'
@@ -10,14 +9,13 @@ export function onionlUIPreset(oprtions: { range: number } = { range: 20 }): Pre
 
   return {
     name: '@onionl-ui/preset',
+    presets: [presetUno()],
     shortcuts,
     safelist,
-    rules,
     theme,
   }
 }
 
-export * from './rules'
 export * from './safelist'
 export * from './shortcuts'
 export * from './theme'

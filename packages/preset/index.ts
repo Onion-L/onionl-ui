@@ -1,6 +1,7 @@
 import type { Theme } from '@unocss/preset-mini'
 import type { Preset } from 'unocss'
 import { presetUno } from 'unocss'
+import { getCSSVariable } from './preflights/css'
 import { getSafelist } from './safelist'
 import { shortcuts } from './shortcuts'
 import { theme } from './theme'
@@ -21,6 +22,11 @@ export function onionlUIPreset(oprtions?: { range: number }) {
     shortcuts,
     safelist,
     theme,
+    preflights: [
+      { getCSS: () =>
+        getCSSVariable(),
+      },
+    ],
   } as Preset<Theme>
 }
 

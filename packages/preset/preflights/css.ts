@@ -1,4 +1,4 @@
-export const colors = {
+export const defaultColors = {
   dark: {
     50: '#f8f9fa',
     100: '#e9ecef',
@@ -107,30 +107,79 @@ export const colors = {
     800: '#5a23c8', // 深色文本
     900: '#4a1ba8', // 最深，特殊强调
   },
+}
+
+const themes = {
   primary: {
-    DEFAULT: 'var(--onl-primary)',
-    text: 'var(--onl-primary-text)',
-    hover: 'var(--onl-primary-hover)',
-    border: 'var(--onl-primary-border)',
+    DEFAULT: 'var(--onl-purple-500)',
+    text: 'var(--onl-light-50)',
+    hover: 'var(--onl-purple-300)',
+    border: 'transparent',
   },
   secondary: {
-    DEFAULT: 'var(--onl-secondary)',
-    text: 'var(--onl-secondary-text)',
-    hover: 'var(--onl-secondary-hover)',
-    border: 'var(--onl-secondary-border)',
+    DEFAULT: 'var(--onl-light-50)',
+    text: 'var(--onl-dark-900)',
+    hover: 'var(--onl-light-300)',
+    border: 'transparent',
   },
   outline: {
-    DEFAULT: 'var(--onl-outline)',
-    text: 'var(--onl-outline-text)',
-    hover: 'var(--onl-outline-hover)',
-    border: 'var(--onl-outline-border)',
+    DEFAULT: 'transparent',
+    text: 'var(--onl-purple-500)',
+    hover: 'var(--onl-purple-300)',
+    border: 'var(--onl-purple-300)',
   },
 }
 
-// export const defaultTheme: Theme = {
-//   colors: {
-//     primary: {
-//       DEFAULT: 'var(--onl-purple-400)',
-//     },
-//   },
-// }
+const darkThemes = {
+  primary: {
+    DEFAULT: 'var(--onl-purple-400)',
+    text: 'var(--onl-dark-900)',
+    hover: 'var(--onl-purple-600)',
+    border: 'transparent',
+  },
+  secondary: {
+    DEFAULT: 'var(--onl-dark-800)',
+    text: 'var(--onl-light-50)',
+    hover: 'var(--onl-dark-700)',
+    border: 'transparent',
+  },
+  outline: {
+    DEFAULT: 'transparent',
+    text: 'var(--onl-purple-400)',
+    hover: 'var(--onl-purple-600)',
+    border: 'var(--onl-purple-600)',
+  },
+}
+
+function splitCSSInject(prefix: string, key: string, value: Record<number | string, string>) {
+  let res = ''
+  for (const [k, v] of Object.entries(value)) {
+    if (k === 'DEFAULT') {
+      res += `\n--${prefix}-${key}: ${v};`
+    }
+    else {
+      res += `\n--${prefix}-${key}-${k}: ${v};`
+    }
+  }
+  return res
+}
+
+function generateCSSVariables(
+  entries: Record<string, any>,
+  selector: string,
+  prefix: string,
+) {
+  return Object.entries(entries)
+    .map(([key, value]) =>
+      `\n${selector}{${splitCSSInject(prefix, key, value)}\n}`,
+    )
+    .join('')
+}
+
+export function getCSSVariable(colors = defaultColors, prefix: string = 'onl') {
+  return [
+    generateCSSVariables(colors, ':root', prefix),
+    generateCSSVariables(themes, ':root', prefix),
+    generateCSSVariables(darkThemes, 'html.dark', prefix),
+  ].join('')
+}

@@ -1,0 +1,37 @@
+
+.VPHero .image-src {
+  animation: logo-glow 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 8em #646cffaa);
+}
+
+@keyframes logo-glow {
+  0% {
+    filter: drop-shadow(0 0 8em #bd34fe);
+  }
+  25% {
+    filter: drop-shadow(0 0 9em #8232f7);
+  }
+  50% {
+    filter: drop-shadow(0 0 10em #41d1ff);
+  }
+  75% {
+    filter: drop-shadow(0 0 9em #8232f7);
+  }
+  100% {
+    filter: drop-shadow(0 0 8em #bd34fe);
+  }
+}
+
+:root {
+  /* 使用 !important 来确保优先级 */
+  --vp-c-brand: #646cff !important;
+  --vp-c-brand-light: #747bff !important;
+  --vp-c-brand-lighter: #9499ff !important;
+  --vp-c-brand-dark: #535bf2 !important;
+  --vp-c-brand-darker: #454ce1 !important;
+  
+  --vp-button-brand-bg: var(--vp-c-brand) !important;
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light) !important;
+  --vp-button-brand-active-bg: var(--vp-c-brand-dark) !important;
+}
+

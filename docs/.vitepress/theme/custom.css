@@ -23,15 +23,8 @@
 }
 
 :root {
-  /* 使用 !important 来确保优先级 */
-  --vp-c-brand: #646cff !important;
-  --vp-c-brand-light: #747bff !important;
-  --vp-c-brand-lighter: #9499ff !important;
-  --vp-c-brand-dark: #535bf2 !important;
-  --vp-c-brand-darker: #454ce1 !important;
-  
-  --vp-button-brand-bg: var(--vp-c-brand) !important;
-  --vp-button-brand-hover-bg: var(--vp-c-brand-light) !important;
-  --vp-button-brand-active-bg: var(--vp-c-brand-dark) !important;
+  --vp-c-brand-1: var(--vp-c-purple-1);
+  --vp-c-brand-2: var(--vp-c-purple-2);
+  --vp-c-brand-3: var(--vp-c-purple-3);
 }
 

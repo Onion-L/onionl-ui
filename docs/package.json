@@ -6,10 +6,7 @@
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "index.md",
   "dependencies": {
     "@onionl-ui/preset": "workspace:*",
     "onionl-ui": "workspace:*"

@@ -1,10 +1,18 @@
-import { type Preset, presetUno } from 'unocss'
+import type { Theme } from '@unocss/preset-mini'
+import type { Preset } from 'unocss'
+import { presetUno } from 'unocss'
 import { getSafelist } from './safelist'
 import { shortcuts } from './shortcuts'
 import { theme } from './theme'
 
-export function onionlUIPreset(oprtions: { range: number } = { range: 20 }): Preset {
-  const { range } = oprtions
+/**
+ * @description  onionl-ui preset
+ * @param oprtions  range
+ * @returns Preset
+ */
+
+export function onionlUIPreset(oprtions?: { range: number }) {
+  const range = oprtions?.range
   const safelist = getSafelist(range)
 
   return {
@@ -13,7 +21,7 @@ export function onionlUIPreset(oprtions: { range: number } = { range: 20 }): Pre
     shortcuts,
     safelist,
     theme,
-  }
+  } as Preset<Theme>
 }
 
 export * from './safelist'

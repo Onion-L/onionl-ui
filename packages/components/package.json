@@ -2,12 +2,15 @@
   "name": "onionl-ui",
   "version": "0.0.1",
   "description": "components",
-  "author": "",
+  "author": "Onion-L",
   "license": "MIT",
   "keywords": [],
   "main": "index.ts",
   "module": "index.ts",
   "peerDependencies": {
     "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@onionl-ui/utils": "workspace:*"
   }
 }

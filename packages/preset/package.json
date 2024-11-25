@@ -1,6 +1,6 @@
 {
   "name": "@onionl-ui/preset",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.3",
   "description": "A UnoCSS preset for Onionl UI",
   "author": "Onion-L",
   "license": "MIT",
@@ -34,7 +34,12 @@
   "scripts": {
     "build": "tsup --config tsup.config.ts",
     "dev": "tsup --watch --config tsup.config.ts",
-    "publish:npm": "pnpm publish --no-git-checks --access public"
+    "version:alpha": "npm version prerelease --preid alpha",
+    "version:beta": "npm version prerelease --preid beta",
+    "version:rc": "npm version prerelease --preid rc",
+    "publish:alpha": "pnpm run version:alpha && pnpm publish --tag alpha --no-git-checks --access public",
+    "publish:beta": "pnpm run version:beta && pnpm publish --tag beta --no-git-checks --access public",
+    "publish:rc": "pnpm run version:rc && pnpm publish --tag rc --no-git-checks --access public"
   },
   "publishConfig": {
     "access": "public"

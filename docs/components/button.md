@@ -29,6 +29,12 @@
 </div>
 
 ## 自定义
-除了预设尺寸外,你还可以传入数字来自定义按钮大小（默认是1-20）。
+除了预设尺寸外,你还可以传入数字来自定义按钮大小，默认是1-20，可以通过在组件的预设中设置range字段来改变按钮大小的范围。
+```JavaScript
+    onionlUIPreset({ range: 25 }),
+```
 
+<div class="space-x-2">
   <OlButton size='20'>20</OlButton>
+  <OlButton size='25'>25</OlButton>
+</div>

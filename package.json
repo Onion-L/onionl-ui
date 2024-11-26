@@ -1,7 +1,7 @@
 {
   "name": "onionl-ui",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Just a component library",
   "author": "Onion-L",
   "license": "MIT",
@@ -14,7 +14,21 @@
     "url": "https://github.com/Onion-L/onionl-ui/issues"
   },
   "keywords": [],
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/onionl-ui.mjs",
+      "require": "./dist/onionl-ui.cjs"
+    }
+  },
+  "main": "dist/onionl-ui.cjs",
+  "module": "dist/onionl-ui.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
   "scripts": {
     "build": "vite build",
     "dev": "pnpm -C play dev",

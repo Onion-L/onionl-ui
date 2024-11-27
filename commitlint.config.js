@@ -8,6 +8,7 @@ export default {
       [
         'feat', // 新功能
         'fix', // 修复bug
+        'wip', // 开发中
         'docs', // 文档修改
         'style', // 代码格式修改
         'lint', // lint相关

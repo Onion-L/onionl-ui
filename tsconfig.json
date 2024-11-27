@@ -9,7 +9,7 @@
     "moduleResolution": "bundler",
     "paths": {
       "@onionl-ui/*": ["packages/*"],
-      "onionl-ui": ["packages/components/*"]
+      "@onionl-ui/components/*": ["packages/components/*"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,

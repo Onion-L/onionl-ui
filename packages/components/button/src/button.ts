@@ -1,8 +1,8 @@
 export type ButtonType = 'primary' | 'secondary' | 'outline'
-export const ButtonSize = ['lg', 'sm', 'xs', 'lg', 'xl', '2xl']
+export type ButtonSize = 'lg' | 'sm' | 'xs' | 'lg' | 'xl' | '2xl'
 
 export interface ButtonProps {
   type?: ButtonType
-  size: string | number
+  size: ButtonSize | number | string
   to?: string
 }

@@ -7,5 +7,5 @@ export function useInstall<T extends Record<string, any>>(comp: T) {
     app.component(comp.name, comp)
   }
 
-  return comp
+  return comp as SFCIntall<T>
 }

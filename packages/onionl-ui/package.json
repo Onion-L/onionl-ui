@@ -1,12 +1,29 @@
 {
   "name": "onionl-ui",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "license": "ISC",
-  "keywords": [],
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "A UI component library for Vue 3",
+  "author": "Onion-L",
+  "license": "MIT",
+  "homepage": "https://github.com/Onion-L/onionl-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onion-L/onionl-ui.git"
+  },
+  "keywords": ["vue3", "components", "ui-library", "unocss"],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    }
+  },
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "peerDependencies": {
+    "clsx": "^2.1.1",
+    "vue": ">=3.3.0"
+
   }
+
 }

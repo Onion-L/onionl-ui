@@ -24,7 +24,7 @@ const customeStyles = computed(() => {
     :is="to ? 'a' : 'button'"
     :to="to"
     class="ol-button"
-    :class="[`${customeStyles}`]"
+    :class="[customeStyles]"
   >
     <slot />
   </component>

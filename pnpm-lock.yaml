@@ -233,12 +233,9 @@ importers:
       '@onionl-ui/preset':
         specifier: workspace:*
         version: link:../packages/preset
-      '@onionl-ui/utils':
-        specifier: workspace:*
-        version: link:../packages/utils
       onionl-ui:
-        specifier: 0.0.1-aplha.2
-        version: 0.0.1-aplha.2(@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(@vue/compiler-sfc@3.5.13)(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
+        specifier: 0.0.1-aplha.5
+        version: 0.0.1-aplha.5(clsx@2.1.1)(vue@3.5.13(typescript@5.6.3))
       vue:
         specifier: ^3.5.12
         version: 3.5.13(typescript@5.6.3)
@@ -3234,6 +3231,12 @@ packages:
 
   onionl-ui@0.0.1-aplha.2:
     resolution: {integrity: sha512-QXir3sCsXQ0rO4MW7eQiy+XE9ShvU1an5+sVsNLQHQH2U6r+x+wsL+1h2OwKCVWEcy7+sJHD9JufQjxG0ZHD/A==}
+
+  onionl-ui@0.0.1-aplha.5:
+    resolution: {integrity: sha512-XwP0wF8nnYSQlCDPKwWiZXO2GTFTSQrc6owQw1p4OnDIURb0u7/tLAexjewjzDswZ0oC+uF8LSve42UmzJ5GUQ==}
+    peerDependencies:
+      clsx: ^2.1.1
+      vue: '>=3.3.0'
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -7543,6 +7546,11 @@ snapshots:
       - svelte
       - svelte-eslint-parser
       - typescript
+
+  onionl-ui@0.0.1-aplha.5(clsx@2.1.1)(vue@3.5.13(typescript@5.6.3)):
+    dependencies:
+      clsx: 2.1.1
+      vue: 3.5.13(typescript@5.6.3)
 
   optionator@0.9.4:
     dependencies:

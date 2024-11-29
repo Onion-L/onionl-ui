@@ -12,12 +12,12 @@
   "keywords": ["vue3", "components", "ui-library", "unocss"],
   "exports": {
     ".": {
-      "import": "./es/onionl-ui/index.mjs",
+      "import": "./es/index.mjs",
       "require": "./index.cjs"
     }
   },
-  "main": "index.cjs",
-  "module": "es/onionl-ui/index.mjs",
+  "main": "es/index.mjs",
+  "module": "es/index.mjs",
   "types": "index.d.ts",
   "peerDependencies": {
     "clsx": "^2.1.1",

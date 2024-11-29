@@ -1,5 +1,4 @@
-import { installer } from './installer'
-import 'uno.css'
+import installer from './onionl-ui/installer'
 
 export * from '@onionl-ui/components'
 

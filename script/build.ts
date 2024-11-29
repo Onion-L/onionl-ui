@@ -61,6 +61,7 @@ async function buildAll() {
         '@': pkgPath,
         '@onionl-ui/components': componentPath,
         '@onionl-ui/utils': resolve(pkgPath, 'utils'),
+        'onionl-ui': pkgPath,
       },
     },
   })])

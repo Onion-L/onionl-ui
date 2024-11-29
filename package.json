@@ -1,7 +1,7 @@
 {
   "name": "onionl-ui",
   "type": "module",
-  "version": "0.0.1-aplha.2",
+  "version": "0.0.1-aplha.4",
   "description": "Just a component library",
   "author": "Onion-L",
   "license": "MIT",
@@ -17,12 +17,12 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/es/onionl-ui/index.mjs",
+      "import": "./dist/es/index.mjs",
       "require": "./dist/index.cjs"
     }
   },
   "main": "dist/index.cjs",
-  "module": "dist/es/onionl-ui/index.mjs",
+  "module": "dist/es/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "LICENSE",

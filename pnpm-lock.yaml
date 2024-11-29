@@ -11,6 +11,12 @@ importers:
       '@onionl-ui/components':
         specifier: workspace:*
         version: link:packages/components
+      '@onionl-ui/preset':
+        specifier: workspace:*
+        version: link:packages/preset
+      '@onionl-ui/utils':
+        specifier: workspace:*
+        version: link:packages/utils
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -159,9 +165,6 @@ importers:
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
-      rollup:
-        specifier: ^4.27.4
-        version: 4.27.4
       rollup-plugin-vue:
         specifier: ^6.0.0
         version: 6.0.0(@vue/compiler-sfc@3.5.13)
@@ -199,14 +202,11 @@ importers:
         specifier: workspace:*
         version: link:../packages/preset
       onionl-ui:
-        specifier: workspace:*
-        version: link:../packages/onionl-ui
+        specifier: 0.0.1-aplha.2
+        version: 0.0.1-aplha.2(@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(@vue/compiler-sfc@3.5.13)(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
 
   packages/components:
     dependencies:
-      '@onionl-ui/utils':
-        specifier: workspace:*
-        version: link:../utils
       vue:
         specifier: ^3.0.0
         version: 3.5.13(typescript@5.6.3)
@@ -237,8 +237,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/utils
       onionl-ui:
-        specifier: workspace:*
-        version: link:../packages/onionl-ui
+        specifier: 0.0.1-aplha.2
+        version: 0.0.1-aplha.2(@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(@vue/compiler-sfc@3.5.13)(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
       vue:
         specifier: ^3.5.12
         version: 3.5.13(typescript@5.6.3)
@@ -3231,6 +3231,9 @@ packages:
 
   oniguruma-to-es@0.4.1:
     resolution: {integrity: sha512-rNcEohFz095QKGRovP/yqPIKc+nP+Sjs4YTHMv33nMePGKrq/r2eu9Yh4646M5XluGJsUnmwoXuiXE69KDs+fQ==}
+
+  onionl-ui@0.0.1-aplha.2:
+    resolution: {integrity: sha512-QXir3sCsXQ0rO4MW7eQiy+XE9ShvU1an5+sVsNLQHQH2U6r+x+wsL+1h2OwKCVWEcy7+sJHD9JufQjxG0ZHD/A==}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -7492,6 +7495,54 @@ snapshots:
       emoji-regex-xs: 1.0.0
       regex: 5.0.2
       regex-recursion: 4.2.1
+
+  onionl-ui@0.0.1-aplha.2(@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(@vue/compiler-sfc@3.5.13)(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3):
+    dependencies:
+      '@onionl-ui/components': link:packages/components
+      '@onionl-ui/preset': link:packages/preset
+      '@onionl-ui/utils': link:packages/utils
+      clsx: 2.1.1
+      eslint-compat-utils: 0.6.3(eslint@9.15.0(jiti@1.21.6))
+      eslint-config-flat-gitignore: 0.3.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-flat-config-utils: 0.4.0
+      eslint-import-resolver-node: 0.3.9
+      eslint-json-compat-utils: 0.2.1(eslint@9.15.0(jiti@1.21.6))(jsonc-eslint-parser@2.4.0)
+      eslint-merge-processors: 0.1.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-antfu: 2.7.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-command: 0.2.6(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-es-x: 7.8.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-import-x: 4.4.2(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
+      eslint-plugin-jsdoc: 50.5.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-jsonc: 2.18.2(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-n: 17.13.2(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-no-only-tests: 3.3.0
+      eslint-plugin-perfectionist: 3.9.1(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)(vue-eslint-parser@9.4.3(eslint@9.15.0(jiti@1.21.6)))
+      eslint-plugin-regexp: 2.7.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-toml: 0.11.1(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-unicorn: 56.0.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-unused-imports: 4.1.4(@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-vue: 9.31.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-plugin-yml: 1.15.0(eslint@9.15.0(jiti@1.21.6))
+      eslint-processor-vue-blocks: 0.1.2(@vue/compiler-sfc@3.5.13)(eslint@9.15.0(jiti@1.21.6))
+      eslint-scope: 8.2.0
+      eslint-visitor-keys: 4.2.0
+      fast-glob: 3.3.2
+      fs-extra: 11.2.0
+      happy-dom: 15.11.6
+      jsonc-eslint-parser: 2.4.0
+      toml-eslint-parser: 0.10.0
+      vue-eslint-parser: 9.4.3(eslint@9.15.0(jiti@1.21.6))
+      yaml-eslint-parser: 1.2.3
+    transitivePeerDependencies:
+      - '@eslint/json'
+      - '@typescript-eslint/eslint-plugin'
+      - '@vue/compiler-sfc'
+      - astro-eslint-parser
+      - eslint
+      - supports-color
+      - svelte
+      - svelte-eslint-parser
+      - typescript
 
   optionator@0.9.4:
     dependencies:

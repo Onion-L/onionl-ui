@@ -16,7 +16,7 @@ const componentPath = resolve(pkgPath, 'components')
 const onionlPath = resolve(pkgPath, 'onionl-ui')
 
 export function excludeFiles(files: string[]) {
-  const excludes = ['node_modules', 'test', 'dist']
+  const excludes = ['node_modules', 'test', 'dist', 'preset']
   return files.filter((path) => {
     const position = path.startsWith(rootPath) ? rootPath.length : 0
     return !excludes.some(exclude => path.includes(exclude, position))
@@ -25,7 +25,7 @@ export function excludeFiles(files: string[]) {
 
 async function buildAll() {
   const input = excludeFiles(await glob('**/*.{js,ts,vue}', {
-    cwd: componentPath,
+    cwd: pkgPath,
     absolute: true,
     onlyFiles: true,
   }))
@@ -41,13 +41,14 @@ async function buildAll() {
           },
           exports: 'named',
           preserveModules: true,
-          preserveModulesRoot: onionlPath,
+          preserveModulesRoot: pkgPath,
         },
+        treeshake: false,
       },
       minify: false,
       cssCodeSplit: true,
       sourcemap: true,
-      outDir: 'dist/',
+      outDir: 'dist/es',
       lib: {
         entry: input,
         formats: ['es'],
@@ -55,13 +56,13 @@ async function buildAll() {
       },
     },
     plugins: [vue(), vueJsx(), UnoCSS()],
-    // resolve: {
-    //   alias: {
-    //     '@': pkgPath,
-    //     '@onionl-ui/components': componentPath,
-    //     '@onionl-ui/utils': resolve(pkgPath, 'utils'),
-    //   },
-    // },
+    resolve: {
+      alias: {
+        '@': pkgPath,
+        '@onionl-ui/components': componentPath,
+        '@onionl-ui/utils': resolve(pkgPath, 'utils'),
+      },
+    },
   })])
 
   await Promise.all([

@@ -1,7 +1,7 @@
 {
   "name": "onionl-ui",
   "type": "module",
-  "version": "0.0.1-aplha.1",
+  "version": "0.0.1-aplha.2",
   "description": "Just a component library",
   "author": "Onion-L",
   "license": "MIT",
@@ -17,12 +17,12 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
+      "import": "./dist/es/onionl-ui/index.mjs",
       "require": "./dist/index.cjs"
     }
   },
   "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "module": "dist/es/onionl-ui/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "LICENSE",
@@ -44,6 +44,8 @@
   },
   "dependencies": {
     "@onionl-ui/components": "workspace:*",
+    "@onionl-ui/preset": "workspace:*",
+    "@onionl-ui/utils": "workspace:*",
     "clsx": "^2.1.1",
     "eslint-compat-utils": "^0.6.3",
     "eslint-config-flat-gitignore": "^0.3.0",
@@ -95,7 +97,6 @@
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "rollup": "^4.27.4",
     "rollup-plugin-vue": "^6.0.0",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",

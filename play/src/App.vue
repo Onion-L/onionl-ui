@@ -1,5 +1,4 @@
 <script setup>
-import { OlButton } from 'onionl-ui'
 </script>
 
 <template>

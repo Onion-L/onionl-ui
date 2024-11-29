@@ -20,9 +20,10 @@
   "module": "es/index.mjs",
   "types": "index.d.ts",
   "peerDependencies": {
-    "clsx": "^2.1.1",
     "vue": ">=3.3.0"
-
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
   }
 
 }

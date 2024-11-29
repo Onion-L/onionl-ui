@@ -234,8 +234,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/preset
       onionl-ui:
-        specifier: 0.0.1-aplha.5
-        version: 0.0.1-aplha.5(clsx@2.1.1)(vue@3.5.13(typescript@5.6.3))
+        specifier: 0.0.1-aplha.6
+        version: 0.0.1-aplha.6(vue@3.5.13(typescript@5.6.3))
       vue:
         specifier: ^3.5.12
         version: 3.5.13(typescript@5.6.3)
@@ -3232,10 +3232,9 @@ packages:
   onionl-ui@0.0.1-aplha.2:
     resolution: {integrity: sha512-QXir3sCsXQ0rO4MW7eQiy+XE9ShvU1an5+sVsNLQHQH2U6r+x+wsL+1h2OwKCVWEcy7+sJHD9JufQjxG0ZHD/A==}
 
-  onionl-ui@0.0.1-aplha.5:
-    resolution: {integrity: sha512-XwP0wF8nnYSQlCDPKwWiZXO2GTFTSQrc6owQw1p4OnDIURb0u7/tLAexjewjzDswZ0oC+uF8LSve42UmzJ5GUQ==}
+  onionl-ui@0.0.1-aplha.6:
+    resolution: {integrity: sha512-c03Z+3QSrGAEz3kyLumA+9jX5k+UA3MRVbGX4rCpEXTNEtQHBytLJXjsVK/idPQCZz+V063t4cKD8BFszrmRUA==}
     peerDependencies:
-      clsx: ^2.1.1
       vue: '>=3.3.0'
 
   optionator@0.9.4:
@@ -7547,7 +7546,7 @@ snapshots:
       - svelte-eslint-parser
       - typescript
 
-  onionl-ui@0.0.1-aplha.5(clsx@2.1.1)(vue@3.5.13(typescript@5.6.3)):
+  onionl-ui@0.0.1-aplha.6(vue@3.5.13(typescript@5.6.3)):
     dependencies:
       clsx: 2.1.1
       vue: 3.5.13(typescript@5.6.3)

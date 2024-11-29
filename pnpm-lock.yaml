@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@onionl-ui/preset':
+        specifier: workspace:*
+        version: link:packages/preset
+      '@onionl-ui/utils':
+        specifier: workspace:*
+        version: link:packages/utils
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -95,6 +101,9 @@ importers:
       jsonc-eslint-parser:
         specifier: ^2.4.0
         version: 2.4.0
+      onionl-ui:
+        specifier: workspace:*
+        version: link:packages/onionl-ui
       toml-eslint-parser:
         specifier: ^0.10.0
         version: 0.10.0

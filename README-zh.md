@@ -1,45 +1,45 @@
 # 🚀 Onionl-UI
 
-A modern lightweight component library based on Vue 3.
+一个基于 Vue 3 的现代化轻量级组件库。
+
 <div align="center">
   <img src="./public/logo.svg" alt="onionl-ui logo" style="width: 240px;" />
 
 [![NPM version](https://img.shields.io/npm/v/onionl-ui.svg)](https://npmjs.org/package/onionl-ui)
 [![NPM downloads](https://img.shields.io/npm/dm/onionl-ui.svg)](https://npmjs.org/package/onionl-ui)
 
-English | [中文](./README-zh.md)
-
+中文 | [English](./README.md)
 </div>
 
-## ✨ Features
+## ✨ 特性
 
-- 🎯 Built with Vue 3 + TypeScript, providing complete type definitions
-- 🎨 Supports theme customization with configurable design tokens
-- 📦 Supports on-demand importing to reduce bundle size
-- 🔧 Rich collection of components and Hooks
-- 📚 Comprehensive documentation and examples
+- 🎯 基于 Vue 3 + TypeScript，提供完整的类型定义
+- 🎨 支持主题定制，可配置的设计令牌
+- 📦 支持按需引入，减小打包体积
+- 🔧 提供丰富的组件和 Hooks
+- 📚 详尽的文档和示例
 
-## 🚀 Installation
+## 🚀 安装
 
-Using npm:
+使用 npm:
 
 ```bash
 npm install onionl-ui
 ```
 
-Using yarn:
+使用 yarn:
 
 ```bash
 yarn add onionl-ui
 ```
 
-Using pnpm:
+使用 pnpm:
 
 ```bash
 pnpm add onionl-ui
 ```
 
-## 🔨 Quick Start
+## 🔨 快速上手
 
 ```ts
 import OnionlUI from 'onionl-ui'
@@ -52,26 +52,26 @@ app.use(OnionlUI)
 app.mount('#app')
 ```
 
-## 📦 Components
+## 📦 组件
 
-Basic usage:
+基础用法:
 
 ```html
 <template>
   <ol-button type="primary">
-    Primary Button
+    主要按钮
   </ol-button>
   <ol-button type="secondary">
-    Secondary Button
+    次要按钮
   </ol-button>
   <ol-button size="lg">
-    Large Button
+    大按钮
   </ol-button>
 </template>
 ```
 
-For more component usage, please check the [Component Documentation](https://onionl-ui.dev/components/).
+更多组件用法请查看[组件文档](https://onionl-ui.dev/components/)。
 
-## 📄 License
+## 📄 许可证
 
 [MIT](./LICENSE) License © 2024 XL

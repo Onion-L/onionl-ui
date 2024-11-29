@@ -24,7 +24,7 @@ export function excludeFiles(files: string[]) {
 }
 
 async function buildAll() {
-  const files = excludeFiles(await glob('**/*.{js,ts,vue}', {
+  const input = excludeFiles(await glob('**/*.{js,ts,vue}', {
     cwd: componentPath,
     absolute: true,
     onlyFiles: true,
@@ -41,7 +41,7 @@ async function buildAll() {
           },
           exports: 'named',
           preserveModules: true,
-          preserveModulesRoot: pkgPath,
+          preserveModulesRoot: onionlPath,
         },
       },
       minify: false,
@@ -49,19 +49,19 @@ async function buildAll() {
       sourcemap: true,
       outDir: 'dist/',
       lib: {
-        entry: files,
+        entry: input,
         formats: ['es'],
         fileName: () => `[name].mjs`,
       },
     },
     plugins: [vue(), vueJsx(), UnoCSS()],
-    resolve: {
-      alias: {
-        '@': pkgPath,
-        '@onionl-ui/components': componentPath,
-        '@onionl-ui/utils': resolve(pkgPath, 'utils'),
-      },
-    },
+    // resolve: {
+    //   alias: {
+    //     '@': pkgPath,
+    //     '@onionl-ui/components': componentPath,
+    //     '@onionl-ui/utils': resolve(pkgPath, 'utils'),
+    //   },
+    // },
   })])
 
   await Promise.all([

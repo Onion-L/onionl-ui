@@ -12,18 +12,18 @@
   "keywords": ["vue3", "components", "ui-library", "unocss"],
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "import": "./index.mjs",
+      "import": "./es/index.mjs",
       "require": "./index.cjs"
     }
   },
-  "main": "index.cjs",
-  "module": "index.mjs",
+  "main": "es/index.mjs",
+  "module": "es/index.mjs",
   "types": "index.d.ts",
   "peerDependencies": {
-    "clsx": "^2.1.1",
     "vue": ">=3.3.0"
-
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
   }
 
 }

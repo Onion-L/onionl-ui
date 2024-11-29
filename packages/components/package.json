@@ -9,8 +9,5 @@
   "module": "index.ts",
   "peerDependencies": {
     "vue": "^3.0.0"
-  },
-  "dependencies": {
-    "@onionl-ui/utils": "workspace:*"
   }
 }

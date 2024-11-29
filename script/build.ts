@@ -16,7 +16,7 @@ const componentPath = resolve(pkgPath, 'components')
 const onionlPath = resolve(pkgPath, 'onionl-ui')
 
 export function excludeFiles(files: string[]) {
-  const excludes = ['node_modules', 'test', 'dist']
+  const excludes = ['node_modules', 'test', 'dist', 'preset']
   return files.filter((path) => {
     const position = path.startsWith(rootPath) ? rootPath.length : 0
     return !excludes.some(exclude => path.includes(exclude, position))
@@ -24,8 +24,8 @@ export function excludeFiles(files: string[]) {
 }
 
 async function buildAll() {
-  const files = excludeFiles(await glob('**/*.{js,ts,vue}', {
-    cwd: componentPath,
+  const input = excludeFiles(await glob('**/*.{js,ts,vue}', {
+    cwd: pkgPath,
     absolute: true,
     onlyFiles: true,
   }))
@@ -43,13 +43,14 @@ async function buildAll() {
           preserveModules: true,
           preserveModulesRoot: pkgPath,
         },
+        treeshake: false,
       },
       minify: false,
       cssCodeSplit: true,
       sourcemap: true,
-      outDir: 'dist/',
+      outDir: 'dist/es',
       lib: {
-        entry: files,
+        entry: input,
         formats: ['es'],
         fileName: () => `[name].mjs`,
       },
@@ -60,6 +61,7 @@ async function buildAll() {
         '@': pkgPath,
         '@onionl-ui/components': componentPath,
         '@onionl-ui/utils': resolve(pkgPath, 'utils'),
+        'onionl-ui': pkgPath,
       },
     },
   })])

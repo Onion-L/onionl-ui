@@ -14,8 +14,7 @@
   ],
   "dependencies": {
     "@onionl-ui/preset": "workspace:*",
-    "@onionl-ui/utils": "workspace:*",
-    "onionl-ui": "workspace:*",
+    "onionl-ui": "0.0.1-aplha.6",
     "vue": "^3.5.12"
   },
   "devDependencies": {

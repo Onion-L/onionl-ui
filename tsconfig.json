@@ -6,18 +6,20 @@
     "useDefineForClassFields": true,
     "baseUrl": "./",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "paths": {
       "@onionl-ui/*": ["packages/*"],
-      "@onionl-ui/components/*": ["packages/components/*"]
+      "onionl-ui": ["packages/components/*"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
+    "allowJs": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noEmit": true,
+    "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     "skipLibCheck": true
   }

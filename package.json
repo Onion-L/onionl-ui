@@ -75,6 +75,7 @@
     "fs-extra": "^11.2.0",
     "happy-dom": "^15.11.6",
     "jsonc-eslint-parser": "^2.4.0",
+    "onionl-ui": "workspace:*",
     "toml-eslint-parser": "^0.10.0",
     "vue-eslint-parser": "^9.4.3",
     "yaml-eslint-parser": "^1.2.3"

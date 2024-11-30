@@ -31,6 +31,7 @@
   "scripts": {
     "build": "run-s build:*",
     "build:preset": "pnpm -C preset build",
+    "build:docs": "vitepress build docs",
     "build:package": "tsx script/build.ts",
     "clean": "run-s clean:*",
     "clean:dist": "rimraf dist",
@@ -42,7 +43,6 @@
     "test": "vitest",
     "prepare": "husky",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {

@@ -15,7 +15,7 @@ export function excludeFiles(files: string[]) {
   })
 }
 
-async function copyFiles() {
+export async function copyFiles() {
   await Promise.all([
     fs.copy('README.md', resolve(rootPath, 'dist/README.md')),
     fs.copy('LICENSE', resolve(rootPath, 'dist/LICENSE')),

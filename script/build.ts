@@ -1,19 +1,11 @@
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { resolve } from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import glob from 'fast-glob'
 import fs from 'fs-extra'
 import UnoCSS from 'unocss/vite'
 import { build } from 'vite'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const rootPath = resolve(__dirname, '..')
-const pkgPath = resolve(rootPath, 'packages')
-const componentPath = resolve(pkgPath, 'components')
-const onionlPath = resolve(pkgPath, 'onionl-ui')
+import { buildConfig, onionlPath, pkgPath, rollupOptions, rootPath } from './config-info'
 
 export function excludeFiles(files: string[]) {
   const excludes = ['node_modules', 'test', 'dist', 'preset']
@@ -23,49 +15,7 @@ export function excludeFiles(files: string[]) {
   })
 }
 
-async function buildAll() {
-  const input = excludeFiles(await glob('**/*.{js,ts,vue}', {
-    cwd: pkgPath,
-    absolute: true,
-    onlyFiles: true,
-  }))
-
-  await Promise.all([await build({
-    build: {
-      rollupOptions: {
-        external: ['vue', 'clsx'],
-        output: {
-          globals: {
-            vue: 'Vue',
-            clsx: 'clsx',
-          },
-          exports: 'named',
-          preserveModules: true,
-          preserveModulesRoot: pkgPath,
-        },
-        treeshake: false,
-      },
-      minify: false,
-      cssCodeSplit: true,
-      sourcemap: true,
-      outDir: 'dist/es',
-      lib: {
-        entry: input,
-        formats: ['es'],
-        fileName: () => `[name].mjs`,
-      },
-    },
-    plugins: [vue(), vueJsx(), UnoCSS()],
-    resolve: {
-      alias: {
-        '@': pkgPath,
-        '@onionl-ui/components': componentPath,
-        '@onionl-ui/utils': resolve(pkgPath, 'utils'),
-        'onionl-ui': pkgPath,
-      },
-    },
-  })])
-
+async function copyFiles() {
   await Promise.all([
     fs.copy('README.md', resolve(rootPath, 'dist/README.md')),
     fs.copy('LICENSE', resolve(rootPath, 'dist/LICENSE')),
@@ -73,4 +23,30 @@ async function buildAll() {
   ])
 }
 
-buildAll()
+(async function buildAll() {
+  const input = excludeFiles(await glob('**/*.{js,ts,vue}', {
+    cwd: pkgPath,
+    absolute: true,
+    onlyFiles: true,
+  }))
+
+  buildConfig.forEach(async ({ outPath, format, extend }) => {
+    await build({
+      build: {
+        rollupOptions,
+        minify: false,
+        cssCodeSplit: true,
+        sourcemap: true,
+        outDir: resolve(rootPath, outPath),
+        lib: {
+          entry: input,
+          formats: [format],
+          fileName: () => `[name].${extend}`,
+        },
+      },
+      plugins: [vue(), vueJsx(), UnoCSS()],
+    })
+  })
+
+  await copyFiles()
+})()

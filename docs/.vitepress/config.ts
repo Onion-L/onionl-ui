@@ -1,5 +1,4 @@
 import type { DefaultTheme } from 'vitepress'
-import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vitepress'
 
 const NavLink: DefaultTheme.NavItemWithLink[] = [
@@ -36,10 +35,4 @@ export default defineConfig({
       { icon: 'bluesky', link: 'https://bsky.app/profile/onion-l.bsky.social' },
     ],
   },
-  vite: {
-    plugins: [
-      UnoCSS(),
-    ],
-  },
-
 })

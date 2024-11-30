@@ -8,7 +8,7 @@
   "keywords": [],
   "main": "index.md",
   "dependencies": {
-    "@onionl-ui/preset": "0.0.1-alpha.4",
+    "@onionl-ui/preset": "workspace:*",
     "onionl-ui": "0.0.1-aplha.2"
   }
 }

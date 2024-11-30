@@ -31,7 +31,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/Onion-L/onionl-ui' },
       { icon: 'bluesky', link: 'https://bsky.app/profile/onion-l.bsky.social' },
     ],
   },

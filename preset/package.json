@@ -33,6 +33,7 @@
   ],
   "scripts": {
     "build": "tsup --config tsup.config.ts",
+    "clean": "rimraf dist",
     "dev": "tsup --watch --config tsup.config.ts",
     "version:alpha": "npm version prerelease --preid alpha",
     "version:beta": "npm version prerelease --preid beta",

@@ -11,6 +11,10 @@ English | [中文](./README-zh.md)
 
 </div>
 
+⚠️ This project is still in its early stages of development.
+
+🌱 This is my first open source project. As a beginner in open source, I'm learning and growing with this project. Any feedback and contributions are warmly welcomed!
+
 ## ✨ Features
 
 - 🎯 Built with Vue 3 + TypeScript, providing complete type definitions

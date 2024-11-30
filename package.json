@@ -1,5 +1,4 @@
 {
-  "name": "onionl-ui",
   "type": "module",
   "version": "0.0.1-aplha.4",
   "description": "Just a component library",
@@ -30,8 +29,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsx script/build.ts",
-    "roll": "rollup -c",
+    "build": "run-s build:*",
+    "build:preset": "pnpm -C preset build",
+    "build:package": "tsx script/build.ts",
+    "clean": "run-s clean:*",
+    "clean:dist": "rimraf dist",
+    "clean:preset": "pnpm -C preset clean",
     "dev": "pnpm -C play dev",
     "type-check": "vue-tsc",
     "lint": "eslint .",
@@ -97,7 +100,9 @@
     "eslint": "^9.15.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.3.3",
+    "rimraf": "^3.0.2",
     "rollup-plugin-vue": "^6.0.0",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",

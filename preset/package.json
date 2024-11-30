@@ -1,6 +1,6 @@
 {
   "name": "@onionl-ui/preset",
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.4",
   "description": "A UnoCSS preset for Onionl UI",
   "author": "Onion-L",
   "license": "MIT",
@@ -45,7 +45,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "peerDependencies": {
-    "unocss": "^0.58.0"
+  "devDependencies": {
+    "@unocss/preset-attributify": "^0.64.1",
+    "@unocss/preset-mini": "^0.64.1",
+    "@unocss/preset-uno": "^0.64.1"
   }
 }

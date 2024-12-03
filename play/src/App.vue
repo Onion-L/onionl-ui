@@ -5,47 +5,16 @@ import { OlButton } from 'onionl-ui'
 <template>
   <div class="p-4 ">
     <h1 class="text-2xl font-bold">
-      OL-UI Components
+      link
     </h1>
-    <div class="mt-4">
-      <h2>type</h2>
-      <OlButton type="primary">
-        primary
-      </OlButton>
-      <OlButton type="secondary">
-        secondary
-      </OlButton>
-      <OlButton type="outline">
-        outline
-      </OlButton>
-      <h2>size</h2>
-      <!-- 这里放组件展示 -->
-      <OlButton size="sm">
-        small
-      </OlButton>
-      <OlButton size="md">
-        medium
-      </OlButton>
+    <OlButton size="lg" to="/to">
+      Link
+    </OlButton>
+    <OlButton size="md" link>
+      Link
+    </OlButton>
 
-      <OlButton size="lg" type="outline">
-        large
-      </OlButton>
-
-      <OlButton size="xl">
-        XL
-      </OlButton>
-
-      <OlButton size="2xl">
-        XXL
-      </OlButton>
-
-      <OlButton size="3xl">
-        XXXL
-      </OlButton>
-
-      <OlButton size="10">
-        custome
-      </OlButton>
-    </div>
+    <h1>Icon</h1>
+    <OlButton link size="md" icon="i-mi-table" />
   </div>
 </template>

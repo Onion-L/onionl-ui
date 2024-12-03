@@ -38,3 +38,27 @@ yarn add onionl-ui @onionl-ui/preset unocss
 # 安装所有必需的依赖
 pnpm add onionl-ui @onionl-ui/preset unocss
 ```
+
+## 图标
+
+Onionl UI 使用 Material Icons 作为默认图标集。要使用图标功能，需要安装 Material Icons 图标集:
+使用 npm:
+
+```bash
+# 安装所有必需的依赖
+npm install -D @iconify-json/mi
+```
+
+使用 yarn:
+
+```bash
+# 安装所有必需的依赖
+yarn add -D @iconify-json/mi
+```
+
+使用 pnpm:
+
+```bash
+# 安装所有必需的依赖
+pnpm add -D @iconify-json/mi
+```

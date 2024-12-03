@@ -118,7 +118,7 @@ const themes = {
   },
   secondary: {
     DEFAULT: 'var(--onl-light-50)',
-    text: 'var(--onl-dark-900)',
+    text: 'var(--onl-purple-500)',
     hover: 'var(--onl-light-300)',
     border: 'transparent',
   },

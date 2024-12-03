@@ -13,8 +13,8 @@
     "play"
   ],
   "dependencies": {
-    "@onionl-ui/preset": "0.0.1-alpha.4",
-    "onionl-ui": "0.0.1-alpha.7",
+    "@onionl-ui/preset": "workspace:*",
+    "onionl-ui": "workspace:*",
     "vue": "^3.5.12"
   },
   "devDependencies": {

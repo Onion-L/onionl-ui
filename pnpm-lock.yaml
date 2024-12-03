@@ -126,6 +126,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.5.0
         version: 19.5.0
+      '@iconify-json/mi':
+        specifier: ^1.2.1
+        version: 1.2.1
       '@rollup/plugin-node-resolve':
         specifier: ^15.3.0
         version: 15.3.0(rollup@4.27.4)
@@ -234,11 +237,11 @@ importers:
   play:
     dependencies:
       '@onionl-ui/preset':
-        specifier: 0.0.1-alpha.4
-        version: 0.0.1-alpha.4
+        specifier: workspace:*
+        version: link:../preset
       onionl-ui:
-        specifier: 0.0.1-alpha.7
-        version: 0.0.1-alpha.7(vue@3.5.13(typescript@5.6.3))
+        specifier: workspace:*
+        version: link:../packages/onionl-ui
       vue:
         specifier: ^3.5.12
         version: 3.5.13(typescript@5.6.3)
@@ -261,6 +264,9 @@ importers:
       '@unocss/preset-attributify':
         specifier: ^0.64.1
         version: 0.64.1
+      '@unocss/preset-icons':
+        specifier: ^0.65.0
+        version: 0.65.0
       '@unocss/preset-mini':
         specifier: ^0.64.1
         version: 0.64.1
@@ -1118,6 +1124,9 @@ packages:
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
 
+  '@iconify-json/mi@1.2.1':
+    resolution: {integrity: sha512-t0CNY985+Gbu+Ef5JKPtrw5rR9JCTNdhk7fRkI6pDY3elTd6vzJrgNGETn9n2ITvcxBtaw8iDGsAlRpJuxQNrg==}
+
   '@iconify-json/simple-icons@1.2.12':
     resolution: {integrity: sha512-lRNORrIdeLStShxAjN6FgXE1iMkaAgiAHZdP0P0GZecX91FVYW58uZnRSlXLlSx5cxMoELulkAAixybPA2g52g==}
 
@@ -1179,9 +1188,6 @@ packages:
 
   '@one-ini/wasm@0.1.1':
     resolution: {integrity: sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==}
-
-  '@onionl-ui/preset@0.0.1-alpha.4':
-    resolution: {integrity: sha512-BwPm+pT3fCkw/fNiCjOrabrzzUw+ux1WsLaPaMa4jcsrKba8fmAVSetnxsCU+Ss7JjDhSXUIMZ6uhbsLE2YcLQ==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -1504,6 +1510,9 @@ packages:
   '@unocss/core@0.64.1':
     resolution: {integrity: sha512-D1ULd70a24/k6kGyHCIijbrrIn9UjFUEBg2R4xKX2/ViQb1k2MIgOs4VS20MkJX6kbZXqqm/zAFHzDhsQGIhBA==}
 
+  '@unocss/core@0.65.0':
+    resolution: {integrity: sha512-2QwjMq/bm7lbxk6BTyGblWuTtSfXRuHJSoN1zys53ES+SrVVYA8FVDIpiTQbxENLcXhwwq1OaN3z7zi714n+OA==}
+
   '@unocss/extractor-arbitrary-variants@0.64.1':
     resolution: {integrity: sha512-tKtaeZYzSCaH1ASE7Uj45rPX4ApQHYE8eZFfaL3N4ZY0LYrTJPBnaLSRfLRwGD6KLHjoL3+sorywJiS/VVBcFQ==}
 
@@ -1521,6 +1530,9 @@ packages:
 
   '@unocss/preset-icons@0.64.1':
     resolution: {integrity: sha512-aQ4hN2NFdJo08pzUYc1FpwTkNUByE7FB51KmRwXclsVKeXFGvFO3YUYeg5IDlTxqCfvFVWZ3q8NhnmpKGkbutw==}
+
+  '@unocss/preset-icons@0.65.0':
+    resolution: {integrity: sha512-zQS7xSBb2Y5ZraARqi6XMFha1z7H0P3tl5HZ6c3nBwwN0FuCbaJnbpdzdgqezcI2V3KctZNiDM3UAT18lSuamQ==}
 
   '@unocss/preset-mini@0.64.1':
     resolution: {integrity: sha512-tl+ciN0elB9eETEVZQrNaMy4NpbLdWDVW7KlmpRZi4Eomf/Ntz+Wctp5V0aBvszo8arEaDiOwsgMxITvx9Ll6Q==}
@@ -3409,11 +3421,6 @@ packages:
   oniguruma-to-es@0.4.1:
     resolution: {integrity: sha512-rNcEohFz095QKGRovP/yqPIKc+nP+Sjs4YTHMv33nMePGKrq/r2eu9Yh4646M5XluGJsUnmwoXuiXE69KDs+fQ==}
 
-  onionl-ui@0.0.1-alpha.7:
-    resolution: {integrity: sha512-EpUw8VV6WDtQ/8JV/GCSKug1ahughdGES/X2jtRl+wODqo4yeZhFA4CNsdI7Ox0mx7kL2w2lV5RBuzTrLkDTYg==}
-    peerDependencies:
-      vue: '>=3.3.0'
-
   onionl-ui@0.0.1-aplha.2:
     resolution: {integrity: sha512-QXir3sCsXQ0rO4MW7eQiy+XE9ShvU1an5+sVsNLQHQH2U6r+x+wsL+1h2OwKCVWEcy7+sJHD9JufQjxG0ZHD/A==}
 
@@ -5188,6 +5195,10 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
+  '@iconify-json/mi@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/simple-icons@1.2.12':
     dependencies:
       '@iconify/types': 2.0.0
@@ -5286,8 +5297,6 @@ snapshots:
       fastq: 1.17.1
 
   '@one-ini/wasm@0.1.1': {}
-
-  '@onionl-ui/preset@0.0.1-alpha.4': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -5631,6 +5640,8 @@ snapshots:
 
   '@unocss/core@0.64.1': {}
 
+  '@unocss/core@0.65.0': {}
+
   '@unocss/extractor-arbitrary-variants@0.64.1':
     dependencies:
       '@unocss/core': 0.64.1
@@ -5664,6 +5675,14 @@ snapshots:
     dependencies:
       '@iconify/utils': 2.1.33
       '@unocss/core': 0.64.1
+      ofetch: 1.4.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@unocss/preset-icons@0.65.0':
+    dependencies:
+      '@iconify/utils': 2.1.33
+      '@unocss/core': 0.65.0
       ofetch: 1.4.1
     transitivePeerDependencies:
       - supports-color
@@ -7968,11 +7987,6 @@ snapshots:
       emoji-regex-xs: 1.0.0
       regex: 5.0.2
       regex-recursion: 4.2.1
-
-  onionl-ui@0.0.1-alpha.7(vue@3.5.13(typescript@5.6.3)):
-    dependencies:
-      clsx: 2.1.1
-      vue: 3.5.13(typescript@5.6.3)
 
   onionl-ui@0.0.1-aplha.2(@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3))(@vue/compiler-sfc@3.5.13)(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3):
     dependencies:

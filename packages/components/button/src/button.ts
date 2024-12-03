@@ -3,6 +3,8 @@ export type ButtonSize = 'lg' | 'sm' | 'xs' | 'lg' | 'xl' | '2xl'
 
 export interface ButtonProps {
   type?: ButtonType
-  size: ButtonSize | number | string
+  size?: ButtonSize | number | string
   to?: string
+  link?: boolean
+  icon?: string
 }

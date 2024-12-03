@@ -1,31 +1,31 @@
 {
-  "hash": "d05f0396",
+  "hash": "68463e1f",
   "configHash": "9282d504",
-  "lockfileHash": "710e5759",
-  "browserHash": "e57af3a7",
+  "lockfileHash": "c3426fdf",
+  "browserHash": "8cabfdfa",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.5.13_typescript@5.6.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "90cd6dd0",
+      "fileHash": "0876851a",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.6.4/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "62c20d78",
+      "fileHash": "7f7d293d",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@11.3.0_vue@3.5.13_typescript@5.6.3_/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "bcafe8c0",
+      "fileHash": "4c8c50be",
       "needsInterop": false
     },
     "onionl-ui": {
       "src": "../../../../node_modules/.pnpm/onionl-ui@0.0.1-aplha.2_@typescript-eslint+eslint-plugin@8.14.0_@typescript-eslint+parser@8.1_ccrf43ap4wuibnwy4mpqdncf6e/node_modules/onionl-ui/dist/es/onionl-ui/index.mjs",
       "file": "onionl-ui.js",
-      "fileHash": "516efbd9",
+      "fileHash": "73358271",
       "needsInterop": false
     }
   },

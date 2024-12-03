@@ -28,19 +28,22 @@
 使用 npm:
 
 ```bash
-npm install onionl-ui
+# 安装所有必需的依赖
+npm install onionl-ui @onionl-ui/preset unocss
 ```
 
 使用 yarn:
 
 ```bash
-yarn add onionl-ui
+# 安装所有必需的依赖
+yarn add onionl-ui @onionl-ui/preset unocss
 ```
 
 使用 pnpm:
 
 ```bash
-pnpm add onionl-ui
+# 安装所有必需的依赖
+pnpm add onionl-ui @onionl-ui/preset unocss
 ```
 
 ## 🔨 快速上手

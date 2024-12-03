@@ -28,19 +28,22 @@ English | [中文](./README-zh.md)
 Using npm:
 
 ```bash
-npm install onionl-ui
+# Install all required dependencies
+npm install onionl-ui @onionl-ui/preset unocss
 ```
 
 Using yarn:
 
 ```bash
-yarn add onionl-ui
+# Install all required dependencies
+yarn add onionl-ui @onionl-ui/preset unocss
 ```
 
 Using pnpm:
 
 ```bash
-pnpm add onionl-ui
+# Install all required dependencies
+pnpm add onionl-ui @onionl-ui/preset unocss
 ```
 
 ## 🔨 Quick Start

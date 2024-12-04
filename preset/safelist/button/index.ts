@@ -3,10 +3,11 @@ export function getBtnSafelist(range: number) {
 
   const sizeSaftList = sizeList.map(size => `ol-button__size-${size}`)
 
-  const btnSafelist: string[] = ['ol-button', 'ol-button__type-primary', 'ol-button__type-outline', 'ol-button__type-secondary', ...sizeSaftList]
+  const typeSafeList = ['primary', 'secondary', 'outline', 'link'].map(type => `ol-button__type-${type}`)
 
   const btnSize = Array.from({ length: range }, (_, i) => `ol-button__size-${i + 1}`)
-  btnSafelist.push(...btnSize)
+
+  const btnSafelist: string[] = ['ol-button', ...typeSafeList, ...sizeSaftList, ...btnSize]
 
   return btnSafelist
 }

@@ -1,9 +1,8 @@
 import { onionlUIPreset } from '@onionl-ui/preset'
-import { defineConfig, presetUno } from 'unocss'
+import { defineConfig } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetUno(),
     onionlUIPreset(),
   ],
 })

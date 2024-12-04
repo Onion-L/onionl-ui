@@ -1,5 +1,6 @@
 import { getBtnSafelist } from './button'
+import { IconSafeList } from './icon'
 
 export function getSafelist(range: number = 20) {
-  return [...getBtnSafelist(range)]
+  return [IconSafeList, ...getBtnSafelist(range)]
 }

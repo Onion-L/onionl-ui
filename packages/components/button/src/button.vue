@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { ButtonProps } from './button'
+import { OlIcon } from '@onionl-ui/components/icon'
 import clsx from 'clsx'
 import { computed } from 'vue'
 
@@ -12,20 +13,28 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   size: 'sm',
 })
 
+const defaultBtn = clsx('ol-button')
+
 const customeStyles = computed(() => {
   const sizeCls = props.size ? `ol-button__size-${props.size}` : ''
+  if (props.to || props.link) {
+    const linkCls = 'ol-button__type-link'
+    return clsx(sizeCls, linkCls)
+  }
   const typeCls = props.type ? `ol-button__type-${props.type}` : ''
-  return clsx(sizeCls, typeCls)
+  return clsx(defaultBtn, sizeCls, typeCls)
 })
 </script>
 
 <template>
   <component
     :is="to ? 'a' : 'button'"
-    :to="to"
-    class="ol-button"
+    :href="to"
     :class="[customeStyles]"
   >
-    <slot />
+    <ol-icon v-if="icon" :class="icon" />
+    <span>
+      <slot />
+    </span>
   </component>
 </template>

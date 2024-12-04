@@ -5,6 +5,7 @@ import glob from 'fast-glob'
 import fs from 'fs-extra'
 import UnoCSS from 'unocss/vite'
 import { build } from 'vite'
+import dts from 'vite-plugin-dts'
 import { buildConfig, onionlPath, pkgPath, rollupOptions, rootPath } from './config-info'
 
 export function excludeFiles(files: string[]) {
@@ -44,7 +45,13 @@ export async function copyFiles() {
           fileName: () => `[name].${extend}`,
         },
       },
-      plugins: [vue(), vueJsx(), UnoCSS()],
+      plugins: [vue(), vueJsx(), UnoCSS(), dts({
+        include: ['packages/**/**/*.{vue,ts,tsx}'],
+        exclude: ['packages/**/test/**', 'packages/**/*.test.ts'],
+        outDir: 'dist/es',
+        staticImport: true,
+        insertTypesEntry: true,
+      })],
     })
   })
 

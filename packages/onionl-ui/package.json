@@ -1,6 +1,6 @@
 {
   "name": "onionl-ui",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.7",
   "description": "A UI component library for Vue 3",
   "author": "Onion-L",
   "license": "MIT",
@@ -12,13 +12,14 @@
   "keywords": ["vue3", "components", "ui-library", "unocss"],
   "exports": {
     ".": {
-      "import": "./es/index.mjs",
-      "require": "./lib/index.cjs"
+      "types": "./es/onionl-ui/index.d.ts",
+      "import": "./es/onionl-ui/index.mjs",
+      "require": "./lib/onionl-ui/index.cjs"
     }
   },
-  "main": "lib/index.cjs",
-  "module": "es/index.mjs",
-  "types": "index.d.ts",
+  "main": "lib/onionl-ui/index.cjs",
+  "module": "es/onionl-ui/index.mjs",
+  "types": "es/onionl-ui/index.d.ts",
   "peerDependencies": {
     "vue": ">=3.3.0"
   },

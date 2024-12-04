@@ -5,12 +5,13 @@ import { getCSSVariable } from './preflights/css'
 import { getSafelist } from './safelist'
 import { shortcuts } from './shortcuts'
 import { theme } from './theme'
+
 /**
- * @description  onionl-ui preset
- * @param oprtions  range
+ * @description onionl-ui preset
+ * @param oprtions - The configuration options
+ * @param oprtions.range - The numeric range value for generating safelist
  * @returns Preset
  */
-
 export function onionlUIPreset(oprtions?: { range: number }) {
   const range = oprtions?.range
   const safelist = getSafelist(range)

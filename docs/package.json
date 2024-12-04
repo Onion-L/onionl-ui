@@ -9,6 +9,9 @@
   "main": "index.md",
   "dependencies": {
     "@onionl-ui/preset": "workspace:*",
-    "onionl-ui": "0.0.1-aplha.2"
+    "onionl-ui": "0.0.1-alpha.8"
+  },
+  "devDependencies": {
+    "@iconify-json/mi": "^1.2.1"
   }
 }

@@ -1,19 +1,25 @@
 import {
+  clsx_default
+} from "./chunk-E6AZFW2I.js";
+import {
   computed,
   createBaseVNode,
   createBlock,
   createCommentVNode,
   createElementBlock,
   defineComponent,
+  mergeProps,
   normalizeClass,
   openBlock,
+  ref,
   renderSlot,
   resolveDynamicComponent,
   unref,
+  useAttrs,
   withCtx
 } from "./chunk-5TCDO6LD.js";
 
-// node_modules/.pnpm/onionl-ui@0.0.1-alpha.8_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/utils/install.mjs
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/utils/install.mjs
 function useInstall(comp) {
   ;
   comp.install = (app) => {
@@ -22,7 +28,7 @@ function useInstall(comp) {
   return comp;
 }
 
-// node_modules/.pnpm/onionl-ui@0.0.1-alpha.8_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/icon/src/icon.vue2.mjs
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/icon/src/icon.vue2.mjs
 var _sfc_main = defineComponent({
   ...{
     name: "OlIcon"
@@ -46,26 +52,10 @@ var _sfc_main = defineComponent({
   }
 });
 
-// node_modules/.pnpm/onionl-ui@0.0.1-alpha.8_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/icon/index.mjs
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/icon/index.mjs
 var OlIcon = useInstall(_sfc_main);
 
-// node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs
-function r(e) {
-  var t, f, n = "";
-  if ("string" == typeof e || "number" == typeof e) n += e;
-  else if ("object" == typeof e) if (Array.isArray(e)) {
-    var o = e.length;
-    for (t = 0; t < o; t++) e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
-  } else for (f in e) e[f] && (n && (n += " "), n += f);
-  return n;
-}
-function clsx() {
-  for (var e, t, f = 0, n = "", o = arguments.length; f < o; f++) (e = arguments[f]) && (t = r(e)) && (n && (n += " "), n += t);
-  return n;
-}
-var clsx_default = clsx;
-
-// node_modules/.pnpm/onionl-ui@0.0.1-alpha.8_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/button/src/button.vue2.mjs
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/button/src/button.vue2.mjs
 var _sfc_main2 = defineComponent({
   ...{
     name: "OlButton"
@@ -111,13 +101,64 @@ var _sfc_main2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/onionl-ui@0.0.1-alpha.8_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/button/index.mjs
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/button/index.mjs
 var OlButton = useInstall(_sfc_main2);
 
-// node_modules/.pnpm/onionl-ui@0.0.1-alpha.8_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/onionl-ui/components.mjs
-var Components = [OlButton];
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/input/src/input.vue2.mjs
+var _hoisted_1 = { class: "relative inline-block" };
+var _hoisted_2 = ["value", "placeholder"];
+var _sfc_main3 = defineComponent({
+  ...{
+    name: "OlInput",
+    inheritAttrs: false
+  },
+  __name: "input",
+  props: {
+    modelValue: {},
+    error: {},
+    prefix: {},
+    suffix: {},
+    className: {},
+    placeholder: {}
+  },
+  setup(__props) {
+    const attrs = useAttrs();
+    const filteredAttrs = computed(() => {
+      const { style, ...rest } = attrs;
+      return rest;
+    });
+    const isFocused = ref(false);
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock("div", _hoisted_1, [
+        _ctx.prefix ? (openBlock(), createBlock(unref(OlIcon), {
+          key: 0,
+          icon: _ctx.prefix,
+          class: normalizeClass(["ol-input__icon-prefix", { "ol-input__icon-focus": isFocused.value }])
+        }, null, 8, ["icon", "class"])) : _ctx.suffix ? (openBlock(), createBlock(unref(OlIcon), {
+          key: 1,
+          icon: _ctx.suffix,
+          class: normalizeClass(["ol-input__icon-suffix", { "ol-input__icon-focus": isFocused.value }])
+        }, null, 8, ["icon", "class"])) : createCommentVNode("v-if", true),
+        createBaseVNode("input", mergeProps({
+          value: _ctx.modelValue,
+          placeholder: _ctx.placeholder
+        }, filteredAttrs.value, {
+          class: ["ol-input", { " pl-10": _ctx.prefix }],
+          onBlur: _cache[0] || (_cache[0] = ($event) => isFocused.value = false),
+          onFocus: _cache[1] || (_cache[1] = ($event) => isFocused.value = true)
+        }), null, 16, _hoisted_2)
+      ]);
+    };
+  }
+});
 
-// node_modules/.pnpm/onionl-ui@0.0.1-alpha.8_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/onionl-ui/install-maker.mjs
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/components/input/index.mjs
+var OlInput = useInstall(_sfc_main3);
+
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/onionl-ui/components.mjs
+var Components = [OlButton, OlIcon, OlInput];
+
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/onionl-ui/install-maker.mjs
 function installMaker(Components2) {
   return {
     install(app) {
@@ -128,13 +169,15 @@ function installMaker(Components2) {
   };
 }
 
-// node_modules/.pnpm/onionl-ui@0.0.1-alpha.8_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/onionl-ui/installer.mjs
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/onionl-ui/installer.mjs
 var installer = installMaker(Components);
 
-// node_modules/.pnpm/onionl-ui@0.0.1-alpha.8_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/onionl-ui/index.mjs
+// node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/onionl-ui/index.mjs
 var install = installer.install;
 export {
   OlButton,
+  OlIcon,
+  OlInput,
   installer as default,
   install
 };

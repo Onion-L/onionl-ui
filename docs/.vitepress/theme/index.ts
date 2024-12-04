@@ -1,9 +1,10 @@
-import OnionlUI from 'onionl-ui'
+import { OlButton, OlInput } from '@onionl-ui/components'
 // // 如果你使用默认主题
-import DefaultTheme from 'vitepress/theme'
+import theme from 'vitepress/theme'
 import './custom.css'
 import 'uno.css'
 
-export default { extends: DefaultTheme, enhanceApp({ app }) {
-  app.use(OnionlUI)
+export default { ...theme, enhanceApp({ app }) {
+  app.use(OlButton)
+  app.use(OlInput)
 } }

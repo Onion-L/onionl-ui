@@ -1,4 +1,4 @@
-import installer from './onionl-ui/installer'
+import installer from './installer'
 
 export * from '@onionl-ui/components'
 

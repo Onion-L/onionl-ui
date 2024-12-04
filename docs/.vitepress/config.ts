@@ -5,7 +5,7 @@ const NavLink: DefaultTheme.NavItemWithLink[] = [
   { text: 'Getting Started', link: '/guide/getting-started' },
 ]
 
-const ComponentItems = [{ text: 'Button', link: '/components/button' }]
+const ComponentItems = [{ text: 'Button', link: '/components/button' }, { text: 'Input', link: '/components/input' }]
 
 const Components: DefaultTheme.SidebarItem[] = [{
   text: 'Basic',

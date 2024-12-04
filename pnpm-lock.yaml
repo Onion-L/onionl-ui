@@ -210,12 +210,12 @@ importers:
 
   docs:
     dependencies:
+      '@onionl-ui/components':
+        specifier: workspace:*
+        version: link:../packages/components
       '@onionl-ui/preset':
         specifier: workspace:*
         version: link:../preset
-      onionl-ui:
-        specifier: 0.0.1-alpha.8
-        version: 0.0.1-alpha.8(vue@3.5.13(typescript@5.6.3))
     devDependencies:
       '@iconify-json/mi':
         specifier: ^1.2.1
@@ -3415,11 +3415,6 @@ packages:
 
   oniguruma-to-es@0.4.1:
     resolution: {integrity: sha512-rNcEohFz095QKGRovP/yqPIKc+nP+Sjs4YTHMv33nMePGKrq/r2eu9Yh4646M5XluGJsUnmwoXuiXE69KDs+fQ==}
-
-  onionl-ui@0.0.1-alpha.8:
-    resolution: {integrity: sha512-zR97sUDJAqsJiRKW2Xt9MJ2ofOBOSgv+YaXf1HmAMAd52cHa75vOff8HV1usWcRmymV09lScBkRs10HkAEY+Ng==}
-    peerDependencies:
-      vue: '>=3.3.0'
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -7984,11 +7979,6 @@ snapshots:
       emoji-regex-xs: 1.0.0
       regex: 5.0.2
       regex-recursion: 4.2.1
-
-  onionl-ui@0.0.1-alpha.8(vue@3.5.13(typescript@5.6.3)):
-    dependencies:
-      clsx: 2.1.1
-      vue: 3.5.13(typescript@5.6.3)
 
   optionator@0.9.4:
     dependencies:

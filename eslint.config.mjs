@@ -6,5 +6,6 @@ export default antfu({
   rules: {
     'vue/no-useless-v-bind': 'off',
     'vue/component-name-in-template-casing': 'off',
+    'vue/attribute-hyphenation': 'off',
   },
 })

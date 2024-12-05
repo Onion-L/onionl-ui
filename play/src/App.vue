@@ -1,8 +1,5 @@
 <script setup>
 import { OlButton, OlInput } from 'onionl-ui'
-import { ref } from 'vue'
-
-const he = ref(1)
 </script>
 
 <template>
@@ -20,11 +17,11 @@ const he = ref(1)
     <h1>Icon</h1>
     <OlInput placeholder="Default Placeholder" />
 
-    <OlInput :modelValue="he" suffix="i-mi-eye" placeholder="Default Placeholder" />
+    <OlInput suffix="i-mi-eye" placeholder="Default Placeholder" />
 
-    <OlInput :modelValue="he" placeholder="Search" />
+    <OlInput prefix="i-mi-search" placeholder="Search" />
 
-    <OlInput type="password" placeholder="Enter your password" />
+    <OlInput type="password" placeholder="Enter your password" disabled />
 
     <OlButton link size="md" icon="i-mi-table" />
   </div>

@@ -1,7 +1,4 @@
 import {
-  clsx_default
-} from "./chunk-E6AZFW2I.js";
-import {
   computed,
   createBaseVNode,
   createBlock,
@@ -18,6 +15,9 @@ import {
   useAttrs,
   withCtx
 } from "./chunk-5TCDO6LD.js";
+import {
+  clsx_default
+} from "./chunk-E6AZFW2I.js";
 
 // node_modules/.pnpm/onionl-ui@0.0.1-alpha.9_vue@3.5.13_typescript@5.6.3_/node_modules/onionl-ui/es/utils/install.mjs
 function useInstall(comp) {

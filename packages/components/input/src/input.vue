@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { InputProps } from './input'
 import { OlIcon } from '@onionl-ui/components/icon'
-import { computed, useAttrs } from 'vue'
+import IMask from 'imask'
+import { computed, onMounted, ref, useAttrs } from 'vue'
 
 defineOptions({
   name: 'OlInput',
@@ -10,10 +11,23 @@ defineOptions({
 
 const props = defineProps<InputProps>()
 
+const InputRef = ref<HTMLInputElement>()
+
+onMounted(() => {
+  if (props.mask) {
+    const maskOptions = {
+      mask: props.mask,
+    }
+    if (InputRef.value) {
+      IMask(InputRef.value!, maskOptions)
+    }
+  }
+})
+
 const attrs = useAttrs()
 
 const filteredAttrs = computed(() => {
-  const { style, ...rest } = attrs
+  const { style, mask, ...rest } = attrs
   return rest
 })
 
@@ -39,6 +53,7 @@ function handleFocus(e: Event) {
         />
       </template>
       <input
+        ref="InputRef"
         :value="modelValue"
         :placeholder="placeholder"
         v-bind="filteredAttrs"

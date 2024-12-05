@@ -5,4 +5,6 @@ export interface InputProps {
   suffix?: string
   className?: string
   placeholder?: string
+  mask?: string
+  disabled?: boolean
 }

@@ -125,6 +125,9 @@ export const colors = {
     hover: 'var(--onl-outline-hover)',
     border: 'var(--onl-outline-border)',
   },
+  disabled: {
+    DEFAULT: 'var(--onl-disabled)',
+  },
 }
 
 // export const defaultTheme: Theme = {

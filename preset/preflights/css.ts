@@ -107,6 +107,18 @@ export const defaultColors = {
     800: '#5a23c8', // 深色文本
     900: '#4a1ba8', // 最深，特殊强调
   },
+  gray: {
+    50: '#ffffff',
+    100: '#fafafa',
+    200: '#f5f5f5',
+    300: '#f0f0f0',
+    400: '#d9d9d9',
+    500: '#bfbfbf',
+    600: '#8c8c8c',
+    700: '#595959',
+    800: '#434343',
+    900: '#262626',
+  },
 }
 
 const themes = {
@@ -127,6 +139,9 @@ const themes = {
     text: 'var(--onl-purple-500)',
     hover: 'var(--onl-purple-300)',
     border: 'var(--onl-purple-300)',
+  },
+  disabled: {
+    DEFAULT: '#f0f0f05e',
   },
 }
 

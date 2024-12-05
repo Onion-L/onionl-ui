@@ -34,3 +34,8 @@
 ```html
 <OlInput type="password" placeholder="Enter your password" />
 ```
+
+## 禁用状态
+通过设置 `disabled` 属性，可以将输入框设置为禁用状态。
+
+<OlInput  class="w-64 h-10" disabled placeholder="Disabled Input" />

@@ -15,7 +15,7 @@ import { OlButton, OlInput } from 'onionl-ui'
     </OlButton>
 
     <h1>Icon</h1>
-    <OlInput placeholder="Default Placeholder" />
+    <OlInput mask="+86 000 0000 0000" placeholder="+86 123 1231 1231" />
 
     <OlInput suffix="i-mi-eye" placeholder="Default Placeholder" />
 

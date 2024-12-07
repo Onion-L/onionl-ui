@@ -9,7 +9,8 @@ export default defineConfig({
     testTimeout: 10000,
     coverage: {
       reporter: ['text', 'json', 'html'],
-      exclude: ['play/**'],
+      include: ['packages/components/**/src/*.{vue,ts}'],
+      exclude: ['play/**', 'preset/**'],
     },
   },
 })

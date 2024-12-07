@@ -58,7 +58,7 @@
 
 通过正则表达式，你可以限制输入内容的格式。例如，下面的示例限制只能输入1-6开头的最多6位数字。
 
-<OlInput class="w-64 h-10" :mask="/^[1-6]\d{0,5}$/" placeholder="+86 123 1231 1231" />
+<OlInput class="w-64 h-10" :mask="/^[1-6]\d{0,5}$/" placeholder="Enter a 6-digit number starting with 1-6" />
 
 ```html
 <OlInput :mask="/^[1-6]\d{0,5}$/" placeholder="+86 123 1231 1231" />

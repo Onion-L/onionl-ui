@@ -33,21 +33,28 @@ jobs:
     needs: lint
     steps:
       - uses: actions/checkout@v3
-
+      
       - uses: pnpm/action-setup@v2
         with:
           version: 9
+            
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: pnpm
-
+      
       - name: Install dependencies
         run: pnpm install
-
-      - name: Run test
-        run: pnpm run test
+      
+      - name: Run test with coverage
+        run: pnpm run coverage
+      
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
 
   build:
     runs-on: ubuntu-latest

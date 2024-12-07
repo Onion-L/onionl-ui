@@ -103,10 +103,10 @@
 
 ## 属性
 
-| 属性名 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| size | 按钮尺寸，可选值为 `sm`、`md`、`lg` 或数字 | `string \| number` | `md` |
-| link | 是否为链接样式 | `boolean` | `false` |
-| to | 路由跳转目标，支持 vue-router 的 to 属性 | `string \| RouteLocationRaw` | - |
-| icon | 图标名称，支持 Material Icons | `string` | - |
-| disabled | 是否禁用 | `boolean` | `false` |
+|属性名     | 说明                                   | 类型                        | 默认值 |
+| -------- | ------------------------------------- | ----------------------------- | --- |
+| size     | 按钮尺寸，可选值为 `sm`、`md`、`lg` 或数字 | `string \| number`            | `md` |
+| link     | 是否为链接样式                           | `boolean`                     | `false` |
+| to       | 路由跳转目标，支持 vue-router 的 to 属性   | `string \| RouteLocationRaw` | - |
+| icon     | 图标名称，支持 Material Icons | `string` | - |
+| disabled | 是否禁用                                | `boolean`                     | `false` |

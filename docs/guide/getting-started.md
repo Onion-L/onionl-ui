@@ -41,7 +41,7 @@ pnpm add onionl-ui @onionl-ui/preset unocss
 
 ## 图标
 
-Onionl UI 使用 Material Icons 作为默认图标集。要使用图标功能，需要安装 Material Icons 图标集:
+Onionl UI 使用 [Mono Icons](https://icones.js.org/collection/mi) 作为默认图标集。要使用图标功能，需要安装 Mono Icons 图标集:
 使用 npm:
 
 ```bash

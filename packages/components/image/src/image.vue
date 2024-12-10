@@ -49,8 +49,10 @@ function handleError() {
 function loadImage() {
   isLoading.value = true
   loadError.value = false
+
   if (props.src) {
     imageSrc.value = props.src
+    isLoading.value = false
   }
   else {
     handleError()

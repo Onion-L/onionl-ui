@@ -3,5 +3,8 @@ export interface ImageProps {
   src?: string
   alt?: string
   fit?: ImageFit
-
+  className?: string
+  loading?: 'eager' | 'lazy'
+  width?: string
+  height?: string
 }

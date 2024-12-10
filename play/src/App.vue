@@ -1,28 +1,33 @@
 <script setup>
-import { OlButton, OlInput } from 'onionl-ui'
+import { OlImage } from 'onionl-ui'
+
+const urls = [
+  'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+  'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+  'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+  'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
+  'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
+  'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
+  'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg',
+  'https://picsum.photos/id/1/100/100',
+  'https://picsum.photos/id/2/100/100',
+  'https://picsum.photos/id/3/100/100',
+  'https://picsum.photos/id/4/100/100',
+  'https://picsum.photos/id/5/100/100',
+  'https://picsum.photos/id/6/100/100',
+  'https://picsum.photos/id/7/100/100',
+  'https://picsum.photos/id/8/100/100',
+  'https://picsum.photos/id/9/100/100',
+  'https://picsum.photos/id/10/100/100',
+]
 </script>
 
 <template>
   <div class="p-4">
     <h1 class="text-2xl font-bold">
-      link
+      Image
     </h1>
-    <OlButton size="lg" to="/to">
-      Link
-    </OlButton>
-    <OlButton size="md" link>
-      Link
-    </OlButton>
 
-    <h1>Icon</h1>
-    <OlInput mask="+86 000 0000 0000" placeholder="+86 123 1231 1231" />
-
-    <OlInput suffix="i-mi-eye" placeholder="Default Placeholder" />
-
-    <OlInput prefix="i-mi-search" placeholder="Search" />
-
-    <OlInput type="password" placeholder="Enter your password" disabled />
-
-    <OlButton link size="md" icon="i-mi-table" />
+    <OlImage v-for="url in urls" :key="url" fit="fill" :src="url" />
   </div>
 </template>

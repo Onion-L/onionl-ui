@@ -20,21 +20,6 @@ const isLoading = ref(true)
 const attr = useAttrs()
 let observer: IntersectionObserver | null = null
 
-const imgCls = computed(() => {
-  return clsx(`ol-image__fit-${props.fit}`)
-})
-
-function loadImage() {
-  if (props.loading === 'eager') {
-    imageSrc.value = props.src
-    isLoading.value = false
-  }
-  else {
-    imageSrc.value = undefined
-    isLoading.value = true
-  }
-}
-
 const filteredAttrs = computed(() => {
   const {
     className,
@@ -49,63 +34,81 @@ const filteredAttrs = computed(() => {
   return rest
 })
 
+const imgCls = computed(() => {
+  return clsx(`ol-image__fit-${props.fit}`)
+})
+
 watch(() => props.src, () => {
-  if (props.loading === 'eager') {
-    loadImage()
-  }
+  loadImage()
 }, { immediate: true })
 
 function handleError() {
   loadError.value = true
 }
 
+function loadImage() {
+  isLoading.value = true
+  loadError.value = false
+  if (props.src) {
+    imageSrc.value = props.src
+  }
+  else {
+    handleError()
+  }
+}
+
 function handleLoad() {
   isLoading.value = false
 }
 
+function lazyLoadImageSetup() {
+  observer = new IntersectionObserver((entries) => {
+    const entry = entries[0]
+    if (entry.isIntersecting) {
+      imageSrc.value = props.src
+      isLoading.value = false
+      if (observer && container.value) {
+        observer.unobserve(container.value)
+        observer = null
+      }
+    }
+  }, {
+    root: null,
+    threshold: 0.25,
+    rootMargin: '50px',
+  })
+
+  if (container.value) {
+    observer.observe(container.value)
+  }
+}
+
+function cleanupObserver() {
+  if (observer && container.value) {
+    observer.unobserve(container.value)
+    observer.disconnect()
+    observer = null
+  }
+}
+
 onMounted(() => {
   if (props.loading === 'lazy') {
-    observer = new IntersectionObserver((entries) => {
-      const entry = entries[0]
-      if (entry.isIntersecting) {
-        imageSrc.value = props.src
-        isLoading.value = false
-        if (observer && container.value) {
-          observer.unobserve(container.value)
-          observer.disconnect()
-          observer = null
-        }
-      }
-    }, {
-      root: null,
-      threshold: 0.25,
-      rootMargin: '50px',
-    })
-
-    if (container.value) {
-      observer.observe(container.value)
-    }
-  }
-  else {
-    imageSrc.value = props.src
+    lazyLoadImageSetup()
   }
 })
 
 onUnmounted(() => {
-  if (observer) {
-    observer.disconnect()
-    observer = null
-  }
+  cleanupObserver()
 })
 </script>
 
 <template>
   <div ref="container" v-bind="filteredAttrs">
-    <slot v-if="loadError" name="error">
-      <div :class="className" class="ol-image__error">
-        {{ 'FAILED' }}
-      </div>
-    </slot>
+    <div v-if="loadError" :class="className" class="ol-image__error">
+      <slot name="error">
+        <span>FAILED</span>
+      </slot>
+    </div>
     <template v-else>
       <div v-if="isLoading" :class="className" class="ol-image__load">
         <slot name="load">

@@ -67,7 +67,7 @@
 按钮可以只包含图标。使用 `icon` 属性设置图标，支持所有 Material Icons。
 
 :::tip
-使用图标功能需要先安装 Material Icons 图标集
+使用图标功能需要先安装 Mono Icons 图标集
 <div class="space-x-2 flex items-center">
   <OlButton icon="i-mi-comment" />
   <OlButton icon="i-mi-add">Plus</OlButton>

@@ -16,6 +16,10 @@ English | [中文](./README-zh.md)
 
 🌱 This is my first open source project. As a beginner in open source, I'm learning and growing with this project. Any feedback and contributions are warmly welcomed!
 
+## 📝 To-Do List
+
+Check the [TODO](./TODO.md) file to view the development plan of Onionl-UI. Suggestions, ideas or code contributions are welcome!
+
 ## ✨ Features
 
 - 🎯 Built with Vue 3 + TypeScript, providing complete type definitions

@@ -1,29 +1,64 @@
-import { useEventListener } from '@vueuse/core'
-import { defineComponent, h, ref } from 'vue'
+import type { PropType } from 'vue'
+import { onClickOutside, useEventListener } from '@vueuse/core'
+import { defineComponent, h, nextTick, onMounted, ref } from 'vue'
+
+const ContextMenuProps = {
+  target: {
+    type: [HTMLElement, Document],
+    default: document,
+  },
+  beforeClose: {
+    type: Function as PropType<() => void>,
+    require: false,
+  },
+}
 
 export default defineComponent({
   name: 'OlContextMenu',
-  props: {},
-  setup() {
+  props: ContextMenuProps,
+  setup(props) {
     const clientX = ref<number | undefined>()
     const clientY = ref<number | undefined>()
     const showMenu = ref(false)
-
-    useEventListener(document, 'contextmenu', (e: MouseEvent) => {
-      e.preventDefault()
-      showMenu.value = true
-      clientX.value = e.clientX
-      clientY.value = e.clientY
-    })
-
-    useEventListener(document, 'click', (e: MouseEvent) => {
-      e.preventDefault()
-      showMenu.value = false
-    })
+    let Ele: HTMLElement | Document
 
     const handleClickMenu = (e: MouseEvent) => {
       e.stopPropagation()
     }
+
+    const handleShowMenu = (e: Event) => {
+      e.preventDefault()
+      const mouseEvent = e as MouseEvent
+      showMenu.value = true
+      clientX.value = mouseEvent.clientX
+      clientY.value = mouseEvent.clientY
+    }
+
+    const handleClose = () => {
+      props.beforeClose && props.beforeClose()
+      if (showMenu) {
+        showMenu.value = false
+      }
+    }
+
+    const eventListeners = {
+      click: handleClose,
+      contextmenu: handleShowMenu,
+    }
+
+    const addEventListener = () => {
+      Object.entries(eventListeners).forEach(([event, listener]) => {
+        useEventListener(Ele, event, listener)
+      })
+    }
+
+    onMounted(async () => {
+      await nextTick()
+      Ele = props.target || document
+      addEventListener()
+      if (Ele instanceof HTMLElement)
+        onClickOutside(Ele, handleClose)
+    })
 
     return {
       clientX,

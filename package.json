@@ -50,6 +50,7 @@
     "@onionl-ui/components": "workspace:*",
     "@onionl-ui/preset": "workspace:*",
     "@onionl-ui/utils": "workspace:*",
+    "@vueuse/core": "^12.0.0",
     "clsx": "^2.1.1",
     "eslint-compat-utils": "^0.6.3",
     "eslint-config-flat-gitignore": "^0.3.0",

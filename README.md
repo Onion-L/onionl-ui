@@ -57,7 +57,6 @@ pnpm add onionl-ui @onionl-ui/preset unocss
 import OnionlUI from 'onionl-ui'
 import { createApp } from 'vue'
 import App from './App.vue'
-import 'onionl-ui/dist/style.css'
 
 const app = createApp(App)
 app.use(OnionlUI)

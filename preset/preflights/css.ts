@@ -143,6 +143,11 @@ const themes = {
   disabled: {
     DEFAULT: '#f0f0f05e',
   },
+  contextmenu: {
+    DEFAULT: 'var(--onl-light-50)',
+    text: 'var(--onl-dark-900)',
+    hover: 'var(--onl-light-300)',
+  },
 }
 
 const darkThemes = {
@@ -163,6 +168,12 @@ const darkThemes = {
     text: 'var(--onl-purple-400)',
     hover: 'var(--onl-purple-600)',
     border: 'var(--onl-purple-600)',
+  },
+  contextmenu: {
+    DEFAULT: 'var(--onl-gray-800)',
+    text: 'var(--onl-light-50)',
+    hover: 'var(--onl-gray-700)',
+    border: 'transparent',
   },
 }
 

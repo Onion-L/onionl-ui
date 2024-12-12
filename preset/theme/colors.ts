@@ -129,11 +129,3 @@ export const colors = {
     DEFAULT: 'var(--onl-disabled)',
   },
 }
-
-// export const defaultTheme: Theme = {
-//   colors: {
-//     primary: {
-//       DEFAULT: 'var(--onl-purple-400)',
-//     },
-//   },
-// }

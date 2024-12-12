@@ -82,7 +82,7 @@ Basic usage:
 </template>
 ```
 
-For more component usage, please check the [Component Documentation](https://onionl-ui.dev/components/).
+For more component usage, please check the [Component Documentation](https://onionl-ui.vercel.app/).
 
 ## 📄 License
 

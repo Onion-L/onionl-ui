@@ -81,7 +81,7 @@ app.mount('#app')
 </template>
 ```
 
-更多组件用法请查看[组件文档](https://onionl-ui.dev/components/)。
+更多组件用法请查看[组件文档](https://onionl-ui.vercel.app/)。
 
 ## 📄 许可证
 

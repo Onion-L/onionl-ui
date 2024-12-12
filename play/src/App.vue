@@ -37,10 +37,10 @@ import { OlContextMenu, OlContextMenuItem } from 'onionl-ui'
       <OlContextMenuItem>label</OlContextMenuItem>
     </OlContextMenu>
 
-    <div class="fixed min-w-100px min-h-2 bg-white border-1 border-solid border-gray-300 rounded-md shadow-lg">
+    <div class="fixed min-w-100px min-h-2 bg-gray-800 color-white border-1 border-solid border-gray-300 rounded-md shadow-lg">
       <ul class=" list-none p-0 m-y-2">
         <li
-          class="cursor-pointer py-2 text-left flex items-center justify-center space-x-2 hover:bg-gray-200 transition-colors duration-150"
+          class="cursor-pointer py-2 text-left flex items-center justify-center space-x-2 hover:bg-gray-700 transition-colors duration-150"
         >
           <span>label</span>
         </li>

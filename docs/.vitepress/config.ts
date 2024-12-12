@@ -9,7 +9,7 @@ const ComponentItems = [
   { text: 'Button', link: '/components/button' },
   { text: 'Input', link: '/components/input' },
   { text: 'Image', link: '/components/image' },
-
+  { text: 'Contextmenu', link: '/components/contextmenu' },
 ]
 
 const Components: DefaultTheme.SidebarItem[] = [{

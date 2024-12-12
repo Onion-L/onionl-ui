@@ -128,12 +128,10 @@ export const colors = {
   disabled: {
     DEFAULT: 'var(--onl-disabled)',
   },
+  contextmenu: {
+    DEFAULT: 'var(--onl-contextmenu)',
+    text: 'var(--onl-contextmenu-text)',
+    hover: 'var(--onl-contextmenu-hover)',
+    border: 'var(--onl-contextmenu-border)',
+  },
 }
-
-// export const defaultTheme: Theme = {
-//   colors: {
-//     primary: {
-//       DEFAULT: 'var(--onl-purple-400)',
-//     },
-//   },
-// }

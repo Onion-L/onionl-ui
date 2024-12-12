@@ -78,3 +78,6 @@
 - [ ] ConfigProvider (配置)
 - [ ] Anchor (锚点)
 - [ ] EyeDropper (颜色提取器)
+
+## 测试 (Test)
+各种测试，包括单元测试、集成测试、组件测试、功能测试等。

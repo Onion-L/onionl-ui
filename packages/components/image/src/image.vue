@@ -10,7 +10,12 @@ defineOptions({
 const props = withDefaults(defineProps<ImageProps>(), {
   loading: 'eager',
   className: 'w-300px h-200px',
+  fit: 'contain',
 })
+
+const emit = defineEmits<{
+  (e: 'load', event: Event): void
+}>()
 
 const container = ref<HTMLElement>()
 const imageRef = ref<HTMLElement>()
@@ -39,28 +44,34 @@ const imgCls = computed(() => {
 })
 
 watch(() => props.src, () => {
-  loadImage()
-}, { immediate: true })
+  if (props.loading === 'lazy') {
+    isLoading.value = true
+    loadError.value = false
+    cleanupObserver()
+    lazyLoadImageSetup()
+  }
+  else {
+    loadImage()
+  }
+})
 
 function handleError() {
   loadError.value = true
 }
 
 function loadImage() {
+  if (!props.src) {
+    handleError()
+    return
+  }
   isLoading.value = true
   loadError.value = false
-
-  if (props.src) {
-    imageSrc.value = props.src
-    isLoading.value = false
-  }
-  else {
-    handleError()
-  }
+  imageSrc.value = props.src
 }
 
-function handleLoad() {
+function handleLoad(event: Event) {
   isLoading.value = false
+  emit('load', event)
 }
 
 function lazyLoadImageSetup() {
@@ -97,6 +108,9 @@ onMounted(() => {
   if (props.loading === 'lazy') {
     lazyLoadImageSetup()
   }
+  else {
+    loadImage()
+  }
 })
 
 onUnmounted(() => {
@@ -105,20 +119,20 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="container" v-bind="filteredAttrs">
+  <div ref="container" class="ol-image relative" v-bind="filteredAttrs">
     <div v-if="loadError" :class="className" class="ol-image__error">
       <slot name="error">
         <span>FAILED</span>
       </slot>
     </div>
     <template v-else>
-      <div v-if="isLoading" :class="className" class="ol-image__load">
+      <div v-if="isLoading" :class="className" class="absolute ol-image__load">
         <slot name="load">
           Loading...
         </slot>
       </div>
       <img
-        v-else
+        v-if="imageSrc !== undefined"
         ref="imageRef"
         :class="[imgCls, className]"
         :src="imageSrc"

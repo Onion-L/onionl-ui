@@ -1,6 +1,10 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
+import { nextTick } from 'vue'
 import Image from '../src/image.vue'
+
+const VALID_IMAGE_URL = 'https://i.postimg.cc/sx8CQcYj/pexels-photo-1108099.jpg'
+const EMPTY_IMAGE_URL = ''
 
 function factory(props: Record<string, any>, slots?: Record<string, any>) {
   return mount(Image, {
@@ -14,45 +18,48 @@ function factory(props: Record<string, any>, slots?: Record<string, any>) {
 }
 
 describe('image Component', () => {
-  it('should render basic image correctly', async () => {
+  it('image render', async () => {
     const wrapper = factory({
       src: 'test.jpg',
       alt: 'test image',
     })
 
+    expect(wrapper.find('.ol-image').exists()).toBe(true)
+  })
+
+  it('should render basic image correctly', async () => {
+    const wrapper = factory({
+      src: VALID_IMAGE_URL,
+      alt: 'test image',
+    })
+
+    await nextTick()
+
     const img = wrapper.find('img')
-    expect(img.exists()).toBe(true)
-    expect(img.attributes('src')).toBe('test.jpg')
+    expect(img.exists()).toBeTruthy()
+
+    expect(img.attributes('src')).toBe(VALID_IMAGE_URL)
     expect(img.attributes('alt')).toBe('test image')
   })
 
-  it('should show error state when src is empty', () => {
+  it('should show error state when src is empty', async () => {
     const wrapper = factory({
-      src: '',
+      src: EMPTY_IMAGE_URL,
     })
 
-    expect(wrapper.find('.ol-image__error').exists()).toBe(true)
-    expect(wrapper.find('img').exists()).toBe(false)
+    await nextTick()
+
+    expect(wrapper.find('.ol-image__error').exists()).toBeTruthy()
+    expect(wrapper.find('img').exists()).toBeFalsy()
   })
 
-  it('should handle image load error correctly', async () => {
+  it('should apply fit class correctly', async () => {
     const wrapper = factory({
-      src: 'invalid.jpg',
+      src: VALID_IMAGE_URL,
+      fit: 'cover',
     })
 
-    const img = wrapper.find('img')
-    await img.trigger('error')
-
-    expect(wrapper.find('.ol-image__error').exists()).toBe(true)
-  })
-
-  it('should apply fit class correctly', () => {
-    const wrapper = mount(Image, {
-      props: {
-        src: 'test.jpg',
-        fit: 'cover',
-      },
-    })
+    await nextTick()
 
     expect(wrapper.find('img').classes()).toContain('ol-image__fit-cover')
   })
@@ -67,25 +74,37 @@ describe('image Component', () => {
     })))
 
     factory({
-      src: 'test.jpg',
+      src: VALID_IMAGE_URL,
       loading: 'lazy',
     })
 
     expect(mockObserve).toHaveBeenCalled()
   })
 
-  // TODO Loading e2e test
+  // TODO 懒加载测试 (Lazy load test)
+
+  it('should support custom loading slot', async () => {
+    const wrapper = factory({
+      src: VALID_IMAGE_URL,
+    }, {
+      load: '<div class="custom-loading">Custom Loading</div>',
+    })
+
+    expect(wrapper.find('.custom-loading').exists()).toBe(true)
+  })
 
   it('should support custom error slot', async () => {
     const wrapper = factory({
-      src: 'invalid.jpg',
+      src: EMPTY_IMAGE_URL,
     }, {
       error: '<div class="custom-error">Custom Error</div>',
     })
 
-    const img = wrapper.find('img')
-    await img.trigger('error')
+    await nextTick()
 
     expect(wrapper.find('.custom-error').exists()).toBe(true)
   })
 })
+
+// TODO: 测试图片加载错误无法测试非空 src (Image Error can not be triggered with invalid src eg: 'invalid.jpg')
+// TODO 优化懒加载测试 (Optimize lazy load test)

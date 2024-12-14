@@ -1,29 +1,40 @@
 <script lang="ts" setup>
 import type { Ref } from 'vue'
+import type { PixelImageProps } from './pixelImage'
 import { computed, onMounted, ref, useAttrs } from 'vue'
-import { pixelImageCreator } from './pixelImage'
+import { defaultProps, pixelImageCreator } from './pixelImage'
 
 defineOptions({
   name: 'OlPixelImage',
   inheritAttrs: false,
 })
 
+const props = withDefaults(defineProps<PixelImageProps>(), defaultProps)
+
 const attrs = useAttrs()
 
 const filterAttrs = computed(() => {
-  const { src } = attrs
-  return { src: src as string }
+  const { src, alt } = attrs
+  return { src: src as string, alt: alt as string }
 })
 
 const imgRef = ref<HTMLImageElement>()
 
 onMounted(() => {
   if (imgRef.value) {
-    pixelImageCreator(imgRef as Ref<HTMLImageElement>)
+    pixelImageCreator(
+      imgRef as Ref<HTMLImageElement>,
+      props,
+    )
   }
 })
 </script>
 
 <template>
-  <img ref="imgRef" v-bind="filterAttrs" class="pixel-image" width="300" height="auto">
+  <img
+    ref="imgRef"
+    v-bind="filterAttrs"
+    :width="props.width"
+    :height="props.height"
+  >
 </template>

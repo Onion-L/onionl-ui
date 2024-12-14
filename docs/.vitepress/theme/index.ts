@@ -3,7 +3,15 @@ import theme from 'vitepress/theme'
 import './custom.css'
 import 'uno.css'
 
-const modules = ['OlButton', 'OlIcon', 'OlImage', 'OlInput', 'OlContextMenu', 'OlContextMenuItem']
+const modules = [
+  'OlButton',
+  'OlIcon',
+  'OlImage',
+  'OlInput',
+  'OlContextMenu',
+  'OlContextMenuItem',
+  'OlPixelImage',
+]
 
 export default { ...theme, async enhanceApp({ app }) {
   if (!import.meta.env.SSR) {

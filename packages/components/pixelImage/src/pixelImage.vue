@@ -10,15 +10,13 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<PixelImageProps>(), defaultProps)
-
 const attrs = useAttrs()
+const imgRef = ref<HTMLImageElement>()
 
 const filterAttrs = computed(() => {
   const { src, alt } = attrs
   return { src: src as string, alt: alt as string }
 })
-
-const imgRef = ref<HTMLImageElement>()
 
 onMounted(() => {
   if (imgRef.value) {

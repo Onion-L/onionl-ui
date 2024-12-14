@@ -32,13 +32,11 @@ export async function pixelImageCreator(
   imgRef: Ref<HTMLImageElement>,
   configOptions: PixelImageProps,
 ) {
+  await waitImageLoad(imgRef)
   if (!imgRef.value)
     return
 
   const { pixelGap, pixelSize, viewportWidth, viewportHeight } = configOptions
-
-  await waitImageLoad(imgRef)
-
   const gap = Number(pixelGap) || 4
   const size = Number(pixelSize) || gap || 4
   const canvas = document.createElement('canvas')
@@ -47,16 +45,21 @@ export async function pixelImageCreator(
   const context = canvas.getContext('2d')
   if (!context)
     return
-  context?.drawImage(imgRef.value, 0, 0, canvas.width, canvas.height)
+
+  if (viewportWidth && viewportHeight) {
+    context.drawImage(imgRef.value, 0, 0)
+  }
+  else {
+    context.drawImage(imgRef.value, 0, 0, canvas.width, canvas.height)
+  }
   imgRef.value.style.display = 'none'
-  const canvasHeight = canvas.height
-  const canvasWidth = canvas.width
-  const data = context.getImageData(0, 0, canvasWidth, canvasHeight).data
+
+  const data = context.getImageData(0, 0, canvas.width, canvas.height).data
   const particles = []
 
-  for (let y = 0; y < canvasHeight; y += gap) {
-    for (let x = 0; x < canvasWidth; x += gap) {
-      const index = (y * canvasWidth + x) * 4
+  for (let y = 0; y < canvas.height; y += gap) {
+    for (let x = 0; x < canvas.width; x += gap) {
+      const index = (y * canvas.width + x) * 4
       const r = data[index]
       const g = data[index + 1]
       const b = data[index + 2]
@@ -67,7 +70,7 @@ export async function pixelImageCreator(
     }
   }
 
-  context?.clearRect(0, 0, canvasWidth, canvasHeight)
+  context?.clearRect(0, 0, canvas.width, canvas.height)
 
   particles.forEach((particle) => {
     context!.fillStyle = particle.color

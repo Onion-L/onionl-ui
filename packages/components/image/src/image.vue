@@ -119,14 +119,14 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="container" class="ol-image relative" v-bind="filteredAttrs">
+  <div ref="container" class="ol-image" v-bind="filteredAttrs">
     <div v-if="loadError" :class="className" class="ol-image__error">
       <slot name="error">
         <span>FAILED</span>
       </slot>
     </div>
     <template v-else>
-      <div v-if="isLoading" :class="className" class="absolute ol-image__load">
+      <div v-if="isLoading" :class="className" class="ol-image__load">
         <slot name="load">
           Loading...
         </slot>

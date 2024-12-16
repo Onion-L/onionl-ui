@@ -7,8 +7,9 @@ import { OlPixelImage } from 'onionl-ui'
     <h1 class="text-2xl font-bold">
       Pixel Image
     </h1>
-    <div class="parent">
-      <ol-pixel-image src="/vue.png" />
-    </div>
+    <ol-pixel-image
+      src="/vue.png"
+      :pixel-size="4"
+    />
   </div>
 </template>

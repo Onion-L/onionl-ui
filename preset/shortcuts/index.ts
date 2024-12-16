@@ -4,6 +4,7 @@ import { contextMenuShortcuts } from './contextMenu'
 import { generalShortcuts } from './general'
 import { imageShortcuts } from './image'
 import { inputShortcuts } from './input'
+import { pixelImageShortcuts } from './pixelImage'
 
 const shortcuts: Shortcut[] = [
   ...inputShortcuts,
@@ -11,6 +12,7 @@ const shortcuts: Shortcut[] = [
   ...generalShortcuts,
   ...imageShortcuts,
   ...contextMenuShortcuts,
+  ...pixelImageShortcuts,
 ]
 
 export { shortcuts }

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { Ref } from 'vue'
 import type { PixelImageProps } from './pixelImage'
-import { computed, onMounted, ref, useAttrs } from 'vue'
-import { defaultProps, pixelImageCreator } from './pixelImage'
+import { computed, onMounted, onUnmounted, ref, useAttrs } from 'vue'
+import { defaultProps, PixelImage } from './pixelImage'
 
 defineOptions({
   name: 'OlPixelImage',
@@ -12,6 +12,7 @@ defineOptions({
 const props = withDefaults(defineProps<PixelImageProps>(), defaultProps)
 const attrs = useAttrs()
 const imgRef = ref<HTMLImageElement>()
+let pixelImageInstance: PixelImage | null = null
 
 const filterAttrs = computed(() => {
   const { src, alt } = attrs
@@ -20,19 +21,25 @@ const filterAttrs = computed(() => {
 
 onMounted(() => {
   if (imgRef.value) {
-    pixelImageCreator(
-      imgRef as Ref<HTMLImageElement>,
-      props,
-    )
+    pixelImageInstance = new PixelImage(imgRef as Ref<HTMLImageElement>, props)
+    pixelImageInstance.create()
+  }
+})
+
+onUnmounted(() => {
+  if (pixelImageInstance) {
+    pixelImageInstance.destroy()
   }
 })
 </script>
 
 <template>
-  <img
-    ref="imgRef"
-    v-bind="filterAttrs"
-    :width="props.width"
-    :height="props.height"
-  >
+  <div class="ol-pixel-image">
+    <img
+      ref="imgRef"
+      v-bind="filterAttrs"
+      :width="props.width"
+      :height="props.height"
+    >
+  </div>
 </template>

@@ -58,10 +58,12 @@ export class PixelImage {
         throw new PixelImageError('Image DOM is not ready')
       }
 
-      if (this.imgRef.value.complete)
+      if (this.imgRef.value.complete) {
         resolve(true)
-      else
+      }
+      else {
         this.imgRef.value.onload = () => resolve(true)
+      }
     })
   }
 
@@ -80,10 +82,10 @@ export class PixelImage {
     }
 
     if (this.viewportWidth && this.viewportHeight) {
-      this.context!.drawImage(this.imgRef.value, 0, 0)
+      this.context.drawImage(this.imgRef.value, 0, 0)
     }
     else {
-      this.context!.drawImage(this.imgRef.value, 0, 0, this.canvas.width, this.canvas.height)
+      this.context.drawImage(this.imgRef.value, 0, 0, this.canvas.width, this.canvas.height)
     }
     this.imgRef.value.style.display = 'none'
   }
@@ -93,7 +95,7 @@ export class PixelImage {
       throw new PixelImageError('context is not ready')
     }
 
-    const data = this.context!.getImageData(0, 0, this.canvas.width, this.canvas.height).data
+    const data = this.context.getImageData(0, 0, this.canvas.width, this.canvas.height).data
     for (let y = 0; y < this.canvas.height; y += this.pixelGap) {
       for (let x = 0; x < this.canvas.width; x += this.pixelGap) {
         const index = (y * this.canvas.width + x) * 4

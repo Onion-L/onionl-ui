@@ -19,6 +19,14 @@ interface Particle {
   y: number
   color: string
 }
+
+class PixelImageError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'PixelImageError'
+  }
+}
+
 export class PixelImage {
   private imgRef: Ref<HTMLImageElement> | null
   private config: PixelImageProps | null
@@ -31,6 +39,9 @@ export class PixelImage {
   private pixelSize: number
 
   constructor(imgRef: Ref<HTMLImageElement>, configOptions: PixelImageProps) {
+    if (!imgRef || !configOptions)
+      throw new PixelImageError('Image DOM and props are required')
+
     this.imgRef = imgRef
     this.config = configOptions
     this.canvas = document.createElement('canvas')
@@ -43,8 +54,9 @@ export class PixelImage {
 
   private async _waitImageLoad() {
     return new Promise((resolve) => {
-      if (!this.imgRef || !this.imgRef.value)
-        return
+      if (!this.imgRef || !this.imgRef.value) {
+        throw new PixelImageError('Image DOM is not ready')
+      }
 
       if (this.imgRef.value.complete)
         resolve(true)
@@ -55,8 +67,7 @@ export class PixelImage {
 
   private initCanvas() {
     if (!this.imgRef || !this.imgRef.value) {
-      console.error('imgRef is not ready')
-      return
+      throw new PixelImageError('Image DOM is not ready')
     }
 
     this.canvas.width = this.viewportWidth || this.imgRef.value.width || this.imgRef.value.naturalWidth
@@ -65,8 +76,7 @@ export class PixelImage {
 
   private drawImage() {
     if (!this.context || !this.imgRef || !this.imgRef.value) {
-      console.error('context or imgRef is not ready')
-      return
+      throw new PixelImageError('Image DOM or context is not ready')
     }
 
     if (this.viewportWidth && this.viewportHeight) {
@@ -80,8 +90,7 @@ export class PixelImage {
 
   private getImageData() {
     if (!this.context) {
-      console.error('context is not ready')
-      return
+      throw new PixelImageError('context is not ready')
     }
 
     const data = this.context!.getImageData(0, 0, this.canvas.width, this.canvas.height).data
@@ -101,8 +110,7 @@ export class PixelImage {
 
   private drawParticles() {
     if (!this.context) {
-      console.error('context is not ready')
-      return
+      throw new PixelImageError('context is not ready')
     }
 
     this.context!.clearRect(0, 0, this.canvas.width, this.canvas.height)
@@ -115,8 +123,7 @@ export class PixelImage {
   public async create() {
     const isLoading = await this._waitImageLoad()
     if (!isLoading || !this.imgRef || !this.imgRef.value || !this.context) {
-      console.error('Image is not loaded or context is not ready')
-      return
+      throw new PixelImageError('Image is not loaded or context is not ready')
     }
 
     this.initCanvas()

@@ -4,7 +4,7 @@ defineOptions({
 })
 
 withDefaults(defineProps<{
-  align: 'start' | 'end' | 'center' | 'none'
+  align?: 'start' | 'end' | 'center' | 'none'
 }>(), {
   align: 'none',
 })

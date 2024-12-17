@@ -11,6 +11,8 @@ const modules = [
   'OlContextMenu',
   'OlContextMenuItem',
   'OlPixelImage',
+  'OlScrollbar',
+  'OlScrollSnap',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

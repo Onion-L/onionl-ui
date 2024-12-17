@@ -35,7 +35,7 @@ const keyframes = computed<Keyframe[]>(() => {
 })
 
 onMounted(() => {
-  if (!glowRef.value || !keyframes.value.length)
+  if (!glowRef.value || !keyframes.value.length || !props.haloColor)
     return
 
   glowRef.value?.animate(keyframes.value, {

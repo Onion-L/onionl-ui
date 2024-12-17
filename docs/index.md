@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Onionl UI
-  text: 现代化的 Vue 3 企业级组件库
+  text: 现代化的 Vue 3 轻量级组件库
   tagline: 为高性能应用打造的下一代组件解决方案
   image:
     src: /logo.svg

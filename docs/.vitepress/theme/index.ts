@@ -13,6 +13,7 @@ const modules = [
   'OlPixelImage',
   'OlScrollbar',
   'OlScrollSnap',
+  'OlHalo',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

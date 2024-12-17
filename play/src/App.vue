@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { OlHalo } from 'onionl-ui'
+import { OlHalo, OlImage } from 'onionl-ui'
 </script>
 
 <template>
   <div class="flex justify-center items-center h-screen">
-    <ol-halo offset-x="10px" offset-y="10px" :halo-color="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']" :duration="3000">
-      <div class="w-100px h-100px bg-white" />
+    <ol-halo :halo-color="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']" :halo-radius="4" :duration="3000">
+      <ol-image className="w-180px h-auto" src="/logo.png" />
     </ol-halo>
   </div>
 </template>

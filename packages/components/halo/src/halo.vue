@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { HaloProps } from './halo'
 import { computed, onMounted, ref } from 'vue'
-import { clone } from '../util'
+import { clone, isNumberString } from '../util'
 
 defineOptions({
   name: 'OlHalo',
@@ -25,7 +25,12 @@ const keyframes = computed<Keyframe[]>(() => {
 
   const duplicatedColors = [props.haloColor, reversedHaloColor].flat()
   return duplicatedColors.map((color, index) => {
-    return { filter: `drop-shadow(${props.offsetX} ${props.offsetY} ${index % 2 === 0 ? props.haloRadius : Number(props.haloRadius) + 1}em ${color})` }
+    const offsetX = isNumberString(props.offsetX) ? `${props.offsetX}px` : props.offsetX
+    const offsetY = isNumberString(props.offsetY) ? `${props.offsetY}px` : props.offsetY
+    if (index === duplicatedColors.length - 1)
+      return { filter: `drop-shadow(${offsetX} ${offsetY} ${props.haloRadius}em ${color})` }
+
+    return { filter: `drop-shadow(${offsetX} ${offsetY} ${index % 2 === 0 ? props.haloRadius : Number(props.haloRadius) + 1}em ${color})` }
   })
 })
 

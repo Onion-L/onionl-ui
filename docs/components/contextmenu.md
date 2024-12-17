@@ -37,3 +37,9 @@ const section = ref(null)
   </OlContextMenu>
 </template>
 ```
+
+## 属性
+
+| 属性名 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| target | 菜单目标 | `HTMLElement` | - |

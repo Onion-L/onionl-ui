@@ -1,6 +1,7 @@
 import type { Theme } from '@unocss/preset-mini'
 import type { Preset } from 'unocss'
 import { presetIcons, presetUno } from 'unocss'
+import { presetScrollbar } from 'unocss-preset-scrollbar'
 import { getCSSVariable } from './preflights/css'
 import { getSafelist } from './safelist'
 import { shortcuts } from './shortcuts'
@@ -18,7 +19,7 @@ export function onionlUIPreset(oprtions?: { range: number }) {
 
   return {
     name: '@onionl-ui/preset',
-    presets: [presetUno(), presetIcons({
+    presets: [presetUno(), presetScrollbar(), presetIcons({
       scale: 1.2,
       warn: true,
       extraProperties: {

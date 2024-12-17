@@ -7,6 +7,7 @@ const elementKeys = [
   'context-menu-item',
   'context-menu__wrapper',
   'pixel-image',
+  'scrollbar',
 ]
 
 export const defaultCls = ['is-disabled', ...elementKeys.map(key => `ol-${key}`)]

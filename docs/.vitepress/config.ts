@@ -15,6 +15,7 @@ const BasicComponentItems = [
 
 const OtherComponentItems = [
   { text: 'PixelImage 像素图片', link: '/components/pixelImage' },
+  { text: 'Halo 光晕背景', link: '/components/halo' },
 ]
 
 const ComponentItems = [

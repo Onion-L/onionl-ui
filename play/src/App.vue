@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { OlScrollbar } from 'onionl-ui'
+import { OlHalo, OlImage } from 'onionl-ui'
 </script>
 
 <template>
-  <div class="w-2xl">
-    <ol-scrollbar height="400px">
-      <div v-for="i in 20" :key="i" class="h-400px bg-primary my-1 rounded-md text-center line-height-400px">
-        {{ i }}
-      </div>
-    </ol-scrollbar>
+  <div class="flex justify-center items-center h-screen">
+    <ol-halo :halo-color="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']" :halo-radius="4" :duration="3000">
+      <ol-image className="w-180px h-auto" src="/logo.png" />
+    </ol-halo>
   </div>
 </template>
 

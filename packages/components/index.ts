@@ -1,5 +1,6 @@
 export * from './button'
 export * from './contextMenu'
+export * from './halo'
 export * from './icon'
 export * from './image'
 export * from './input'

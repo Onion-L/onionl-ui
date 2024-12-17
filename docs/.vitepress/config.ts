@@ -5,19 +5,31 @@ const NavLink: DefaultTheme.NavItemWithLink[] = [
   { text: 'Get Started', link: '/guide/getting-started' },
 ]
 
-const ComponentItems = [
+const BasicComponentItems = [
   { text: 'Button 按钮', link: '/components/button' },
   { text: 'Input 输入框', link: '/components/input' },
   { text: 'Image 图片', link: '/components/image' },
   { text: 'Contextmenu 右键菜单', link: '/components/contextmenu' },
-  { text: 'PixelImage 像素图片', link: '/components/pixelImage' },
   { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
+]
+
+const OtherComponentItems = [
+  { text: 'PixelImage 像素图片', link: '/components/pixelImage' },
+]
+
+const ComponentItems = [
+  ...BasicComponentItems,
+  ...OtherComponentItems,
 ]
 
 const Components: DefaultTheme.SidebarItem[] = [{
   text: '基础',
   collapsed: false,
-  items: ComponentItems,
+  items: BasicComponentItems,
+}, {
+  text: '其他',
+  collapsed: false,
+  items: OtherComponentItems,
 }]
 
 // https://vitepress.dev/reference/site-config

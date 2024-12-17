@@ -1,11 +1,13 @@
 # Onionl-UI 待办事项列表
 
+> 不保证完全按照 TODO List 进行开发，有时会按照个人喜好开发有趣的组件。
+
 ## 基本组件 (Basic Components)
 - [x] Button (按钮)
 - [x] ContextMenu (右键菜单)
 - [x] Icon (图标)
 - [x] Image (图片)
-- [ ] Scrollbar (滚动条)
+- [x] Scrollbar (滚动条)
 - [ ] Divider (分隔符)
 - [ ] Badge (徽章)
 - [ ] Tag (标签)

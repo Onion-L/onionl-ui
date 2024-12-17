@@ -1,13 +1,13 @@
+import { addPrefix } from './util'
+
 const elementKeys = [
   'button',
   'icon',
   'input',
   'image',
   'context-menu',
-  'context-menu-item',
-  'context-menu__wrapper',
   'pixel-image',
   'scrollbar',
 ]
 
-export const defaultCls = ['is-disabled', ...elementKeys.map(key => `ol-${key}`)]
+export const defaultCls: string[] = ['is-disabled', ...addPrefix(elementKeys)]

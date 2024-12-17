@@ -5,7 +5,7 @@ import { OlIcon } from '../components/icon'
 import { OlImage } from '../components/image'
 import { OlInput } from '../components/input'
 import { OlPixelImage } from '../components/pixelImage'
-import { OlScrollbar } from '../components/scrollbar'
+import { OlScrollbar, OlScrollSnap } from '../components/scrollbar'
 
 export const Components = [
   OlButton,
@@ -16,4 +16,5 @@ export const Components = [
   OlImage,
   OlPixelImage,
   OlScrollbar,
+  OlScrollSnap,
 ] as Plugin[]

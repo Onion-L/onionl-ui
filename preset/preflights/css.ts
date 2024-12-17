@@ -147,6 +147,7 @@ const themes = {
     DEFAULT: 'var(--onl-light-50)',
     text: 'var(--onl-dark-900)',
     hover: 'var(--onl-light-300)',
+    border: 'transparent',
   },
 }
 

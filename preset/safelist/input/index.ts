@@ -1,1 +1,1 @@
-export const inputSafelist = ['ol-input__icon-focus', 'ol-input__icon']
+export const inputSafelist: string[] = ['ol-input__icon-focus', 'ol-input__icon']

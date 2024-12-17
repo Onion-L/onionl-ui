@@ -5,6 +5,7 @@ import { generalShortcuts } from './general'
 import { imageShortcuts } from './image'
 import { inputShortcuts } from './input'
 import { pixelImageShortcuts } from './pixelImage'
+import { scrollbarShortcuts } from './scrollbar'
 
 const shortcuts: Shortcut[] = [
   ...inputShortcuts,
@@ -13,6 +14,7 @@ const shortcuts: Shortcut[] = [
   ...imageShortcuts,
   ...contextMenuShortcuts,
   ...pixelImageShortcuts,
+  ...scrollbarShortcuts,
 ]
 
 export { shortcuts }

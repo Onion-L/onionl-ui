@@ -2,19 +2,20 @@ import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 
 const NavLink: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Getting Started', link: '/guide/getting-started' },
+  { text: 'Get Started', link: '/guide/getting-started' },
 ]
 
 const ComponentItems = [
-  { text: 'Button', link: '/components/button' },
-  { text: 'Input', link: '/components/input' },
-  { text: 'Image', link: '/components/image' },
-  { text: 'Contextmenu', link: '/components/contextmenu' },
-  { text: 'PixelImage', link: '/components/pixelImage' },
+  { text: 'Button 按钮', link: '/components/button' },
+  { text: 'Input 输入框', link: '/components/input' },
+  { text: 'Image 图片', link: '/components/image' },
+  { text: 'Contextmenu 右键菜单', link: '/components/contextmenu' },
+  { text: 'PixelImage 像素图片', link: '/components/pixelImage' },
+  { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
 ]
 
 const Components: DefaultTheme.SidebarItem[] = [{
-  text: 'Basic',
+  text: '基础',
   collapsed: false,
   items: ComponentItems,
 }]

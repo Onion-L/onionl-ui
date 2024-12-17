@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import { OlPixelImage } from 'onionl-ui'
+import { OlScrollbar } from 'onionl-ui'
 </script>
 
 <template>
-  <div class="p-4">
-    <h1 class="text-2xl font-bold">
-      Pixel Image
-    </h1>
-    <ol-pixel-image
-      src="/vue.png"
-      :pixel-size="4"
-    />
+  <div class="w-2xl">
+    <ol-scrollbar height="400px">
+      <div v-for="i in 20" :key="i" class="h-400px bg-primary my-1 rounded-md text-center line-height-400px">
+        {{ i }}
+      </div>
+    </ol-scrollbar>
   </div>
 </template>
+
+<style scoped>
+
+</style>

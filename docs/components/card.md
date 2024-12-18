@@ -19,7 +19,7 @@
     </div>
   </ol-card-header>
   <ol-card-content>
-    <ol-image className="w-full h-auto image-render-edge" src="/logo4x.png" />
+    <ol-image className="w-full h-auto" src="/logo4x.png" />
   </ol-card-content>
   <ol-card-footer>
     <ol-button size="sm" class="w-full">

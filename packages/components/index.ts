@@ -1,6 +1,7 @@
 export * from './button'
 export * from './card'
 export * from './contextMenu'
+export * from './flipCard'
 export * from './flipControl'
 export * from './halo'
 export * from './icon'

@@ -2,10 +2,11 @@ import { addPrefix } from './util'
 
 const elementKeys = [
   'button',
+  'card',
+  'context-menu',
   'icon',
   'input',
   'image',
-  'context-menu',
   'pixel-image',
   'scrollbar',
 ]

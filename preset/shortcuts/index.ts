@@ -1,5 +1,6 @@
 import type { Shortcut } from 'unocss'
 import { buttonShortcuts } from './button'
+import { cardShortcuts } from './card'
 import { contextMenuShortcuts } from './contextMenu'
 import { generalShortcuts } from './general'
 import { imageShortcuts } from './image'
@@ -10,6 +11,7 @@ import { scrollbarShortcuts } from './scrollbar'
 const shortcuts: Shortcut[] = [
   ...inputShortcuts,
   ...buttonShortcuts,
+  ...cardShortcuts,
   ...generalShortcuts,
   ...imageShortcuts,
   ...contextMenuShortcuts,

@@ -134,4 +134,7 @@ export const colors = {
     hover: 'var(--onl-contextmenu-hover)',
     border: 'var(--onl-contextmenu-border)',
   },
+  card: {
+    border: 'var(--onl-card-border)',
+  },
 }

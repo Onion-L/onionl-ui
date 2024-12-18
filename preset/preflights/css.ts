@@ -149,6 +149,9 @@ const themes = {
     hover: 'var(--onl-light-300)',
     border: 'transparent',
   },
+  card: {
+    border: 'var(--onl-gray-100)',
+  },
 }
 
 const darkThemes = {
@@ -175,6 +178,9 @@ const darkThemes = {
     text: 'var(--onl-light-50)',
     hover: 'var(--onl-gray-700)',
     border: 'transparent',
+  },
+  card: {
+    border: 'var(--onl-gray-800)',
   },
 }
 

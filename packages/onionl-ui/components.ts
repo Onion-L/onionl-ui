@@ -2,6 +2,7 @@ import type { Plugin } from 'vue'
 import { OlButton } from '../components/button'
 import { OlCard, OlCardContent, OlCardFooter, OlCardHeader } from '../components/card'
 import { OlContextMenu, OlContextMenuItem } from '../components/contextMenu'
+import { OlFlipControl } from '../components/flipControl'
 import { OlHalo } from '../components/halo'
 import { OlIcon } from '../components/icon'
 import { OlImage } from '../components/image'
@@ -17,6 +18,7 @@ export const Components = [
   OlCardFooter,
   OlContextMenu,
   OlContextMenuItem,
+  OlFlipControl,
   OlHalo,
   OlIcon,
   OlInput,

@@ -8,12 +8,18 @@ const modules = [
   'OlIcon',
   'OlImage',
   'OlInput',
+  'OlCard',
+  'OlCardHeader',
+  'OlCardContent',
+  'OlCardFooter',
   'OlContextMenu',
   'OlContextMenuItem',
   'OlPixelImage',
   'OlScrollbar',
   'OlScrollSnap',
   'OlHalo',
+  'OlFlipCard',
+  'OlFlipControl',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

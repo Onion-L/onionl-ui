@@ -7,15 +7,17 @@ const NavLink: DefaultTheme.NavItemWithLink[] = [
 
 const BasicComponentItems = [
   { text: 'Button 按钮', link: '/components/button' },
-  { text: 'Input 输入框', link: '/components/input' },
-  { text: 'Image 图片', link: '/components/image' },
+  { text: 'Card 卡片', link: '/components/card' },
   { text: 'Contextmenu 右键菜单', link: '/components/contextmenu' },
+  { text: 'Image 图片', link: '/components/image' },
+  { text: 'Input 输入框', link: '/components/input' },
   { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
 ]
 
 const OtherComponentItems = [
-  { text: 'PixelImage 像素图片', link: '/components/pixelImage' },
+  { text: 'FlipCard 翻转卡片', link: '/components/flipCard' },
   { text: 'Halo 光晕背景', link: '/components/halo' },
+  { text: 'PixelImage 像素图片', link: '/components/pixelImage' },
 ]
 
 const ComponentItems = [

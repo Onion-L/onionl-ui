@@ -1,13 +1,24 @@
 <script setup lang="ts">
-import { OlHalo, OlImage } from 'onionl-ui'
+import { OlFlipCard } from 'onionl-ui'
+import { ref } from 'vue'
+import Back from './back.vue'
+import Front from './front.vue'
+
+const isFlipped = ref(false)
+
+function handleClick() {
+  isFlipped.value = !isFlipped.value
+}
 </script>
 
 <template>
-  <div class="flex justify-center items-center h-screen">
-    <ol-halo :halo-color="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']" :halo-radius="4" :duration="3000">
-      <ol-image className="w-180px h-auto" src="/logo.png" />
-    </ol-halo>
-  </div>
+  <ol-flip-card
+    class="w-70 h-70"
+    :flipped="isFlipped"
+    :front="Front"
+    :back="Back"
+    @click="handleClick"
+  />
 </template>
 
 <style scoped>

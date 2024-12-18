@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <div :class="clsx('ol-filp-control', props.class)">
+  <div :class="clsx('ol-flip-control', props.class)">
     <div
       :class="{ 'is-flipped': flipped }"
       class="ol-flip-control__inner"

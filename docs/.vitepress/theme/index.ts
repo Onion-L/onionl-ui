@@ -18,6 +18,8 @@ const modules = [
   'OlScrollbar',
   'OlScrollSnap',
   'OlHalo',
+  'OlFlipCard',
+  'OlFlipControl',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

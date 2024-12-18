@@ -15,8 +15,9 @@ const BasicComponentItems = [
 ]
 
 const OtherComponentItems = [
-  { text: 'PixelImage 像素图片', link: '/components/pixelImage' },
+  { text: 'FlipCard 翻转卡片', link: '/components/flipCard' },
   { text: 'Halo 光晕背景', link: '/components/halo' },
+  { text: 'PixelImage 像素图片', link: '/components/pixelImage' },
 ]
 
 const ComponentItems = [

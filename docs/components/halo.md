@@ -106,9 +106,9 @@ Halo 组件用于为其子元素添加动态发光效果，能够为用户界面
 
 | 属性名 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| is | 渲染的 HTML 标签 | string | 'div' |
-| halo-color | 发光颜色，可以是单个颜色或颜色数组 | string \| string[] | - |
-| duration | 动画持续时间（毫秒） | number | 5000 |
-| halo-radius | 发光半径（em） | number | 6 |
-| offset-x | X 轴偏移量 | number \| string | 0 |
-| offset-y | Y 轴偏移量 | number \| string | 0 |
+| is | 渲染的 HTML 标签 | `string` | `'div'` |
+| halo-color | 发光颜色，可以是单个颜色或颜色数组 | `string \| string[]` | - |
+| duration | 动画持续时间（毫秒） | `number` | `5000` |
+| halo-radius | 发光半径（em） | `number` | `6` |
+| offset-x | X 轴偏移量 | `number \| string` | `0` |
+| offset-y | Y 轴偏移量 | `number \| string` | `0` |

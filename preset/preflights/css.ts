@@ -150,7 +150,7 @@ const themes = {
     border: 'transparent',
   },
   card: {
-    border: 'var(--onl-gray-100)',
+    border: 'var(--onl-gray-500)',
   },
 }
 

@@ -9,7 +9,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<ImageProps>(), {
   loading: 'eager',
-  className: 'w-300px h-200px',
+  class: 'w-300px h-200px',
   fit: 'contain',
 })
 
@@ -27,7 +27,6 @@ let observer: IntersectionObserver | null = null
 
 const filteredAttrs = computed(() => {
   const {
-    className,
     style,
     src,
     alt,
@@ -40,7 +39,7 @@ const filteredAttrs = computed(() => {
 })
 
 const imgCls = computed(() => {
-  return clsx(`ol-image__fit-${props.fit}`)
+  return clsx(`ol-image__fit-${props.fit}`, props.class)
 })
 
 watch(() => props.src, () => {
@@ -120,13 +119,13 @@ onUnmounted(() => {
 
 <template>
   <div ref="container" class="ol-image" v-bind="filteredAttrs">
-    <div v-if="loadError" :class="className" class="ol-image__error">
+    <div v-if="loadError" :class="clsx(props.class, 'ol-image__error')">
       <slot name="error">
         <span>FAILED</span>
       </slot>
     </div>
     <template v-else>
-      <div v-if="isLoading" :class="className" class="ol-image__load">
+      <div v-if="isLoading" :class="clsx(props.class, 'ol-image__load')">
         <slot name="load">
           Loading...
         </slot>
@@ -134,7 +133,7 @@ onUnmounted(() => {
       <img
         v-if="imageSrc !== undefined"
         ref="imageRef"
-        :class="[imgCls, className]"
+        :class="imgCls"
         :src="imageSrc"
         :alt="alt"
         @load="handleLoad"

@@ -7,7 +7,7 @@
 <div class="flex gap-4">
   <div v-for="fit in ['fill', 'contain', 'cover', 'none', 'scale-down']" :key="fit" class="flex flex-col items-center gap-4">
     <span>{{ fit }}</span>
-    <OlImage className="w-100px h-100px" :fit="fit" loading="lazy" src="https://i.postimg.cc/sx8CQcYj/pexels-photo-1108099.jpg" />
+    <OlImage class="w-100px h-100px" :fit="fit" loading="lazy" src="https://i.postimg.cc/sx8CQcYj/pexels-photo-1108099.jpg" />
   </div>
 </div>
 
@@ -19,7 +19,7 @@
       class="flex flex-col items-center gap-4"
     >
       <span>{{ fit }}</span>
-      <OlImage className="w-100px h-100px" :fit="fit" loading="lazy" src="https://i.  postimg.cc/sx8CQcYj/pexels-photo-1108099.jpg" />
+      <OlImage class="w-100px h-100px" :fit="fit" loading="lazy" src="https://i.  postimg.cc/sx8CQcYj/pexels-photo-1108099.jpg" />
     </div>
 </div>
 ```
@@ -66,7 +66,7 @@ const urls = [
 </script>
 
 <div class="w-2xl h-lg overflow-y-scroll">
-  <OlImage className='w-auto h-370px' v-for="url in urls" :key="url" fit="contain" loading="lazy" :src="url" />
+  <OlImage class='w-auto h-370px' v-for="url in urls" :key="url" fit="contain" loading="lazy" :src="url" />
 </div>
 
 ```vue
@@ -84,7 +84,7 @@ const urls = [
 
 <template>
   <div class="w-2xl h-lg overflow-y-scroll">
-    <OlImage v-for="url in urls" :key="url" className="w-auto h-370px" fit="contain" loading="lazy" :src="url" />
+    <OlImage v-for="url in urls" :key="url" class="w-auto h-370px" fit="contain" loading="lazy" :src="url" />
   </div>
 </template>
 ```
@@ -96,7 +96,6 @@ const urls = [
 | src        | 图片源地址     | `string`            | `-`    |
 | fit        | 图片填充模式   | `'fill' \| 'contain' \| 'cover' \| 'none' \| 'scale-down'` | `'fill'` |
 | loading    | 图片加载模式   | `'eager' \| 'lazy'` | `'eager'` |
-| className  | 自定义类名     | `string`            | `-`    |
 | alt        | 图片替代文本   | `string`            | `-`    |
 
 ## 插槽

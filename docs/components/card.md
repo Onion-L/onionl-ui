@@ -19,7 +19,7 @@
         </div>
       </ol-card-header>
       <ol-card-content>
-        <ol-image className="w-full h-auto" src="/logo2x.png" />
+        <ol-image class="w-full h-auto" src="/logo2x.png" />
       </ol-card-content>
       <ol-card-footer>
         <ol-button size="sm" class="w-full">
@@ -44,7 +44,7 @@
         </div>
       </ol-card-header>
       <ol-card-content>
-        <ol-image className="w-full h-auto" src="/logo2x.png" />
+        <ol-image class="w-full h-auto" src="/logo2x.png" />
       </ol-card-content>
       <ol-card-footer>
         <ol-button size="sm" class="w-full">

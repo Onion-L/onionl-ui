@@ -21,15 +21,15 @@
 ::: code-group
 
 ```bash [npm]
-npm install onionl-ui @onionl-ui/preset unocss
+npm install onionl-ui @onionl-ui/preset
 ```
 
 ```bash [yarn]
-yarn add onionl-ui @onionl-ui/preset unocss
+yarn add onionl-ui @onionl-ui/preset
 ```
 
 ```bash [pnpm]
-pnpm add onionl-ui @onionl-ui/preset unocss
+pnpm add onionl-ui @onionl-ui/preset
 ```
 
 :::

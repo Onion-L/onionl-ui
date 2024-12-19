@@ -34,21 +34,21 @@ Using npm:
 
 ```bash
 # Install all required dependencies
-npm install onionl-ui @onionl-ui/preset unocss
+npm install onionl-ui @onionl-ui/preset
 ```
 
 Using yarn:
 
 ```bash
 # Install all required dependencies
-yarn add onionl-ui @onionl-ui/preset unocss
+yarn add onionl-ui @onionl-ui/preset
 ```
 
 Using pnpm:
 
 ```bash
 # Install all required dependencies
-pnpm add onionl-ui @onionl-ui/preset unocss
+pnpm add onionl-ui @onionl-ui/preset
 ```
 
 ## 🔨 Quick Start

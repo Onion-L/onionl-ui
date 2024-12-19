@@ -23,10 +23,10 @@ describe('ol-progress', () => {
     })
 
     const bar = wrapper.find('.ol-progress-bar')
-    expect(bar.attributes('style')).toContain('translateX(-30%)')
+    expect(bar.attributes('style')).toContain('translateX(-70%)')
 
     await wrapper.setProps({ value: 60 })
-    expect(bar.attributes('style')).toContain('translateX(-60%)')
+    expect(bar.attributes('style')).toContain('translateX(-40%)')
   })
 
   it('should reverse the progress bar direction', () => {
@@ -38,7 +38,7 @@ describe('ol-progress', () => {
     })
 
     expect(wrapper.find('.ol-progress-bar').attributes('style'))
-      .toContain('translateX(40%)')
+      .toContain('translateX(60%)')
   })
 
   it('should control label display with label prop', async () => {

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { HaloProps } from './halo'
+import { clone, isNumberString } from '@onionl-ui/utils'
 import { computed, onMounted, ref } from 'vue'
-import { clone, isNumberString } from '../util'
 
 defineOptions({
   name: 'OlHalo',

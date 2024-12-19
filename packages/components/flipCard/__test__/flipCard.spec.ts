@@ -2,18 +2,13 @@ import type { VueWrapper } from '@vue/test-utils'
 import { OlFlipControl } from '@onionl-ui/components'
 import { mount } from '@vue/test-utils'
 import { beforeEach, describe, expect, it } from 'vitest'
+import { h } from 'vue'
 import OlFlipCard from '../src/flipCard.vue'
 
 describe('olFlipCard', () => {
   let wrapper: VueWrapper
-
-  const FrontComponent = {
-    template: '<div class="front">Front Content</div>',
-  }
-
-  const BackComponent = {
-    template: '<div class="back">Back Content</div>',
-  }
+  const FrontComponent = h('div', { class: 'front' }, 'Front Content')
+  const BackComponent = h('div', { class: 'back' }, 'Back Content')
 
   beforeEach(() => {
     wrapper = mount(OlFlipCard, {
@@ -25,7 +20,6 @@ describe('olFlipCard', () => {
     })
   })
 
-  // 基础渲染测试
   it('should render correctly', () => {
     expect(wrapper.findComponent(OlFlipControl).exists()).toBe(true)
     expect(wrapper.find('.front').exists()).toBe(true)

@@ -20,6 +20,7 @@ const modules = [
   'OlHalo',
   'OlFlipCard',
   'OlFlipControl',
+  'OlProgress',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

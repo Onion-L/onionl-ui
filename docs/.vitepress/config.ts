@@ -14,6 +14,10 @@ const BasicComponentItems = [
   { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
 ]
 
+const DataComponentItems = [
+  { text: 'Progress 进度条', link: '/components/progress' },
+]
+
 const OtherComponentItems = [
   { text: 'FlipCard 翻转卡片', link: '/components/flipCard' },
   { text: 'Halo 光晕背景', link: '/components/halo' },
@@ -22,26 +26,35 @@ const OtherComponentItems = [
 
 const ComponentItems = [
   ...BasicComponentItems,
+  ...DataComponentItems,
   ...OtherComponentItems,
 ]
 
-const Components: DefaultTheme.SidebarItem[] = [{
-  text: '基础',
-  collapsed: false,
-  items: BasicComponentItems,
-}, {
-  text: '其他',
-  collapsed: false,
-  items: OtherComponentItems,
-}]
+const Components: DefaultTheme.SidebarItem[] = [
+  {
+    text: 'Basic 基础',
+    collapsed: false,
+    items: BasicComponentItems,
+  },
+  {
+    text: 'Data 数据',
+    collapsed: false,
+    items: DataComponentItems,
+  },
+  {
+    text: 'Other 其他',
+    collapsed: false,
+    items: OtherComponentItems,
+  },
+]
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Onionl UI',
+  title: 'OnionlUI',
   description: 'A component library',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/logo.svg',
+    logo: '/logo2x.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', items: NavLink },

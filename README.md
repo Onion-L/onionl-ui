@@ -5,8 +5,8 @@ A modern lightweight component library based on Vue 3.
   <img src="./public/logo.svg" alt="onionl-ui logo" style="width: 240px;" />
 
 [![NPM version](https://img.shields.io/npm/v/onionl-ui.svg)](https://npmjs.org/package/onionl-ui)
-[![NPM downloads](https://img.shields.io/npm/dm/onionl-ui.svg)](https://npmjs.org/package/onionl-ui)
-<!-- [![Coverage](https://img.shields.io/codecov/c/github/Onion-L/onionl-ui)](https://codecov.io/gh/Onion-L/onionl-ui) -->
+[![Coverage](https://img.shields.io/codecov/c/github/Onion-L/onionl-ui)](https://codecov.io/gh/Onion-L/onionl-ui)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
 
 English | [中文](./README-zh.md)
 

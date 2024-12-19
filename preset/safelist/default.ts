@@ -10,6 +10,7 @@ const elementKeys = [
   'pixel-image',
   'scrollbar',
   'flip-control',
+  'progress',
 ]
 
 export const defaultCls: string[] = ['is-disabled', ...addPrefix(elementKeys)]

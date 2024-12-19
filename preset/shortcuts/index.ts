@@ -7,6 +7,7 @@ import { generalShortcuts } from './general'
 import { imageShortcuts } from './image'
 import { inputShortcuts } from './input'
 import { pixelImageShortcuts } from './pixelImage'
+import { progressShortcuts } from './progress'
 import { scrollbarShortcuts } from './scrollbar'
 
 const shortcuts: Shortcut[] = [
@@ -19,6 +20,7 @@ const shortcuts: Shortcut[] = [
   ...pixelImageShortcuts,
   ...scrollbarShortcuts,
   ...flipShortcuts,
+  ...progressShortcuts,
 ]
 
 export { shortcuts }

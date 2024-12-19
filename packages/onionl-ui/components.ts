@@ -9,23 +9,25 @@ import { OlIcon } from '../components/icon'
 import { OlImage } from '../components/image'
 import { OlInput } from '../components/input'
 import { OlPixelImage } from '../components/pixelImage'
+import { OlProgress } from '../components/progress'
 import { OlScrollbar, OlScrollSnap } from '../components/scrollbar'
 
 export const Components = [
   OlButton,
   OlCard,
-  OlCardHeader,
   OlCardContent,
   OlCardFooter,
+  OlCardHeader,
   OlContextMenu,
   OlContextMenuItem,
+  OlFlipCard,
   OlFlipControl,
   OlHalo,
   OlIcon,
-  OlInput,
   OlImage,
+  OlInput,
   OlPixelImage,
+  OlProgress,
   OlScrollbar,
   OlScrollSnap,
-  OlFlipCard,
 ] as Plugin[]

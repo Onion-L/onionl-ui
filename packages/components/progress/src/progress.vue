@@ -18,7 +18,10 @@ const props = withDefaults(defineProps<{
   label: false,
 })
 
-const translateX = computed(() => `translateX(${props.reverse ? props.value : -props.value}%)`)
+const translateX = computed(() => {
+  const value = props.reverse ? (100 - props.value) : -(100 - props.value)
+  return `translateX(${value}%)`
+})
 </script>
 
 <template>

@@ -24,13 +24,7 @@ const OtherComponentItems = [
   { text: 'PixelImage 像素图片', link: '/components/pixelImage' },
 ]
 
-const ComponentItems = [
-  ...BasicComponentItems,
-  ...DataComponentItems,
-  ...OtherComponentItems,
-]
-
-const Components: DefaultTheme.SidebarItem[] = [
+const Components = [
   {
     text: 'Basic 基础',
     collapsed: false,
@@ -58,7 +52,10 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', items: NavLink },
-      { text: 'Components', items: ComponentItems },
+      {
+        text: 'Components',
+        items: Components,
+      },
     ],
     sidebar: {
       '/guide/': [{ text: '快速开始', link: '/guide/getting-started' }],

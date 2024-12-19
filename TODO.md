@@ -12,7 +12,7 @@
 - [ ] Badge (徽章)
 - [ ] Tag (标签)
 - [ ] Avatar (头像)
-- [ ] Card (卡片)
+- [x] Card (卡片)
 
 ## 布局组件 (Layout Components)
 - [ ] Container (容器)
@@ -61,7 +61,6 @@
 - [ ] Popconfirm (弹出确认框)
 - [ ] Spin (加载中)
 - [ ] Skeleton (骨架屏)
-- [ ] Result (结果)
 
 ## 数据展示组件 (Data Display Components)
 - [ ] Table (表格)
@@ -75,6 +74,7 @@
 - [ ] Popover (弹出框)
 - [ ] Carousel (轮播图)
 - [ ] Statistic (统计)
+- [ ] Marquee (跑马灯)
 
 ## 其他组件 (Other Components)
 - [ ] ConfigProvider (配置)

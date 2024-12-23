@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useNamespace } from '@onionl-ui/utils'
 import clsx from 'clsx'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 defineOptions({
   name: 'OlMarquee',
@@ -17,17 +17,26 @@ const props = withDefaults(defineProps<{
   gap: '2rem',
 })
 
+const marqueeRef = ref<HTMLElement>()
+
 const repeat = 4
 const duration = computed(() => `${props.duration}s`)
 const ns = useNamespace('marquee')
 const { namespace } = ns
-const innerCls = computed(() => clsx(props.reverse ? ns.em('animate', 'reverse') : ns.e('animate'), ns.e('inner')))
+
+const innerCls = computed(() => {
+  const isReverseCls = props.reverse
+    ? ns.em('animate', 'reverse')
+    : ns.e('animate')
+  return clsx(isReverseCls, ns.e('inner'))
+})
 </script>
 
 <template>
-  <div :class="namespace">
+  <div class="group" :class="[namespace]">
     <div
       v-for="i in repeat"
+      ref="marqueeRef"
       :key="i"
       :class="innerCls"
     >

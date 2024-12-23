@@ -11,6 +11,7 @@ const BasicComponentItems = [
   { text: 'Contextmenu 右键菜单', link: '/components/contextmenu' },
   { text: 'Image 图片', link: '/components/image' },
   { text: 'Input 输入框', link: '/components/input' },
+  { text: 'Marquee 跑马灯', link: '/components/marquee' },
   { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
 ]
 

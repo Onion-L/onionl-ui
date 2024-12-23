@@ -74,7 +74,7 @@
 - [ ] Popover (弹出框)
 - [ ] Carousel (轮播图)
 - [ ] Statistic (统计)
-- [ ] Marquee (跑马灯)
+- [x] Marquee (跑马灯)
 
 ## 其他组件 (Other Components)
 - [ ] ConfigProvider (配置)

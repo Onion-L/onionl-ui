@@ -1,5 +1,6 @@
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
+import { vitepressDemoPlugin } from 'vitepress-demo-plugin'
 
 const NavLink: DefaultTheme.NavItemWithLink[] = [
   { text: 'Get Started', link: '/guide/getting-started' },
@@ -67,5 +68,13 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/Onion-L/onionl-ui' },
       { icon: 'bluesky', link: 'https://bsky.app/profile/onion-l.bsky.social' },
     ],
+  },
+  markdown: {
+    config(md) {
+      md.use(vitepressDemoPlugin, {
+        lightTheme: 'atom-one-light',
+        darkTheme: 'atom-one-dark',
+      })
+    },
   },
 })

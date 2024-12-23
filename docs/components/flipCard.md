@@ -6,50 +6,7 @@ FlipCard 组件提供了一个可以翻转的卡片界面，支持正反两面�
 
 通过 `flipped` 属性控制卡片的翻转状态，使用 `front` 和 `back` 属性分别设置正反面的内容。
 
-<script setup>
-import { ref } from 'vue'
-import Back from './flipCard/back.vue'
-import Front from './flipCard/front.vue'
-const isFlipped = ref(false)
-function handleClick() {
-isFlipped.value = !isFlipped.value
-}
-</script>
-
-<div class="flex justify-center">
-<ol-flip-card
-class="w-70 h-70"
-  :flipped="isFlipped"
-  :front="Front"
-  :back="Back"
-  @click="handleClick"
-/>
-</div>
-
-```vue
-<script setup>
-import { ref } from 'vue'
-import Back from './flipCard/back.vue'
-import Front from './flipCard/front.vue'
-
-const isFlipped = ref(false)
-function handleClick() {
-  isFlipped.value = !isFlipped.value
-}
-</script>
-
-<template>
-  <div class="flex justify-center">
-    <ol-flip-card
-      class="w-70 h-70"
-      :flipped="isFlipped"
-      :front="Front"
-      :back="Back"
-      @click="handleClick"
-    />
-  </div>
-</template>
-```
+<demo vue="../demo/flipCard/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/flipCard" />
 
 ## 属性
 

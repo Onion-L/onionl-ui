@@ -213,6 +213,9 @@ importers:
       vitepress:
         specifier: ^1.5.0
         version: 1.5.0(@algolia/client-search@5.15.0)(@types/node@22.9.0)(postcss@8.4.49)(search-insights@2.17.3)(terser@5.36.0)(typescript@5.6.3)
+      vitepress-demo-plugin:
+        specifier: ^1.2.0
+        version: 1.2.0(vitepress@1.5.0(@algolia/client-search@5.15.0)(@types/node@22.9.0)(postcss@8.4.49)(search-insights@2.17.3)(terser@5.36.0)(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
       vitest:
         specifier: ^2.1.5
         version: 2.1.5(@types/node@22.9.0)(happy-dom@15.11.6)(terser@5.36.0)
@@ -232,6 +235,9 @@ importers:
       '@iconify-json/mi':
         specifier: ^1.2.1
         version: 1.2.1
+      vitepress-demo-plugin:
+        specifier: ^1.2.0
+        version: 1.2.0(vitepress@1.5.0(@algolia/client-search@5.15.0)(@types/node@22.9.0)(postcss@8.4.49)(search-insights@2.17.3)(terser@5.36.0)(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3))
 
   packages/components:
     dependencies:
@@ -4325,6 +4331,12 @@ packages:
         optional: true
       terser:
         optional: true
+
+  vitepress-demo-plugin@1.2.0:
+    resolution: {integrity: sha512-8nFHVsIUQlDgVa+DbcfHAKU646Tet2TvIKdGyWkFf3gS4XQjuc0dEiJu8Z9RH/9xdN5V2/NsO4LB/LuYnu9AjQ==}
+    peerDependencies:
+      vitepress: '*'
+      vue: ^3.2.0
 
   vitepress@1.5.0:
     resolution: {integrity: sha512-q4Q/G2zjvynvizdB3/bupdYkCJe2umSAMv9Ju4d92E6/NXJ59z70xB0q5p/4lpRyAwflDsbwy1mLV9Q5+nlB+g==}
@@ -9018,6 +9030,11 @@ snapshots:
       '@types/node': 22.9.0
       fsevents: 2.3.3
       terser: 5.36.0
+
+  vitepress-demo-plugin@1.2.0(vitepress@1.5.0(@algolia/client-search@5.15.0)(@types/node@22.9.0)(postcss@8.4.49)(search-insights@2.17.3)(terser@5.36.0)(typescript@5.6.3))(vue@3.5.13(typescript@5.6.3)):
+    dependencies:
+      vitepress: 1.5.0(@algolia/client-search@5.15.0)(@types/node@22.9.0)(postcss@8.4.49)(search-insights@2.17.3)(terser@5.36.0)(typescript@5.6.3)
+      vue: 3.5.13(typescript@5.6.3)
 
   vitepress@1.5.0(@algolia/client-search@5.15.0)(@types/node@22.9.0)(postcss@8.4.49)(search-insights@2.17.3)(terser@5.36.0)(typescript@5.6.3):
     dependencies:

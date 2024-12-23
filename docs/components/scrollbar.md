@@ -6,26 +6,13 @@
 
 通过设置 `height` 属性来控制滚动区域的高度。
 
-<ol-scrollbar height="400px">
-<div v-for="i in 20" :key="i" class="text-lg h-50px bg-primary my-1 rounded-md text-center line-height-50px">
-  {{ i }}
-</div>
-</ol-scrollbar>
+<demo vue="../demo/scrollbar/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/scrollbar" />
 
 ## 滚动捕捉
 
 结合 `ol-scroll-snap` 组件，可以实现滚动捕捉效果。设置 `snap` 属性为 `both`、`x`、`y` 可以在水平和垂直方向都启用滚动捕捉。
 
-<ol-scrollbar height="400px" snap="both">
-  <ol-scroll-snap
-    v-for="i in 10"
-    :key="i"
-    align="start"
-    class="text-3xl h-400px bg-primary my-1 rounded-md text-center line-height-400px"
-  >
-    {{ i }}
-  </ol-scroll-snap>
-</ol-scrollbar>
+<demo vue="../demo/scrollbar/snap.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/scrollbar" />
 
 ### Scrollbar 属性
 

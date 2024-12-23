@@ -12,6 +12,7 @@
     "@onionl-ui/preset": "workspace:*"
   },
   "devDependencies": {
-    "@iconify-json/mi": "^1.2.1"
+    "@iconify-json/mi": "^1.2.1",
+    "vitepress-demo-plugin": "^1.2.0"
   }
 }

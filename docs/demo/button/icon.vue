@@ -4,11 +4,11 @@
 
 <template>
   <div class="space-x-2 flex items-center">
-    <OlButton icon="i-mi-comment" />
-    <OlButton icon="i-mi-add">
+    <ol-button icon="i-mi-comment" />
+    <ol-button icon="i-mi-add">
       Plus
-    </OlButton>
-    <OlButton icon="i-mi-settings" link />
+    </ol-button>
+    <ol-button icon="i-mi-settings" link />
   </div>
 </template>
 

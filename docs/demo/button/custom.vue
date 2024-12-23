@@ -1,10 +1,10 @@
 <template>
   <div class="space-x-2">
-    <OlButton size="20">
+    <ol-button size="20">
       20
-    </OlButton>
-    <OlButton size="25">
+    </ol-button>
+    <ol-button size="25">
       25
-    </OlButton>
+    </ol-button>
   </div>
 </template>

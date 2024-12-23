@@ -1,25 +1,25 @@
 <template>
   <div class="space-x-2">
-    <OlButton size="3xl">
+    <ol-button size="3xl">
       3xl
-    </OlButton>
-    <OlButton size="2xl">
+    </ol-button>
+    <ol-button size="2xl">
       2xl
-    </OlButton>
-    <OlButton size="xl">
+    </ol-button>
+    <ol-button size="xl">
       xl
-    </OlButton>
-    <OlButton size="lg">
+    </ol-button>
+    <ol-button size="lg">
       lg
-    </OlButton>
-    <OlButton size="md">
+    </ol-button>
+    <ol-button size="md">
       md
-    </OlButton>
-    <OlButton size="sm">
+    </ol-button>
+    <ol-button size="sm">
       sm
-    </OlButton>
-    <OlButton size="xs">
+    </ol-button>
+    <ol-button size="xs">
       xs
-    </OlButton>
+    </ol-button>
   </div>
 </template>

@@ -9,10 +9,10 @@ const section = ref(null)
     在此右键打开菜单
   </div>
 
-  <OlContextMenu :target="section">
-    <OlContextMenuItem>复制</OlContextMenuItem>
-    <OlContextMenuItem>粘贴</OlContextMenuItem>
-    <OlContextMenuItem>剪切</OlContextMenuItem>
-    <OlContextMenuItem>删除</OlContextMenuItem>
-  </OlContextMenu>
+  <ol-context-menu :target="section">
+    <ol-context-menuItem>复制</ol-context-menuItem>
+    <ol-context-menuItem>粘贴</ol-context-menuItem>
+    <ol-context-menuItem>剪切</ol-context-menuItem>
+    <ol-context-menuItem>删除</ol-context-menuItem>
+  </ol-context-menu>
 </template>

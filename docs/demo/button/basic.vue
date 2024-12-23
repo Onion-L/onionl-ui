@@ -1,13 +1,13 @@
 <template>
   <div class="space-x-2">
-    <OlButton type="primary">
+    <ol-button type="primary">
       Primary
-    </OlButton>
-    <OlButton type="secondary">
+    </ol-button>
+    <ol-button type="secondary">
       Secondary
-    </OlButton>
-    <OlButton type="outline">
+    </ol-button>
+    <ol-button type="outline">
       Outline
-    </OlButton>
+    </ol-button>
   </div>
 </template>

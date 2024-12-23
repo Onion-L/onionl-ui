@@ -12,6 +12,6 @@ const urls = [
 
 <template>
   <ol-scrollbar class="w-full h-lg">
-    <OlImage v-for="url in urls" :key="url" class="w-auto h-370px" fit="contain" loading="lazy" :src="url" />
+    <ol-image v-for="url in urls" :key="url" class="w-auto h-370px" fit="contain" loading="lazy" :src="url" />
   </ol-scrollbar>
 </template>

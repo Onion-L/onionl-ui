@@ -1,10 +1,10 @@
 <template>
   <div class="flex gap-4">
-    <OlImage />
-    <OlImage>
+    <ol-image />
+    <ol-image>
       <template #error>
         <OlIcon icon="i-mi-image" />
       </template>
-    </OlImage>
+    </ol-image>
   </div>
 </template>

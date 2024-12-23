@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useNamespace } from '@onionl-ui/utils'
+import clsx from 'clsx'
 import { computed } from 'vue'
 
 defineOptions({
@@ -17,15 +19,17 @@ const props = withDefaults(defineProps<{
 
 const repeat = 4
 const duration = computed(() => `${props.duration}s`)
+const ns = useNamespace('marquee')
+const { namespace } = ns
+const innerCls = computed(() => clsx(props.reverse ? ns.em('animate', 'reverse') : ns.e('animate'), ns.e('inner')))
 </script>
 
 <template>
-  <div class="flex [gap:var(--onl-marquee-gap)] overflow-hidden marquee-variable">
+  <div :class="namespace">
     <div
       v-for="i in repeat"
       :key="i"
-      class="flex [gap:var(--onl-marquee-gap)]"
-      :class="props.reverse ? 'animate-marquee-reverse' : 'animate-marquee'"
+      :class="innerCls"
     >
       <slot />
     </div>
@@ -33,16 +37,16 @@ const duration = computed(() => `${props.duration}s`)
 </template>
 
 <style scoped>
-.marquee-variable {
+.ol-marquee {
   --onl-marquee-duration: v-bind(duration);
   --onl-marquee-gap: v-bind(gap);
 }
 
-.animate-marquee {
+.ol-marquee__animate {
   animation: marquee var(--onl-marquee-duration) linear infinite;
 }
 
-.animate-marquee-reverse {
+.ol-marquee__animate--reverse {
   animation: marquee-reverse var(--onl-marquee-duration) linear infinite;
 }
 

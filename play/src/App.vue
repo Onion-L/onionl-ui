@@ -5,7 +5,7 @@ import { OlCard, OlCardHeader, OlMarquee } from '@onionl-ui/components'
 <template>
   <h1>Marquee</h1>
   <div class="w-screen">
-    <ol-marquee>
+    <ol-marquee :duration="10" reverse>
       <ol-card v-for="j in 4" :key="j" class="w-70  flex-shrink-0">
         <ol-card-header>
           <div class="flex flex-col gap-2 dark:text-white">

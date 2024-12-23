@@ -6,127 +6,25 @@ PixelImage组件用于创建像素风格的图片效果，可以将普通图片�
 
 通过传入图片地址，即可创建一个基础的像素化图片。
 
-<div class="flex items-center justify-center space-x-4">
-  <ol-pixel-image
-    src="/vite.png"
-    width="200"
-    height="auto"
-  />
-  <ol-pixel-image
-    src="/vue.png"
-    width="200"
-    height="auto"
-  />
-</div>
-
-```html
-<div class="flex items-center justify-center">
-  <ol-pixel-image
-    src="/vite.png"
-    width="200"
-    height="auto"
-  />
-</div>
-```
+<demo vue="../demo/pixelImage/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/pixelImage" />
 
 ## 自定义间距
 
 你可以通过`pixelGap`属性来控制像素块之间的间距。
 
-<div class="flex  items-center space-x-4 justify-center">
-  <ol-pixel-image
-    src="/vite.png"
-    width="200"
-    height="auto"
-    :pixel-gap="2"
-  />
-
-  <ol-pixel-image
-    src="/vite.png"
-    width="200"
-    height="auto"
-    :pixel-gap="4"
-  />
-</div>
-
-```html
-<div class="flex  items-center space-x-4 justify-center">
-  <ol-pixel-image
-    src="/vite.png"
-    width="200"
-    height="auto"
-    :pixel-gap="2"
-  />
-
-  <ol-pixel-image
-    src="/vite.png"
-    width="200"
-    height="auto"
-    :pixel-gap="4"
-  />
-</div>
-```
+<demo vue="../demo/pixelImage/gap.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/pixelImage" />
 
 ## 自定义像素大小
 
 你可以通过`pixelSize`属性来控制像素化的程度，数值越大像素块越大。
 
-<div class="flex items-center justify-center space-x-4">
-<ol-pixel-image
-    src="/vite.png"
-    width="200"
-    height="auto"
-    :pixel-size="2"
-  />
+<demo vue="../demo/pixelImage/size.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/pixelImage" />
 
-  <ol-pixel-image
-    src="/vue.png"
-    width="200"
-    height="auto"
-    :pixel-size="1"
-  />
-</div>
-
-```html
-<div class="flex items-center justify-center space-x-4">
-<ol-pixel-image
-    src="/vite.png"
-    width="200"
-    height="auto"
-    :pixel-size="2"
-  />
-  <ol-pixel-image
-    src="/vue.png"
-    width="200"
-    height="auto"
-    :pixel-size="1"
-  />
-</div>
-```
 ## 自定义视窗大小
 
 通过`viewport-width`和`viewport-height`属性，可以自定义视窗大小。
 
-<div class="flex items-center justify-center">
-  <ol-pixel-image
-    src="/vue.png"
-    :viewport-width="350"
-    :viewport-height="200"
-    :pixel-size="4"
-  />
-</div>
-
-```html
-<div class="flex items-center justify-center">
-  <ol-pixel-image
-    src="/vue.png"
-    :viewport-width="200"
-    :viewport-height="200"
-    :pixel-size="4"
-  />
-</div>
-
-```
+<demo vue="../demo/pixelImage/viewport.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/pixelImage" />
 
 ## 属性
 

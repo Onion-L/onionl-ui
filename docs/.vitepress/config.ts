@@ -71,10 +71,7 @@ export default defineConfig({
   },
   markdown: {
     config(md) {
-      md.use(vitepressDemoPlugin, {
-        lightTheme: 'atom-one-light',
-        darkTheme: 'atom-one-dark',
-      })
+      md.use(vitepressDemoPlugin)
     },
   },
 })

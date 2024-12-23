@@ -1,49 +1,58 @@
 {
-  "hash": "f9a80b25",
+  "hash": "fb8bb301",
   "configHash": "9282d504",
-  "lockfileHash": "0a9706eb",
-  "browserHash": "a12de676",
+  "lockfileHash": "38127e17",
+  "browserHash": "865f6778",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.5.13_typescript@5.6.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "859cdc0e",
+      "fileHash": "8a80f7e2",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.6.4/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "d3c55ee2",
+      "fileHash": "c8d0307e",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@11.3.0_vue@3.5.13_typescript@5.6.3_/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "b9a47091",
+      "fileHash": "3b0242f4",
       "needsInterop": false
     },
     "clsx": {
       "src": "../../../../node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
       "file": "clsx.js",
-      "fileHash": "47dd6f11",
+      "fileHash": "7de6b32b",
       "needsInterop": false
     },
     "imask": {
       "src": "../../../../node_modules/.pnpm/imask@7.6.1/node_modules/imask/esm/index.js",
       "file": "imask.js",
-      "fileHash": "df02fc04",
+      "fileHash": "846fdeca",
       "needsInterop": false
     },
     "@vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@12.0.0_typescript@5.6.3/node_modules/@vueuse/core/index.mjs",
       "file": "@vueuse_core.js",
-      "fileHash": "3823b924",
+      "fileHash": "4f788b43",
+      "needsInterop": false
+    },
+    "vitepress-demo-plugin": {
+      "src": "../../../../node_modules/.pnpm/vitepress-demo-plugin@1.2.0_vitepress@1.5.0_@algolia+client-search@5.15.0_@types+node@22.9.0__pqfhc4cns7ncjuozrsybbkehnm/node_modules/vitepress-demo-plugin/dist/index.js",
+      "file": "vitepress-demo-plugin.js",
+      "fileHash": "9bb494df",
       "needsInterop": false
     }
   },
   "chunks": {
     "chunk-5TCDO6LD": {
       "file": "chunk-5TCDO6LD.js"
+    },
+    "chunk-5WRI5ZAA": {
+      "file": "chunk-5WRI5ZAA.js"
     }
   }
 }

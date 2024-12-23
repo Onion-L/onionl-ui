@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import Back from './flipCard/back.vue'
-import Front from './flipCard/front.vue'
+import Back from './back.vue'
+import Front from './front.vue'
 
 const isFlipped = ref(false)
 function handleClick() {

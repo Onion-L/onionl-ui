@@ -6,7 +6,7 @@ FlipCard 组件提供了一个可以翻转的卡片界面，支持正反两面�
 
 通过 `flipped` 属性控制卡片的翻转状态，使用 `front` 和 `back` 属性分别设置正反面的内容。
 
-<demo vue="../demo/filpCard/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/flipCard" />
+<demo vue="../demo/flipCard/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/flipCard" />
 
 ## 属性
 

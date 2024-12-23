@@ -8,6 +8,7 @@ import { OlHalo } from '../components/halo'
 import { OlIcon } from '../components/icon'
 import { OlImage } from '../components/image'
 import { OlInput } from '../components/input'
+import { OlMarquee } from '../components/marquee'
 import { OlPixelImage } from '../components/pixelImage'
 import { OlProgress } from '../components/progress'
 import { OlScrollbar, OlScrollSnap } from '../components/scrollbar'
@@ -26,6 +27,7 @@ export const Components = [
   OlIcon,
   OlImage,
   OlInput,
+  OlMarquee,
   OlPixelImage,
   OlProgress,
   OlScrollbar,

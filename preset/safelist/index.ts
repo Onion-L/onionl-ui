@@ -4,6 +4,7 @@ import { defaultCls } from './default'
 import { flipSafelist } from './flip'
 import { IconSafeList } from './icon'
 import { imageSafelist } from './image'
+import { marqueeSafelist } from './marquee'
 import { progressSafelist } from './progress'
 import { scrollbarSafelist } from './scrollbar'
 
@@ -16,6 +17,7 @@ export function getSafelist(range: number = 20) {
     scrollbarSafelist,
     flipSafelist,
     progressSafelist,
+    marqueeSafelist,
     ...getBtnSafelist(range),
   ]
 }

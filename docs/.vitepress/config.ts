@@ -16,8 +16,10 @@ const VisualInteractionItems = [
 const ContentDisplayItems = [
   { text: 'Card 卡片', link: '/components/card' },
   { text: 'Marquee 跑马灯', link: '/components/marquee' },
+  { text: 'Popover 弹出框', link: '/components/popover' },
   { text: 'Progress 进度条', link: '/components/progress' },
   { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
+  { text: 'Tooltip 文字提示', link: '/components/tooltip' },
 ]
 
 const FormInteractionItems = [

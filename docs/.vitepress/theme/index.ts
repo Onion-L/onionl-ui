@@ -22,6 +22,8 @@ const modules = [
   'OlFlipControl',
   'OlProgress',
   'OlMarquee',
+  'OlPopover',
+  'OlTooltip',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

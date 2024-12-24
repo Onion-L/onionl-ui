@@ -12,6 +12,7 @@ const elementKeys = [
   'flip-control',
   'progress',
   'marquee',
+  'popover',
 ]
 
 export const defaultCls: string[] = ['is-disabled', ...addPrefix(elementKeys)]

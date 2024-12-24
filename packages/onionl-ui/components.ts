@@ -10,6 +10,7 @@ import { OlImage } from '../components/image'
 import { OlInput } from '../components/input'
 import { OlMarquee } from '../components/marquee'
 import { OlPixelImage } from '../components/pixelImage'
+import { OlPopover } from '../components/popover'
 import { OlProgress } from '../components/progress'
 import { OlScrollbar, OlScrollSnap } from '../components/scrollbar'
 
@@ -29,6 +30,7 @@ export const Components = [
   OlInput,
   OlMarquee,
   OlPixelImage,
+  OlPopover,
   OlProgress,
   OlScrollbar,
   OlScrollSnap,

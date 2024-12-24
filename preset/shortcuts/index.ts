@@ -8,6 +8,7 @@ import { imageShortcuts } from './image'
 import { inputShortcuts } from './input'
 import { marqueeShortcuts } from './marquee'
 import { pixelImageShortcuts } from './pixelImage'
+import { popoverShortcuts } from './popover'
 import { progressShortcuts } from './progress'
 import { scrollbarShortcuts } from './scrollbar'
 
@@ -23,6 +24,7 @@ const shortcuts: Shortcut[] = [
   ...flipShortcuts,
   ...progressShortcuts,
   ...marqueeShortcuts,
+  ...popoverShortcuts,
 ]
 
 export { shortcuts }

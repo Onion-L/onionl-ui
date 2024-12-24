@@ -28,7 +28,7 @@ const reference = ref<HTMLElement | null>(null)
 const floating = ref<HTMLElement | null>(null)
 const floatingArrow = ref<HTMLElement | null>(null)
 
-const { floatingStyles, middlewareData } = useFloating(reference, floating, {
+const { floatingStyles, middlewareData, placement } = useFloating(reference, floating, {
   placement: props.placement,
   middleware: [
     offset(props.offset),
@@ -40,7 +40,7 @@ const { floatingStyles, middlewareData } = useFloating(reference, floating, {
 })
 
 const duration = computed(() => `${props.duration}ms`)
-const arrowPlacement = computed(() => props.placement.split('-')[0])
+const arrowPlacement = computed(() => placement.value.split('-')[0])
 
 const arrowStyles = computed(() => {
   if (!middlewareData.value.arrow)

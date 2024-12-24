@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Placement } from '@floating-ui/vue'
+import type { PopoverProps } from './popover'
 import { arrow, autoUpdate, flip, offset, shift, useFloating } from '@floating-ui/vue'
 import { useNamespace } from '@onionl-ui/utils'
 import clsx from 'clsx'
@@ -9,13 +10,7 @@ defineOptions({
   name: 'OlPopover',
 })
 
-const props = withDefaults(defineProps<{
-  show?: boolean
-  placement?: Placement
-  offset?: number
-  arrow?: boolean
-  duration?: number
-}>(), {
+const props = withDefaults(defineProps<PopoverProps>(), {
   show: false,
   placement: 'bottom',
   trigger: 'click',

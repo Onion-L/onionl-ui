@@ -152,6 +152,11 @@ const themes = {
   card: {
     border: 'var(--onl-gray-500)',
   },
+  popover: {
+    DEFAULT: 'var(--onl-light-50)',
+    border: 'var(--onl-gray-500)',
+    text: 'var(--onl-dark-900)',
+  },
 }
 
 const darkThemes = {
@@ -181,6 +186,11 @@ const darkThemes = {
   },
   card: {
     border: 'var(--onl-gray-800)',
+  },
+  popover: {
+    DEFAULT: 'var(--onl-dark-700)',
+    border: 'var(--onl-gray-800)',
+    text: 'var(--onl-light-50)',
   },
 }
 

@@ -6,4 +6,5 @@ export interface PopoverProps {
   offset?: number
   arrow?: boolean
   duration?: number
+  contentClass?: string
 }

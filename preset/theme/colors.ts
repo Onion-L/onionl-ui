@@ -137,4 +137,9 @@ export const colors = {
   card: {
     border: 'var(--onl-card-border)',
   },
+  popover: {
+    DEFAULT: 'var(--onl-popover)',
+    text: 'var(--onl-popover-text)',
+    border: 'var(--onl-popover-border)',
+  },
 }

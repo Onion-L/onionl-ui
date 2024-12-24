@@ -8,6 +8,7 @@ import { computed, ref } from 'vue'
 
 defineOptions({
   name: 'OlPopover',
+  inheritAttrs: false,
 })
 
 const props = withDefaults(defineProps<PopoverProps>(), {
@@ -17,6 +18,7 @@ const props = withDefaults(defineProps<PopoverProps>(), {
   offset: 5,
   arrow: true,
   duration: 300,
+  contentClass: '',
 })
 
 const ns = useNamespace('popover')
@@ -70,7 +72,7 @@ const arrowStyles = computed(() => {
         v-if="show"
         ref="floating"
         :style="floatingStyles"
-        :class="ns.e('content')"
+        :class="clsx(ns.e('content'), props.contentClass)"
       >
         <slot />
         <div

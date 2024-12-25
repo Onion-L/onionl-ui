@@ -2,8 +2,6 @@
 import type { TooltipProps } from './tooltip'
 import { OlPopover } from '@onionl-ui/components'
 import { useNamespace } from '@onionl-ui/utils'
-import { ref } from 'vue'
-import { handleTrigger } from './util'
 
 defineOptions({
   name: 'OlTooltip',
@@ -17,26 +15,25 @@ const props = withDefaults(defineProps<TooltipProps>(), {
   trigger: 'hover',
   arrow: true,
   offset: 5,
+  show: false,
 })
 
 const ns = useNamespace('tooltip')
 const { namespace } = ns
-const show = ref(false)
-
-const handleClick = handleTrigger(props.trigger, 'click', () => {
-  show.value = !show.value
-})
-const onMouseEnter = handleTrigger(props.trigger, 'hover', () => {
-  show.value = true
-})
-const onMouseLeave = handleTrigger(props.trigger, 'hover', () => {
-  show.value = false
-})
 </script>
 
 <template>
-  <div :class="namespace" @click="handleClick" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
-    <ol-popover :offset="props.offset" :arrow="props.arrow" :content-class="props.contentClass" :placement="placement" :show="show">
+  <div
+    :class="namespace"
+  >
+    <ol-popover
+      :trigger="props.trigger"
+      :offset="props.offset"
+      :arrow="props.arrow"
+      :content-class="props.contentClass"
+      :placement="placement"
+      :show="props.show"
+    >
       <template #trigger>
         <slot />
       </template>

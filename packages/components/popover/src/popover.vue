@@ -3,8 +3,10 @@ import type { Placement } from '@floating-ui/vue'
 import type { PopoverProps } from './popover'
 import { arrow, autoUpdate, flip, offset, shift, useFloating } from '@floating-ui/vue'
 import { useNamespace } from '@onionl-ui/utils'
+import { onClickOutside } from '@vueuse/core'
 import clsx from 'clsx'
 import { computed, ref } from 'vue'
+import { handleTrigger } from './util'
 
 defineOptions({
   name: 'OlPopover',
@@ -12,9 +14,8 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<PopoverProps>(), {
-  show: false,
   placement: 'bottom',
-  trigger: 'click',
+  trigger: 'hover',
   offset: 5,
   arrow: true,
   duration: 300,
@@ -24,9 +25,11 @@ const props = withDefaults(defineProps<PopoverProps>(), {
 const ns = useNamespace('popover')
 const { namespace } = ns
 
+const popover = ref<HTMLElement | null>(null)
 const reference = ref<HTMLElement | null>(null)
 const floating = ref<HTMLElement | null>(null)
 const floatingArrow = ref<HTMLElement | null>(null)
+const showContent = ref<boolean | undefined>(props.show)
 
 const { floatingStyles, middlewareData, placement } = useFloating(reference, floating, {
   placement: props.placement,
@@ -60,19 +63,44 @@ const arrowStyles = computed(() => {
     [staticSide[arrowPlacement.value as Placement]]: '-0.25em',
   }
 })
+
+onClickOutside(popover, () => {
+  if (props.trigger === 'click') {
+    showContent.value = false
+  }
+})
+
+const handleClick = handleTrigger(props.trigger, 'click', () => {
+  showContent.value = !showContent.value
+})
+const onMouseEnter = handleTrigger(props.trigger, 'hover', () => {
+  showContent.value = true
+})
+const onMouseLeave = handleTrigger(props.trigger, 'hover', () => {
+  showContent.value = false
+})
 </script>
 
 <template>
-  <div :class="namespace">
-    <div ref="reference">
+  <div
+    ref="popover"
+    :class="namespace"
+  >
+    <div
+      ref="reference"
+      @click="handleClick"
+      @mouseenter="onMouseEnter"
+      @mouseleave="onMouseLeave"
+    >
       <slot name="trigger" />
     </div>
     <transition name="fade">
       <div
-        v-if="show"
+        v-if="props.show || showContent"
         ref="floating"
         :style="floatingStyles"
         :class="clsx(ns.e('content'), props.contentClass)"
+        @click.stop
       >
         <slot />
         <div

@@ -23,7 +23,6 @@
 
 ## 待开发组件
 
-- [ ] GlassCard (毛玻璃卡片)
 - [ ] DynamicList (动态列表)
 - [ ] ImageViewer (图片查看器)
 - [ ] Avatar (头像)
@@ -33,4 +32,12 @@
 - [ ] AudioPlayer (音频播放器)
 - [ ] Skeleton (骨架屏)
 - [ ] Empty (空状态)
+- [ ] Popover (弹出框)
+- [ ] Tooltip (提示框)
+- [ ] Modal (弹窗)
+- [ ] Drawer (抽屉)
+- [ ] Message (消息)
+- [ ] Notification (通知)
+- [ ] Alert (警告)
+- [ ] Confirm (确认)
 <!-- TODO 待开发组件探讨-->

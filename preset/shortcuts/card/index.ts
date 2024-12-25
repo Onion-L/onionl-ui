@@ -1,4 +1,4 @@
-import type { Shortcut } from 'unocss/index'
+import type { Shortcut } from 'unocss'
 
 export const cardShortcuts: Shortcut[] = [
   ['ol-card', 'rounded-lg border border-card-border border-solid'],

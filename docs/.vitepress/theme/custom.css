@@ -31,6 +31,8 @@
   --vp-c-brand-2: var(--vp-c-purple-2);
   --vp-c-brand-3: var(--vp-c-purple-3);
 
+  --onl-popover: linear-gradient(to right, #4f46e5, #7c3aed);
+
   --vp-nav-logo-height:48px;
 
   --un-shadow:0 0 rgb(0 0 0 / 0);

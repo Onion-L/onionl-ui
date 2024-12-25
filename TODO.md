@@ -20,6 +20,8 @@
 - [x] Marquee (跑马灯)
 - [x] Progress (进度条)
 - [x] Scrollbar (滚动条)
+- [x] Popover (弹出框)
+- [x] Tooltip (提示框)
 
 ## 待开发组件
 
@@ -32,8 +34,6 @@
 - [ ] AudioPlayer (音频播放器)
 - [ ] Skeleton (骨架屏)
 - [ ] Empty (空状态)
-- [ ] Popover (弹出框)
-- [ ] Tooltip (提示框)
 - [ ] Modal (弹窗)
 - [ ] Drawer (抽屉)
 - [ ] Message (消息)

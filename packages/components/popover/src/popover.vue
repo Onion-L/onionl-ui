@@ -76,7 +76,7 @@ const arrowStyles = computed(() => {
       >
         <slot />
         <div
-          v-if="show"
+          v-if="props.arrow"
           ref="floatingArrow"
           :style="arrowStyles"
           :class="clsx(

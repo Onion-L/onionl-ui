@@ -6,4 +6,6 @@ export interface TooltipProps {
   contentClass?: string
   placement?: Placement
   trigger?: TriggerType
+  arrow?: boolean
+  offset?: number
 }

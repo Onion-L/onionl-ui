@@ -15,6 +15,8 @@ const props = withDefaults(defineProps<TooltipProps>(), {
   contentClass: '',
   placement: 'top',
   trigger: 'hover',
+  arrow: true,
+  offset: 5,
 })
 
 const ns = useNamespace('tooltip')
@@ -34,12 +36,15 @@ const onMouseLeave = handleTrigger(props.trigger, 'hover', () => {
 
 <template>
   <div :class="namespace" @click="handleClick" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
-    <ol-popover :content-class="props.contentClass" :placement="placement" :show="show">
+    <ol-popover :offset="props.offset" :arrow="props.arrow" :content-class="props.contentClass" :placement="placement" :show="show">
       <template #trigger>
         <slot />
       </template>
-      <div :class="ns.e('content')">
-        {{ content }}
+      <div
+        :class="ns.e('content')"
+        @click.stop
+      >
+        <span>{{ content }}</span>
       </div>
     </ol-popover>
   </div>

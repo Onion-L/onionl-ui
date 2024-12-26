@@ -21,6 +21,11 @@
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/button" vue="../demo/button/link.vue"  />
 
+## 禁用状态
+按钮可以设置为禁用状态。使用 `disabled` 属性将按钮设置为禁用状态。
+
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/button" vue="../demo/button/disabled.vue"  />
+
 ## 图标按钮
 按钮可以只包含图标。使用 `icon` 属性设置图标，支持所有 Material Icons。
 

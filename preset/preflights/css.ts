@@ -140,9 +140,6 @@ const themes = {
     hover: 'var(--onl-purple-300)',
     border: 'var(--onl-purple-300)',
   },
-  disabled: {
-    DEFAULT: '#f0f0f05e',
-  },
   contextmenu: {
     DEFAULT: 'var(--onl-light-50)',
     text: 'var(--onl-dark-900)',

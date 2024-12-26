@@ -17,4 +17,5 @@ export const buttonShortcuts: Shortcut[] = [
       return base += ` hover:color-${type}-hover`
     else return base += ` hover:bg-${type}-hover`
   }],
+  ['ol-button__disabled', 'is-disabled !hover:bg-primary'],
 ]

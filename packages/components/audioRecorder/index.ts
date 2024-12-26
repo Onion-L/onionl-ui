@@ -6,3 +6,4 @@ export const OlAudioRecorder = useInstall(AudioRecorder)
 export default OlAudioRecorder
 
 export * from './src/microphone'
+export * from './src/recorder'

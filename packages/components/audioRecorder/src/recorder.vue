@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { AudioRecorderProps, AudioSource } from './recorder'
 import {
   OlButton,
   OlCard,
@@ -14,7 +15,16 @@ defineOptions({
   name: 'OlAudioRecorder',
 })
 
-const microphone = useMicrophone()
+const props = defineProps<AudioRecorderProps>()
+
+const emit = defineEmits<{
+  stop: [AudioSource]
+  error: [error: Error]
+  start: []
+  play: []
+}>()
+
+const { getMicrophonePermission, startRecording, stopRecording, saveAudio } = useMicrophone()
 const timer = ref<NodeJS.Timeout | null>(null)
 const duration = ref(0)
 const isRecording = ref(false)
@@ -27,28 +37,32 @@ async function recordStart() {
   if (isRecording.value)
     return
 
-  const mediaStream = await microphone.getMicrophonePermission()
-  microphone.startRecording(mediaStream).then((_) => {
-    if (audioBlob.value || duration.value !== 0 || audioUrl.value !== undefined) {
-      audioBlob.value = null
-      audioUrl.value = undefined
-      duration.value = 0
-    }
+  const mediaStream = await getMicrophonePermission()
+  if (audioBlob.value || duration.value !== 0 || audioUrl.value !== undefined) {
+    audioBlob.value = null
+    audioUrl.value = undefined
+    duration.value = 0
+  }
 
+  startRecording(mediaStream).then((_) => {
     isRecording.value = true
     timer.value = setInterval(() => {
       duration.value++
     }, 1000)
+    emit('start')
+  }).catch((error) => {
+    emit('error', error)
   })
 }
 
 async function recordStop() {
-  audioBlob.value = await microphone.stopRecording()
+  audioBlob.value = await stopRecording({ type: props.audioType })
   if (timer.value)
     clearInterval(timer.value)
 
   audioUrl.value = URL.createObjectURL(audioBlob.value as Blob)
   isRecording.value = false
+  emit('stop', { blob: audioBlob.value as Blob, url: audioUrl.value })
 }
 
 function formatDuration(duration: number) {
@@ -60,7 +74,6 @@ function formatDuration(duration: number) {
 function playAudio() {
   if (!audioBlob.value && !audioUrl.value)
     return
-
   if (isPlaying.value) {
     audioRef.value?.pause()
     isPlaying.value = false
@@ -69,6 +82,7 @@ function playAudio() {
     audioRef.value?.play()
     isPlaying.value = true
   }
+  emit('play')
 }
 
 onMounted(() => {
@@ -82,8 +96,32 @@ onUnmounted(() => {
 })
 
 defineExpose({
+  /**
+   * @feature Start recording
+   */
   recordStart,
+  /**
+   * @feature Stop recording
+   */
   recordStop,
+  /**
+   * @feature Play audio
+   */
+  playAudio,
+  /**
+   * @type {Blob | ArrayBuffer | null}
+   * @content Audio File
+   */
+  audioBlob: audioBlob.value,
+  /**
+   * @feature Save audio
+   */
+  saveAudio,
+  /**
+   * @type {string | undefined}
+   * @content Audio URL
+   */
+  audioUrl: audioUrl.value,
 })
 </script>
 
@@ -100,7 +138,6 @@ defineExpose({
           {{ formatDuration(duration) }}
         </div>
       </ol-card-content>
-
       <ol-card-footer>
         <div class="flex gap-2 justify-center items-center">
           <ol-button :disabled="isRecording" @click="recordStart">

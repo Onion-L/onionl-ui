@@ -7,4 +7,5 @@ export interface ButtonProps {
   to?: string
   link?: boolean
   icon?: string
+  disabled?: boolean
 }

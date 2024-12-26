@@ -53,10 +53,10 @@ export function useMicrophone() {
     mediaRecorder.start()
   }
 
-  function stopRecording(type: MediaRecorderOptions['mimeType'] = 'audio/wav'): Promise<Blob | ArrayBuffer> {
+  function stopRecording(options?: BlobPropertyBag): Promise<Blob | ArrayBuffer> {
     return new Promise((resolve) => {
       mediaRecorder.onstop = () => {
-        const audioBlob = new Blob(audioChunks, { type })
+        const audioBlob = new Blob(audioChunks, options)
         audioChunks = []
         stopMicrophone()
         resolve(audioBlob)

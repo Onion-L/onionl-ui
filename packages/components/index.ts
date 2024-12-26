@@ -1,3 +1,4 @@
+export * from './audioRecorder'
 export * from './button'
 export * from './card'
 export * from './contextMenu'

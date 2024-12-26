@@ -1,4 +1,5 @@
 import type { Plugin } from 'vue'
+import { OlAudioRecorder } from '../components/audioRecorder'
 import { OlButton } from '../components/button'
 import { OlCard, OlCardContent, OlCardFooter, OlCardHeader } from '../components/card'
 import { OlContextMenu, OlContextMenuItem } from '../components/contextMenu'
@@ -16,6 +17,7 @@ import { OlScrollbar, OlScrollSnap } from '../components/scrollbar'
 import { OlTooltip } from '../components/tooltip'
 
 export const Components = [
+  OlAudioRecorder,
   OlButton,
   OlCard,
   OlCardContent,

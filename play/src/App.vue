@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-import { OlButton } from '@onionl-ui/components'
+import { OlAudioRecorder } from '@onionl-ui/components'
 </script>
 
 <template>
-  <div class="flex gap-2 justify-center items-center">
-    <ol-button disabled>
-      Disabled
-    </ol-button>
+  <div class="w-screen h-screen flex gap-2 justify-center items-center">
+    <ol-audio-recorder />
   </div>
 </template>

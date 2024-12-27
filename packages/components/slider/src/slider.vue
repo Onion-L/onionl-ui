@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useNamespace } from '@onionl-ui/utils'
 import { ref, watch } from 'vue'
 import { MODEL_VALUE_UPDATE } from '../../constant'
 
@@ -6,18 +7,21 @@ defineOptions({
   name: 'OlSlider',
 })
 
-const { modelValue, min, max } = withDefaults(defineProps<{
+const { modelValue, min, max, step } = withDefaults(defineProps<{
   modelValue?: number
   min?: number
   max?: number
+  step?: number
 }>(), {
   modelValue: 0,
   min: 0,
   max: 100,
+  step: 1,
 })
 
 const emit = defineEmits([MODEL_VALUE_UPDATE])
 
+const ns = useNamespace('slider')
 const percentage = ref(modelValue)
 const isDragging = ref(false)
 const mouseX = ref(0)
@@ -35,7 +39,7 @@ function handleMouseMove(event: MouseEvent) {
   const sliderRect = slider.value.getBoundingClientRect()
   const { width } = sliderRect
   const sliderWidth = mouseX.value - sliderRect.left
-  percentage.value = Math.max(min, Math.min(max, Math.round((sliderWidth / width) * 100)))
+  percentage.value = Math.max(min, Math.min(max, Math.round((sliderWidth / width) * 100 / step) * step))
   emit(MODEL_VALUE_UPDATE, percentage.value)
 }
 
@@ -56,9 +60,9 @@ watch(isDragging, (dragging) => {
 </script>
 
 <template>
-  <div ref="slider" class="relative w-md h-2 bg-gray-200 rounded-md">
-    <div :style="{ width: `${percentage}%` }" class="absolute h-full bg-primary rounded-md">
-      <div class="bg-white dark:bg-gray-700 ring-primary ring-2 rounded-full w-4 h-4 absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2" @mousedown="handleMouseDown" />
+  <div ref="slider" :class="ns.namespace">
+    <div :style="{ width: `${percentage}%` }" :class="ns.e('progress')">
+      <div :class="ns.e('thumb')" @mousedown="handleMouseDown" />
     </div>
   </div>
 </template>

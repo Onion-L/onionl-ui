@@ -5,6 +5,7 @@ import { OlCard, OlCardContent, OlCardFooter, OlCardHeader } from '../components
 import { OlContextMenu, OlContextMenuItem } from '../components/contextMenu'
 import { OlFlipCard } from '../components/flipCard'
 import { OlFlipControl } from '../components/flipControl'
+import { OlGlowRing } from '../components/glowRing'
 import { OlHalo } from '../components/halo'
 import { OlIcon } from '../components/icon'
 import { OlImage } from '../components/image'
@@ -28,6 +29,7 @@ export const Components = [
   OlContextMenuItem,
   OlFlipCard,
   OlFlipControl,
+  OlGlowRing,
   OlHalo,
   OlIcon,
   OlImage,

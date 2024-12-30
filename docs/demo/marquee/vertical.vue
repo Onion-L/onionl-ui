@@ -31,7 +31,7 @@ const memes = [
 <template>
   <div class="flex gap-4">
     <ol-marquee :duration="20" vertical class="h-120">
-      <ol-card v-for="meme in memes" :key="meme.title" class="w-80 flex-shrink-0 mx-2">
+      <ol-card v-for="meme in memes" :key="meme.title" class="w-75 flex-shrink-0 mx-2">
         <ol-card-header>
           <div class="flex flex-col gap-3 dark:text-white">
             <div class="flex items-center gap-4">
@@ -48,7 +48,7 @@ const memes = [
       </ol-card>
     </ol-marquee>
     <ol-marquee :duration="20" vertical reverse class="h-120">
-      <ol-card v-for="meme in memes" :key="meme.title" class="w-80 flex-shrink-0 mx-2">
+      <ol-card v-for="meme in memes" :key="meme.title" class="w-75 flex-shrink-0 mx-2">
         <ol-card-header>
           <div class="flex flex-col gap-3 dark:text-white">
             <div class="flex items-center gap-4">

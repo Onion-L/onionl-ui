@@ -11,6 +11,7 @@ import { pixelImageShortcuts } from './pixelImage'
 import { popoverShortcuts } from './popover'
 import { progressShortcuts } from './progress'
 import { scrollbarShortcuts } from './scrollbar'
+import { sliderShortcuts } from './slider'
 
 const shortcuts: Shortcut[] = [
   ...inputShortcuts,
@@ -25,6 +26,7 @@ const shortcuts: Shortcut[] = [
   ...progressShortcuts,
   ...marqueeShortcuts,
   ...popoverShortcuts,
+  ...sliderShortcuts,
 ]
 
 export { shortcuts }

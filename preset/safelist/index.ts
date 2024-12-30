@@ -8,6 +8,7 @@ import { marqueeSafelist } from './marquee'
 import { popoverSafelist } from './popover'
 import { progressSafelist } from './progress'
 import { scrollbarSafelist } from './scrollbar'
+import { sliderSafelist } from './slider'
 
 export function getSafelist(range: number = 20) {
   return [
@@ -20,6 +21,7 @@ export function getSafelist(range: number = 20) {
     progressSafelist,
     marqueeSafelist,
     popoverSafelist,
+    sliderSafelist,
     ...getBtnSafelist(range),
   ]
 }

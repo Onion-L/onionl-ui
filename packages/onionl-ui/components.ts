@@ -14,6 +14,7 @@ import { OlPixelImage } from '../components/pixelImage'
 import { OlPopover } from '../components/popover'
 import { OlProgress } from '../components/progress'
 import { OlScrollbar, OlScrollSnap } from '../components/scrollbar'
+import { OlSlider } from '../components/slider'
 import { OlTooltip } from '../components/tooltip'
 
 export const Components = [
@@ -37,5 +38,6 @@ export const Components = [
   OlProgress,
   OlScrollbar,
   OlScrollSnap,
+  OlSlider,
   OlTooltip,
 ] as Plugin[]

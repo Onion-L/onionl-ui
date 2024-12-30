@@ -26,6 +26,7 @@ const FormInteractionItems = [
   { text: 'Button 按钮', link: '/components/button' },
   { text: 'Contextmenu 右键菜单', link: '/components/contextmenu' },
   { text: 'Input 输入框', link: '/components/input' },
+  { text: 'Slider 滑块', link: '/components/slider' },
 ]
 
 const Components = [

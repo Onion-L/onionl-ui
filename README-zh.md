@@ -8,6 +8,9 @@
 [![NPM version](https://img.shields.io/npm/v/onionl-ui.svg)](https://npmjs.org/package/onionl-ui)
 [![Coverage](https://img.shields.io/codecov/c/github/Onion-L/onionl-ui)](https://codecov.io/gh/Onion-L/onionl-ui)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
+[![License](https://img.shields.io/github/license/Onion-L/onionl-ui)](https://github.com/Onion-L/onionl-ui/blob/main/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Onion-L/onionl-ui.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/Onion-L/onionl-ui/commits/main)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Onion-L/onionl-ui?style=flat-square&logo=github&logoColor=white)](https://github.com/Onion-L/onionl-ui/graphs/commit-activity)
 
 中文 | [English](./README.md)
 </div>

@@ -25,6 +25,7 @@ const modules = [
   'OlPopover',
   'OlTooltip',
   'OlSlider',
+  'OlText3D',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

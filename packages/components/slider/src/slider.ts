@@ -4,4 +4,5 @@ export interface SliderProps {
   max?: number
   step?: number
   vertical?: boolean
+  disabled?: boolean
 }

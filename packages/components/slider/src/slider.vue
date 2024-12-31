@@ -14,6 +14,7 @@ const {
   max = 100,
   step = 1,
   vertical = false,
+  disabled = false,
 } = defineProps<SliderProps>()
 
 const emit = defineEmits([MODEL_VALUE_UPDATE])
@@ -21,11 +22,12 @@ const emit = defineEmits([MODEL_VALUE_UPDATE])
 const ns = useNamespace('slider')
 const percentage = ref(modelValue)
 const isDragging = ref(false)
+const isHovering = ref(false)
 const newPosition = ref(0)
 
 const slider = ref<HTMLDivElement | null>(null)
 
-const silderCls = computed(() => {
+const sliderCls = computed(() => {
   return vertical ? ns.m('vertical') : ns.namespace
 })
 
@@ -33,12 +35,8 @@ const sliderStyle = computed(() => {
   return vertical ? { height: `${percentage.value}%` } : { width: `${percentage.value}%` }
 })
 
-function handleMouseDown() {
-  isDragging.value = true
-}
-
 function handleMouseMove(event: MouseEvent) {
-  if (!slider.value)
+  if (!slider.value || disabled)
     return
 
   newPosition.value = vertical ? event.clientY : event.clientX
@@ -57,7 +55,29 @@ function handleMouseMove(event: MouseEvent) {
 }
 
 function handleMouseUp() {
+  if (disabled)
+    return
+  isHovering.value = true
   isDragging.value = false
+}
+
+function handleMouseLeave() {
+  if (disabled)
+    return
+  isHovering.value = false
+}
+
+function handleMouseEnter() {
+  if (disabled)
+    return
+  isHovering.value = true
+}
+
+function handleMouseDown() {
+  if (disabled)
+    return
+  isHovering.value = false
+  isDragging.value = true
 }
 
 watch(isDragging, (dragging) => {
@@ -73,9 +93,21 @@ watch(isDragging, (dragging) => {
 </script>
 
 <template>
-  <div ref="slider" :class="silderCls">
-    <div :style="sliderStyle" :class="vertical ? ns.em('progress', 'vertical') : ns.e('progress')">
-      <div :class="vertical ? ns.em('thumb', 'vertical') : ns.e('thumb')" @mousedown="handleMouseDown" />
+  <div ref="slider" :class="sliderCls">
+    <div
+      :style="sliderStyle"
+      :class="[vertical ? ns.em('progress', 'vertical') : ns.e('progress'),
+               disabled ? ns.em('progress', 'disabled') : '']"
+    >
+      <div
+        :class="[vertical ? ns.em('thumb', 'vertical') : ns.e('thumb'),
+                 isHovering ? ns.em('thumb', 'hover') : '',
+                 isDragging ? ns.em('thumb', 'drag') : '',
+                 disabled ? ns.em('thumb', 'disabled') : '']"
+        @mousedown="handleMouseDown"
+        @mouseenter="handleMouseEnter"
+        @mouseleave="handleMouseLeave"
+      />
     </div>
   </div>
 </template>

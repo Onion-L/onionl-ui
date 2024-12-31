@@ -7,4 +7,6 @@ export const sliderShortcuts: Shortcut[] = [
   ['ol-slider__progress--vertical', 'absolute w-full bg-primary rounded-md bottom-0'],
   ['ol-slider__thumb', 'bg-white dark:bg-gray-700 ring-primary ring-2 rounded-full w-4 h-4 absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2'],
   ['ol-slider__thumb--vertical', 'bg-white dark:bg-gray-700 ring-primary ring-2 rounded-full w-4 h-4 absolute top-0 -right-1/2 -translate-y-1/2 translate-x-0'],
+  ['ol-slider__thumb--hover', 'cursor-grab'],
+  ['ol-slider__thumb--drag', 'cursor-grabbing'],
 ]

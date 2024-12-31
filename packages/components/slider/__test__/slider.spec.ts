@@ -24,6 +24,17 @@ describe('olSlider', () => {
     expect(wrapper.vm.$props.max).toBe(90)
   })
 
+  it('should set disabled status correctly', () => {
+    const wrapper = mount(OlSlider, {
+      props: {
+        disabled: true,
+      },
+    })
+    const thumb = wrapper.find('.ol-slider__thumb')
+
+    expect(thumb.classes()).toContain('ol-slider__thumb--disabled')
+  })
+
   it('should add correct classes when interacting with the slider', async () => {
     const wrapper = mount(OlSlider, {
       props: {

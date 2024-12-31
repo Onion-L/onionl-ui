@@ -18,4 +18,3 @@
 | step | 步长 | `number` | `1` |
 | vertical | 是否垂直模式 | `boolean` | `false` |
 | disabled | 是否禁用滑块 | `boolean` | `false` |
-

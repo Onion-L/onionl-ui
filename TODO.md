@@ -22,6 +22,7 @@
 - [x] Scrollbar (滚动条)
 - [x] Popover (弹出框)
 - [x] Tooltip (提示框)
+- [x] Text3D (3D文字)
 
 ## 待开发组件
 

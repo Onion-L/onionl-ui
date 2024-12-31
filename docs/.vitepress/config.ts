@@ -19,6 +19,7 @@ const ContentDisplayItems = [
   { text: 'Popover 弹出框', link: '/components/popover' },
   { text: 'Progress 进度条', link: '/components/progress' },
   { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
+  { text: 'Text3D 3D文字', link: '/components/text3d' },
   { text: 'Tooltip 文字提示', link: '/components/tooltip' },
 ]
 

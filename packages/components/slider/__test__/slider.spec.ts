@@ -84,7 +84,6 @@ describe('olSlider', () => {
     expect(wrapper.classes()).toContain('ol-slider--vertical')
   })
 
-  
   it('should emit update:modelValue event when dragging', async () => {
     const wrapper = mount(OlSlider, {
       props: {
@@ -92,7 +91,7 @@ describe('olSlider', () => {
       },
     })
     const thumb = wrapper.find('.ol-slider__thumb')
-    
+
     await thumb.trigger('mousedown')
 
     const moveEvent = new MouseEvent('mousemove', {
@@ -100,7 +99,7 @@ describe('olSlider', () => {
       bubbles: true,
     })
     document.dispatchEvent(moveEvent)
-    
+
     expect(wrapper.emitted('update:modelValue')).toBeTruthy()
   })
 })

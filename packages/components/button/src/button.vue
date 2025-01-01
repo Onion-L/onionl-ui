@@ -14,6 +14,8 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   size: 'sm',
 })
 
+const emit = defineEmits(['click'])
+
 const ns = useNamespace('button')
 
 const defaultBtn = clsx('ol-button')
@@ -27,6 +29,12 @@ const customeStyles = computed(() => {
   const typeCls = props.type ? `ol-button__type-${props.type}` : ''
   return clsx(defaultBtn, sizeCls, typeCls)
 })
+
+function handleClick(e: MouseEvent) {
+  if (props.disabled)
+    return
+  emit('click', e)
+}
 </script>
 
 <template>
@@ -34,6 +42,7 @@ const customeStyles = computed(() => {
     :is="to ? 'a' : 'button'"
     :href="to"
     :class="[customeStyles, { [ns.e('disabled')]: disabled }]"
+    @click="handleClick"
   >
     <ol-icon v-if="icon" :class="icon" />
     <span>

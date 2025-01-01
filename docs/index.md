@@ -3,36 +3,36 @@ layout: home
 
 hero:
   name: Onionl UI
-  text: 现代化的 Vue 3 轻量级组件库
-  tagline: 为高性能应用打造的下一代组件解决方案
+  text: Modern Vue 3 Component Library
+  tagline: The Next Generation Component Solution for High-Performance Applications
   image:
     src: /logo.svg
     alt: onionl-ui
   actions:
     - theme: brand
-      text: 开始使用
+      text: Get Started
       link: /guide/getting-started
     - theme: alt
-      text: 在 GitHub 上查看
+      text: View on GitHub
       link: https://github.com/Onion-L/onionl-ui
 
 features:
   - icon: ⚡️
-    title: 高性能设计
-    details: 基于 Vue 3.5+ 构建，支持按需引入，最小化运行时开销
+    title: High Performance
+    details: Built on Vue 3.5+, supports tree-shaking and minimal runtime overhead
   - icon: 🔑
-    title: 类型安全
-    details: TypeScript 5.6+ 支持，完整的类型定义，提供最佳开发体验
+    title: Type Safe
+    details: TypeScript 5.6+ support with complete type definitions for the best development experience
   - icon: 🧩
-    title: 模块化架构
-    details: 核心组件、工具函数、预设配置分包设计，灵活组合按需使用
+    title: Modular Architecture
+    details: Core components, utility functions, and preset configurations with flexible combination
   - icon: 🛠️
-    title: 企业级支持
-    details: 完整的 Composition API 支持，适配现代企业应用开发需求
+    title: Enterprise Ready
+    details: Complete Composition API support, suitable for modern enterprise application development
   - icon: 📦
-    title: 开箱即用
-    details: 基于 Vite 和 pnpm workspace 的现代化开发体验
+    title: Ready to Use
+    details: Modern development experience based on Vite and pnpm workspace
   - icon: 🎨
-    title: 主题定制
-    details: 灵活的主题配置系统，轻松打造专属组件风格
+    title: Theme Customization
+    details: Flexible theme configuration system for creating your own component style
 ---

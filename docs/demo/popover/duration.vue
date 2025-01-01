@@ -8,7 +8,7 @@
     <ol-card class="border-none">
       <ol-card-header class="flex flex-col gap-2 p-1">
         <p class="!m-0 text-sm dark:text-gray-300 text-gray-600">
-          我快如闪电
+          I am as fast as lightning
         </p>
       </ol-card-header>
     </ol-card>

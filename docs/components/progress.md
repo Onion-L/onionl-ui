@@ -1,41 +1,41 @@
-# Progress 进度条
+# Progress
 
-用于展示操作的当前进度。
+Used to display the current progress of an operation.
 
-## 基础用法
+## Basic Usage
 
-通过 `value` 属性设置进度条百分比。
+Set the progress bar percentage through the `value` property.
 
 <demo vue="../demo/progress/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/progress" />
 
-## 显示标签
+## Displaying Labels
 
-设置 `label` 属性可以在进度条右侧显示百分比标签。
+Setting the `label` property can display a percentage label on the right side of the progress bar.
 
-  <ol-progress class="w-70 h-2" :value="50" label />
+<demo vue="../demo/progress/label.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/progress" />
 
-## 反向进度条
+## Reverse Progress Bar
 
-设置 `reverse` 属性可以使进度条从右向左展示。
+Setting the `reverse` property can make the progress bar display from right to left.
 
 <demo vue="../demo/progress/reverse.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/progress" />
 
-## 自定义标签内容
+## Customizing Label Content
 
-通过 `label` 插槽可以自定义标签内容。
+The `label` slot can be used to customize the label content.
 
 <demo vue="../demo/progress/slot.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/progress" />
 
-### 属性
+### Properties
 
-| 属性名 | 说明 | 类型 | 默认值 |
-|--------|------|------|---------|
-| value | 进度百分比 | `number` | `0` |
-| reverse | 是否反向 | `boolean` | `false` |
-| label | 是否显示标签 | `boolean` | `false` |
+| Property Name | Description | Type | Default Value |
+|---------------|-------------|------|----------------|
+| value | Progress percentage | `number` | `0` |
+| reverse | Whether to reverse | `boolean` | `false` |
+| label | Whether to display labels | `boolean` | `false` |
 
-### 插槽
+### Slots
 
-| 插槽名 | 说明 |
-|--------|------|
-| label | 自定义标签内容 |
+| Slot Name | Description |
+|-----------|-------------|
+| label | Custom label content |

@@ -1,49 +1,49 @@
-# Popover 弹出框
+# Popover
 
-弹出框组件用于在元素周围显示一些临时信息。当用户与触发元素交互时（点击或悬停），弹出框会在指定位置显示内容。
+The popover component is used to display temporary information around an element. When the user interacts with the trigger element (click or hover), the popover will display the content at the specified position.
 
-## 基础用法
+## Basic Usage
 
-最基础的弹出框用法。
+The most basic usage of the popover.
 
 <demo vue="../demo/popover/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/popover" />
 
-## 触发方式
+## Trigger Method
 
-使用 `trigger` 插槽来定义触发元素，弹出框内容可以是任意自定义内容。
+Use the `trigger` slot to define the trigger element, and the popover content can be any custom content.
 
 <demo vue="../demo/popover/trigger.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/popover" />
 
-## 箭头和位置
+## Arrow and Position
 
-使用 `placement` 属性来定义弹出框的位置，使用 `arrow` 属性来定义是否显示箭头。
+Use the `placement` property to define the position of the popover, and use the `arrow` property to define whether the arrow is displayed.
 
 <demo vue="../demo/popover/arrow.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/popover" />
 
-## 动画时间
+## Animation Time
 
-使用 `duration` 属性来定义弹出框的动画时间。
+Use the `duration` property to define the animation time of the popover.
 
 <demo vue="../demo/popover/duration.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/popover" />
 
-## 偏移
+## Offset
 
-使用 `offset` 属性来定义弹出框的偏移量。
+Use the `offset` property to define the offset of the popover.
 
 <demo vue="../demo/popover/offset.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/popover" />
 
-## 属性
+## Properties
 
-| 参数 | 说明 | 类型 | 默认值 |
+| Property | Description | Type | Default |
 |------|------|------|--------|
-| trigger | 触发方式 | `'hover' \| 'click' \| 'focus'` | `'click'` |
-| placement | 弹出位置 | `'top' \| 'bottom' \| 'left' \| 'right'` | `'bottom'` |
-| arrow | 是否显示箭头 | `boolean` | `false` |
-| duration | 动画持续时间(ms) | `number` | `200` |
+| trigger | Trigger method | `'hover' \| 'click' \| 'focus'` | `'click'` |
+| placement | Popover position | `'top' \| 'bottom' \| 'left' \| 'right'` | `'bottom'` |
+| arrow | Whether to display the arrow | `boolean` | `false` |
+| duration | Animation duration (ms) | `number` | `200` |
 
-### 插槽
+### Slots
 
-| 插槽名 | 说明 |
+| Slot Name | Description |
 |--------|------|
-| trigger | 触发元素 |
-| default | 弹出框内容 |
+| trigger | Trigger element |
+| default | Popover content |

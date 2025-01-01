@@ -1,25 +1,25 @@
-# Marquee 跑马灯
+# Marquee
 
-跑马灯组件用于创建循环滚动的文本或内容展示效果。
+The marquee component is used to create a looping scrolling text or content display effect.
 
-## 基础用法
+## Basic Usage
 
-通过默认插槽传入需要滚动的内容。
+Pass the content to be scrolled through the default slot.
 
 <demo vue="../demo/marquee/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/marquee" />
 
-## 垂直滚动
+## Vertical Scrolling
 
-设置 `vertical` 属性可以实现垂直方向的滚动。
+Setting the `vertical` attribute can achieve vertical scrolling.
 
 <demo vue="../demo/marquee/vertical.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/marquee" />
 
-## 属性
+## Properties
 
-| 属性名 | 说明 | 类型 | 默认值 |
+| Property | Description | Type | Default |
 |--------|------|------|---------|
-| duration | 滚动一次所需时间(秒) | `number` | `20` |
-| reverse | 是否反向滚动 | `boolean` | `false` |
-| gap | 滚动内容之间的间距 | `string` | `'8px'` |
-| height | 组件高度 | `string` | `'100%'` |
-| vertical | 是否垂直滚动 | `boolean` | `false` |
+| duration | Time required for one scroll (seconds) | `number` | `20` |
+| reverse | Whether to scroll in reverse | `boolean` | `false` |
+| gap | Spacing between scrolling content | `string` | `'8px'` |
+| height | Component height | `string` | `'100%'` |
+| vertical | Whether to scroll vertically | `boolean` | `false` |

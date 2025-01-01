@@ -1,18 +1,18 @@
-# Card 卡片
+ # Card
 
-卡片组件用于以统一的格式展示相关内容和操作。
+The card component is used to display related content and operations in a unified format.
 
-## 基础用法
+## Basic Usage
 
-最基本的卡片组件包含标题、内容和底部操作区域。
+The most basic card component includes a title, content, and a bottom operation area.
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/docs/packages/components/card" vue="../demo/card/card.vue"  />
 
-## 组件结构
+## Component Structure
 
-Card组件由以下几个部分组成：
+The Card component consists of the following parts:
 
-- `<ol-card>`: 卡片的容器组件
-- `<ol-card-header>`: 卡片的头部区域
-- `<ol-card-content>`: 卡片的主要内容区域
-- `<ol-card-footer>`: 卡片的底部区域
+- `<ol-card>`: The container component of the card
+- `<ol-card-header>`: The header area of the card
+- `<ol-card-content>`: The main content area of the card
+- `<ol-card-footer>`: The bottom area of the card

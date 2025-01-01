@@ -1,45 +1,45 @@
-# Text3D 文字立体效果
+# Text3D 3D Text Effect
 
-用于创建具有 3D 立体感的文字效果。
+Used to create a 3D text effect.
 
-## 基础用法
+## Basic Usage
 
-设置 `text` 属性来指定显示的文字内容。
+Set the `text` property to specify the text content to be displayed.
 
 <demo vue="../demo/text3d/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/text3d" />
 
-## 自定义层级
+## Customizing Layers
 
-通过 `layer` 属性设置阴影的层数，数值越大立体感越强。
+Set the `layer` property to specify the number of layers for the shadow, with a larger number resulting in a stronger 3D effect.
 
 <demo vue="../demo/text3d/layer.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/text3d" />
 
-## 方向控制
+## Direction Control
 
-使用 `direction` 属性控制立体效果的方向，支持 `top-left`、`top-right`、`bottom-left`、`bottom-right` 四个方向。
+Use the `direction` property to control the direction of the 3D effect, supporting `top-left`, `top-right`, `bottom-left`, and `bottom-right` directions.
 
 <demo vue="../demo/text3d/direction.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/text3d" />
 
-## 模糊效果
+## Blur Effect
 
-添加 `blur` 属性来启用阴影的模糊效果。
+Add the `blur` property to enable the blur effect for the shadow.
 
 <demo vue="../demo/text3d/blur.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/text3d" />
 
-## 自定义样式
+## Customizing Styles
 
-可以通过 `color`、`shadowColor` 和 `letterSpacing` 属性来自定义文字样式。
+You can customize the text style through the `color`, `shadowColor`, and `letterSpacing` properties.
 
 <demo vue="../demo/text3d/style.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/text3d" />
 
-## 属性
+## Properties
 
-| 属性名 | 说明 | 类型 | 默认值                |
+| Property Name | Description | Type | Default Value                |
 |--------|------|------|---------------------------|
-| text | 显示的文字内容 | `string` | `—`                   |
-| color | 文字颜色 | `string` | `var(--onl-primary)` |
-| shadowColor | 阴影颜色 | `string` | `var(--onl-purple-900)` |
-| layer | 立体效果的层数 | `number` | `5`                  |
-| letterSpacing | 字间距 | `string` | `'0'`                |
-| direction | 立体效果的方向 | `'top-left' \| 'top-right' \| 'bottom-left' \| 'bottom-right'` | `—`                   |
-| blur | 是否启用模糊效果 | `boolean` | `false`              |
+| text | Text content to be displayed | `string` | `—`                   |
+| color | Text color | `string` | `var(--onl-primary)` |
+| shadowColor | Shadow color | `string` | `var(--onl-purple-900)` |
+| layer | Number of layers for the 3D effect | `number` | `5`                  |
+| letterSpacing | Letter spacing | `string` | `'0'`                |
+| direction | Direction of the 3D effect | `'top-left' \| 'top-right' \| 'bottom-left' \| 'bottom-right'` | `—`                   |
+| blur | Whether to enable the blur effect | `boolean` | `false`              |

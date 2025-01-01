@@ -1,10 +1,10 @@
 <template>
   <div class="space-x-2">
     <ol-button class="!color-primary !no-underline !hover:underline" to="/">
-      路由链接
+      Router-Link
     </ol-button>
     <ol-button link>
-      链接样式
+      Link
     </ol-button>
   </div>
 </template>

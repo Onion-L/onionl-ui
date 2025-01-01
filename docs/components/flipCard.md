@@ -1,18 +1,18 @@
-# FlipCard 翻转卡片
+# FlipCard Flip Card
 
-FlipCard 组件提供了一个可以翻转的卡片界面，支持正反两面内容的展示。
+The FlipCard component provides a flipable card interface, supporting the display of content on both sides.
 
-## 基础用法
+## Basic Usage
 
-通过 `flipped` 属性控制卡片的翻转状态，使用 `front` 和 `back` 属性分别设置正反面的内容。
+Control the flip state of the card using the `flipped` property, and set the content of both sides using the `front` and `back` properties respectively.
 
 <demo vue="../demo/flipCard/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/flipCard" />
 
-## 属性
+## Properties
 
-| 属性名 | 类型 | 默认值 | 说明 |
-|--------|------|--------|------|
-| flipped | `boolean` | `false` | 控制卡片是否翻转 |
-| class | `string \| object \| array` | - | 自定义 class |
-| front | `Component` | - | 卡片正面显示的组件 |
-| back | `Component` | - | 卡片背面显示的组件 |
+| Property Name | Type | Default Value | Description |
+|---------------|------|--------------|-------------|
+| flipped | `boolean` | `false` | Controls whether the card is flipped |
+| class | `string \| object \| array` | - | Custom class |
+| front | `Component` | - | Component displayed on the front of the card |
+| back | `Component` | - | Component displayed on the back of the card |

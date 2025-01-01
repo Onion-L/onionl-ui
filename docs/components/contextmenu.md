@@ -1,10 +1,10 @@
-# 右键菜单
+# Context Menu
 
-## 基础用法
+## Basic Usage
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/contextMenu" vue="../demo/contextmenu/basic.vue"  />
-## 属性
+## Properties
 
-| 属性名 | 说明 | 类型 | 默认值 |
+| Property Name | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| target | 菜单目标 | `HTMLElement` | - |
+| target | Menu target | `HTMLElement` | - |

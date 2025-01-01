@@ -1,28 +1,28 @@
-# Scrollbar 滚动条
+# Scrollbar
 
-自定义滚动条组件，提供更好的滚动体验。
+Custom scrollbar component, providing a better scrolling experience.
 
-## 基础用法
+## Basic Usage
 
-通过设置 `height` 属性来控制滚动区域的高度。
+Control the height of the scrolling area by setting the `height` property.
 
 <demo vue="../demo/scrollbar/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/scrollbar" />
 
-## 滚动捕捉
+## Scroll Snap
 
-结合 `ol-scroll-snap` 组件，可以实现滚动捕捉效果。设置 `snap` 属性为 `both`、`x`、`y` 可以在水平和垂直方向都启用滚动捕捉。
+Combining with the `ol-scroll-snap` component, scroll snap effect can be achieved. Setting the `snap` property to `both`, `x`, or `y` enables scroll snap in both horizontal and vertical directions.
 
 <demo vue="../demo/scrollbar/snap.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/scrollbar" />
 
-### Scrollbar 属性
+### Scrollbar Properties
 
-| 属性名 | 说明 | 类型 | 默认值 |
+| Property Name | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| height | 滚动区域的高度 | `string \| number` | - |
-| snap | 滚动捕捉方向，可选值为 `x`、`y`、`both` | `string` | - |
+| height | Height of the scrolling area | `string \| number` | - |
+| snap | Scroll snap direction, optional values are `x`, `y`, `both` | `string` | - |
 
-### ScrollSnap 属性
+### ScrollSnap Properties
 
-| 属性名 | 说明 | 类型 | 默认值 |
+| Property Name | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| align | 滚动捕捉的对齐方式，可选值为 `start`、`center`、`end` | `string` | `center` |
+| align | Alignment of scroll snap, optional values are `start`, `center`, `end` | `string` | `center` |

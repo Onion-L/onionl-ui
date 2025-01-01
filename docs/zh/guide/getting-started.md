@@ -1,8 +1,8 @@
-# Getting Started
+# 快速开始
 
-## Installation
+## 安装
 
-Install OnionlUI using your preferred package manager
+使用包管理器安装 OnionlUI
 
 ```bash
 # NPM
@@ -15,9 +15,9 @@ yarn add onionl-ui
 pnpm add onionl-ui
 ```
 
-## Usage
+## 使用
 
-### Full Import
+### 完整引入
 
 ```ts
 import OnionlUI from 'onionl-ui'
@@ -30,7 +30,7 @@ app.use(OnionlUI)
 app.mount('#app')
 ```
 
-### On-demand Import
+### 按需引入
 
 ```ts
 import { Button, Card } from 'onionl-ui'
@@ -44,4 +44,4 @@ app.use(Card)
 app.mount('#app')
 ```
 
-Now you can start using OnionlUI! Please check each component's documentation for more usage details.
+现在你可以开始使用 OnionlUI 了！请查看每个组件的文档了解更多使用细节。

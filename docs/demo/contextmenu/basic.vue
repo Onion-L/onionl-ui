@@ -6,13 +6,13 @@ const section = ref(null)
 
 <template>
   <div ref="section" class="w-full h-400px rounded-md bg-primary p-4 text-center text-size-18px line-height-400px">
-    在此右键打开菜单
+    Right-click here to open the menu
   </div>
 
   <ol-context-menu :target="section">
-    <ol-context-menuItem>复制</ol-context-menuItem>
-    <ol-context-menuItem>粘贴</ol-context-menuItem>
-    <ol-context-menuItem>剪切</ol-context-menuItem>
-    <ol-context-menuItem>删除</ol-context-menuItem>
+    <ol-context-menuItem>Copy</ol-context-menuItem>
+    <ol-context-menuItem>Paste</ol-context-menuItem>
+    <ol-context-menuItem>Cut</ol-context-menuItem>
+    <ol-context-menuItem>Delete</ol-context-menuItem>
   </ol-context-menu>
 </template>

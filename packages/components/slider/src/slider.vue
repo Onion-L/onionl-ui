@@ -22,7 +22,6 @@ const emit = defineEmits([MODEL_VALUE_UPDATE])
 const ns = useNamespace('slider')
 const percentage = ref(modelValue)
 const isDragging = ref(false)
-const isHovering = ref(false)
 const newPosition = ref(0)
 
 const slider = ref<HTMLDivElement | null>(null)
@@ -57,26 +56,12 @@ function handleMouseMove(event: MouseEvent) {
 function handleMouseUp() {
   if (disabled)
     return
-  isHovering.value = true
   isDragging.value = false
-}
-
-function handleMouseLeave() {
-  if (disabled)
-    return
-  isHovering.value = false
-}
-
-function handleMouseEnter() {
-  if (disabled)
-    return
-  isHovering.value = true
 }
 
 function handleMouseDown() {
   if (disabled)
     return
-  isHovering.value = false
   isDragging.value = true
 }
 
@@ -101,12 +86,9 @@ watch(isDragging, (dragging) => {
     >
       <div
         :class="[vertical ? ns.em('thumb', 'vertical') : ns.e('thumb'),
-                 isHovering ? ns.em('thumb', 'hover') : '',
                  isDragging ? ns.em('thumb', 'drag') : '',
                  disabled ? ns.em('thumb', 'disabled') : '']"
         @mousedown="handleMouseDown"
-        @mouseenter="handleMouseEnter"
-        @mouseleave="handleMouseLeave"
       />
     </div>
   </div>

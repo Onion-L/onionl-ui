@@ -47,18 +47,10 @@ describe('olSlider', () => {
     })
     const thumb = wrapper.find('.ol-slider__thumb')
 
-    expect(thumb.classes()).not.toContain('ol-slider__thumb--hover')
     expect(thumb.classes()).not.toContain('ol-slider__thumb--drag')
-
-    await thumb.trigger('mouseenter')
-    expect(thumb.classes()).toContain('ol-slider__thumb--hover')
-
-    await thumb.trigger('mouseleave')
-    expect(thumb.classes()).not.toContain('ol-slider__thumb--hover')
 
     await thumb.trigger('mousedown')
     expect(thumb.classes()).toContain('ol-slider__thumb--drag')
-    expect(thumb.classes()).not.toContain('ol-slider__thumb--hover')
   })
 
   it('should set percentage style based on modelValue', () => {

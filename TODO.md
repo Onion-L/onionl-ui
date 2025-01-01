@@ -1,44 +1,37 @@
-# Onionl-UI 待办事项列表
+# Onionl-UI Components
 
-> 专注于内容展示和视觉交互增强的组件库
+> UI component library focused on content display and visual interaction enhancement
 
-## 已开发组件
-
-### 基础交互组件 (Basic Interaction Components)
-- [x] Button (按钮)
-- [x] Contextmenu (右键菜单)
-- [x] Input (输入框)
-
-### 视觉交互组件 (Visual Interaction Components)
-- [x] FlipCard (翻转卡片)
-- [x] Halo (光晕背景)
-- [x] Image (图片)
-- [x] PixelImage (像素图片)
-
-### 内容展示组件 (Content Display Components)
-- [x] Card (卡片)
-- [x] Marquee (跑马灯)
-- [x] Progress (进度条)
-- [x] Scrollbar (滚动条)
-- [x] Popover (弹出框)
-- [x] Tooltip (提示框)
-- [x] Text3D (3D文字)
-
-## 待开发组件
-
-- [ ] DynamicList (动态列表)
-- [ ] ImageViewer (图片查看器)
-- [ ] Avatar (头像)
-- [ ] Timeline (时间轴)
-- [ ] Statistic (统计)
-- [ ] VideoPlayer (视频播放器)
-- [ ] AudioPlayer (音频播放器)
-- [ ] Skeleton (骨架屏)
-- [ ] Empty (空状态)
-- [ ] Modal (弹窗)
-- [ ] Drawer (抽屉)
-- [ ] Message (消息)
-- [ ] Notification (通知)
-- [ ] Alert (警告)
-- [ ] Confirm (确认)
-<!-- TODO 待开发组件探讨-->
+- [ ] Accordion
+- [ ] Avatar
+- [ ] Badge
+- [x] Button
+- [ ] Calendar
+- [x] Card
+- [ ] Card3D
+- [ ] Carousel
+- [ ] Checkbox
+- [ ] ColorPicker
+- [x] Contextmenu
+- [ ] DatePicker
+- [ ] Dialog
+- [ ] Drawer
+- [ ] DynamicList
+- [x] FlipCard
+- [x] Halo
+- [x] Image
+- [x] Input
+- [x] Marquee
+- [ ] MatrixRain
+- [ ] Menu
+- [x] PixelImage
+- [x] Popover
+- [x] Progress
+- [ ] Radio
+- [x] Scrollbar
+- [x] Slider
+- [ ] Switch
+- [ ] Table
+- [ ] Tabs
+- [x] Text3D
+- [x] Tooltip

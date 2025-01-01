@@ -99,20 +99,22 @@ Example: `feat: add new component`
 npm install
 ```
 
-2. Start development server:
+2. Build project:
+```bash
+npm run build
+```
+
+3. Start development server:
 ```bash
 npm run dev
 ```
 
-3. Run tests:
+4. Run tests:
 ```bash
 npm run test
 ```
 
-4. Build project:
-```bash
-npm run build
-```
+> Note: Component development depends on UnoCSS Preset, please start the play project after completing the build command
 
 ## Pull Request Process
 
@@ -129,4 +131,4 @@ If you need help during the contribution process:
 - Ask questions in issues
 - Contact project maintainers
 
-Thank you again for your contribution!
+Thank you again for your contribution✨

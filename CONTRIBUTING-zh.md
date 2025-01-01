@@ -99,20 +99,22 @@ commit 信息请遵循以下格式：
 npm install
 ```
 
-2. 启动开发服务器：
+2. 构建项目：
+```bash
+npm run build
+```
+
+3. 启动开发服务器：
 ```bash
 npm run dev
 ```
 
-3. 运行测试：
+4. 运行测试：
 ```bash
 npm run test
 ```
 
-4. 构建项目：
-```bash
-npm run build
-```
+> 注意：组件开发依赖于 UnoCSS Preset，请在完成构建命令后再启动 play 项目
 
 ## Pull Request 流程
 
@@ -129,4 +131,4 @@ npm run build
 - 在 issue 中提问
 - 联系项目维护者
 
-再次感谢你的贡献！
+再次感谢你的贡献✨

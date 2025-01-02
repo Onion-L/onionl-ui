@@ -5,3 +5,15 @@ export function isEmpty(value: any) {
 export function isNumberString(value: string | number) {
   return !Number.isNaN(Number(value))
 }
+
+export function isNumber(value: any) {
+  return typeof value === 'number'
+}
+
+export function isString(value: any) {
+  return typeof value === 'string'
+}
+
+export function isBoolean(value: any) {
+  return typeof value === 'boolean'
+}

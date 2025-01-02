@@ -1,16 +1,12 @@
 <script lang="ts" setup>
-import { OlText3D } from '@onionl-ui/components'
+import { OlSwitch } from '@onionl-ui/components'
+import { ref } from 'vue'
+
+const checked = ref(false)
 </script>
 
 <template>
   <div class="w-screen h-screen flex gap-2 justify-center items-center">
-    <OlText3D
-      class="text-100px font-extrabold"
-      text="Onionl UI"
-      :layer="10"
-      letter-spacing="10px"
-      direction="bottom-left"
-      blur
-    />
+    <ol-switch v-model="checked" />
   </div>
 </template>

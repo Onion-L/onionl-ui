@@ -12,6 +12,7 @@ import { popoverShortcuts } from './popover'
 import { progressShortcuts } from './progress'
 import { scrollbarShortcuts } from './scrollbar'
 import { sliderShortcuts } from './slider'
+import { switchShortcuts } from './switch'
 
 const shortcuts: Shortcut[] = [
   ...inputShortcuts,
@@ -27,6 +28,7 @@ const shortcuts: Shortcut[] = [
   ...marqueeShortcuts,
   ...popoverShortcuts,
   ...sliderShortcuts,
+  ...switchShortcuts,
 ]
 
 export { shortcuts }

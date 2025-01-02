@@ -43,6 +43,7 @@ export function useNamespace(name: string) {
   const bem = (block: string, element: string, modifier: string) => block && element && modifier
     ? _bem(namespace, block, element, modifier)
     : ''
+  const disabled = () => 'is-disabled'
 
   return {
     namespace,
@@ -53,5 +54,6 @@ export function useNamespace(name: string) {
     bm,
     em,
     bem,
+    disabled,
   }
 }

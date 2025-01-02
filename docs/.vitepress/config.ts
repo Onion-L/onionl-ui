@@ -28,6 +28,8 @@ const FormInteractionItems = [
   { text: 'Contextmenu', link: '/components/contextmenu' },
   { text: 'Input', link: '/components/input' },
   { text: 'Slider', link: '/components/slider' },
+  { text: 'Switch', link: '/components/switch' },
+
 ]
 
 const Components = [
@@ -75,6 +77,7 @@ const FormInteractionItemsZh = [
   { text: 'Contextmenu 右键菜单', link: '/zh/components/contextmenu' },
   { text: 'Input 输入框', link: '/zh/components/input' },
   { text: 'Slider 滑块', link: '/zh/components/slider' },
+  { text: 'Switch 开关', link: '/zh/components/switch' },
 ]
 
 const ComponentsZh = [

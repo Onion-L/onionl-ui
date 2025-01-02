@@ -3,6 +3,10 @@ import { CHANGE_EVENT, CLICK_EVENT, MODEL_VALUE_UPDATE } from '@onionl-ui/compon
 import { isBoolean } from '@onionl-ui/utils'
 
 export const SwitchProps = {
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
   disabled: {
     type: Boolean,
     default: false,

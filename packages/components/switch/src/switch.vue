@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { CHANGE_EVENT, CLICK_EVENT, MODEL_VALUE_UPDATE } from '@onionl-ui/components/constant'
 import { useNamespace } from '@onionl-ui/utils'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { SwitchEmits, SwitchProps } from './switch'
 
 defineOptions({
@@ -13,6 +13,10 @@ const emit = defineEmits(SwitchEmits)
 const { beforeSwitch } = props
 const ns = useNamespace('switch')
 const isChecked = ref(props.checked)
+
+watch(() => props.modelValue, (value) => {
+  isChecked.value = value
+})
 
 const switchCls = computed(() => [
   { [ns.e('checked')]: isChecked.value },

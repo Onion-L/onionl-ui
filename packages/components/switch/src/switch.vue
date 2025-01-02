@@ -1,30 +1,33 @@
 <script lang="ts" setup>
-import { MODEL_VALUE_UPDATE } from '@onionl-ui/components/constant'
+import { CHANGE_EVENT, CLICK_EVENT, MODEL_VALUE_UPDATE } from '@onionl-ui/components/constant'
 import { useNamespace } from '@onionl-ui/utils'
 import { computed, ref } from 'vue'
+import { SwitchEmits, SwitchProps } from './switch'
 
 defineOptions({
   name: 'OlSwitch',
 })
 
-const props = defineProps({
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-})
-
-const emit = defineEmits([MODEL_VALUE_UPDATE, 'change'])
-
+const props = defineProps(SwitchProps)
+const emit = defineEmits(SwitchEmits)
+const { beforeSwitch } = props
 const ns = useNamespace('switch')
+const isChecked = ref(props.checked)
 
-const checked = ref(false)
+const switchCls = computed(() => [
+  { [ns.e('checked')]: isChecked.value },
+  { [ns.disabled()]: props.disabled },
+  ns.namespace,
+  ns.m(props.size),
+])
+
 function handleSwitch() {
   if (props.disabled)
     return
-  checked.value = !checked.value
-  emit(MODEL_VALUE_UPDATE, checked.value)
-  emit('change', checked.value)
+  isChecked.value = !isChecked.value
+  emit(MODEL_VALUE_UPDATE, isChecked.value)
+  emit(CHANGE_EVENT, isChecked.value)
+  emit(CLICK_EVENT, isChecked.value)
 }
 
 function handleKeyDown(e: KeyboardEvent) {
@@ -33,27 +36,30 @@ function handleKeyDown(e: KeyboardEvent) {
     handleSwitch()
 }
 
-const switchCls = computed(() => [
-  { [ns.e('checked')]: checked.value },
-  { 'is-disabled': props.disabled },
-  ns.namespace,
-])
-
-const switchStyle = computed(() => {
-  return checked.value ? { transform: 'translateX(20px)' } : {}
-})
+async function handleClick() {
+  if (!beforeSwitch) {
+    handleSwitch()
+  }
+  else {
+    await beforeSwitch()
+    handleSwitch()
+  }
+}
 </script>
 
 <template>
   <div
     :class="switchCls"
     tabindex="0"
-    @click="handleSwitch"
+    @click="handleClick"
     @keydown="handleKeyDown"
   >
     <div
-      :style="switchStyle"
-      :class="ns.e('core')"
+      :class="[
+        ns.e('core'),
+        ns.em('core', size),
+        { [ns.em('core', `${size}-checked`)]: isChecked },
+      ]"
     />
   </div>
 </template>

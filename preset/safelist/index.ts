@@ -9,6 +9,7 @@ import { popoverSafelist } from './popover'
 import { progressSafelist } from './progress'
 import { scrollbarSafelist } from './scrollbar'
 import { sliderSafelist } from './slider'
+import { switchSafelist } from './switch'
 
 export function getSafelist(range: number = 20) {
   return [
@@ -22,6 +23,7 @@ export function getSafelist(range: number = 20) {
     marqueeSafelist,
     popoverSafelist,
     sliderSafelist,
+    switchSafelist,
     ...getBtnSafelist(range),
   ]
 }

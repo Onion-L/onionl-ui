@@ -1,8 +1,8 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: New Component
+about: Describe the component you want to build
 title: "[Component]"
-labels: enhancement
+labels: new component
 assignees: Onion-L
 
 ---

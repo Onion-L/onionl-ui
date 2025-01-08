@@ -21,9 +21,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: 18.x
           registry-url: 'https://registry.npmjs.org'
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -69,5 +69,3 @@ jobs:
         if: failure()
         run: |
           echo "Release process failed!"
-
-          

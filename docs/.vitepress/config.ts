@@ -102,11 +102,23 @@ const ComponentsZh = [
 export default defineConfig({
   title: 'OnionlUI',
   description: 'A component library',
+  head: [
+    ['meta', { name: 'author', content: 'Onion-L' }],
+    ['meta', { name: 'keywords', content: 'Vue3, Component Library, UI Framework, TypeScript, OnionlUI' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'OnionlUI - Modern Vue 3 Component Library' }],
+    ['meta', { property: 'og:description', content: 'A Vue 3 component library with modern design and smooth interactions' }],
+    ['meta', { property: 'og:image', content: 'https://onionl-ui.netlify.app/logo2x.png' }],
+    ['meta', { property: 'og:url', content: 'https://onionl-ui.netlify.app' }],
+    ['link', { rel: 'alternate', hreflang: 'en', href: 'https://onionl-ui.netlify.app' }],
+    ['link', { rel: 'alternate', hreflang: 'zh-CN', href: 'https://onionl-ui.netlify.app/zh/' }],
+  ],
 
   locales: {
     root: {
       label: 'English',
       lang: 'en',
+      description: 'A Vue 3 component library with modern design and smooth interactions',
       themeConfig: {
         logo: '/logo2x.png',
         nav: [
@@ -127,6 +139,7 @@ export default defineConfig({
       label: '简体中文',
       lang: 'zh-CN',
       link: '/zh/',
+      description: '一个现代化设计的 Vue 3 组件库，提供流畅的交互体验',
       themeConfig: {
         logo: '/logo2x.png',
         nav: [

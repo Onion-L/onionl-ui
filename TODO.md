@@ -30,7 +30,7 @@
 - [ ] Radio
 - [x] Scrollbar
 - [x] Slider
-- [ ] Switch
+- [x] Switch
 - [ ] Table
 - [ ] Tabs
 - [x] Text3D

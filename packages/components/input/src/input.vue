@@ -3,6 +3,7 @@ import type { InputProps } from './input'
 import { MODEL_VALUE_UPDATE } from '@onionl-ui/components/constant'
 import { OlIcon } from '@onionl-ui/components/icon'
 import { useNamespace } from '@onionl-ui/utils'
+import clsx from 'clsx'
 import IMask from 'imask'
 import { computed, onMounted, ref, useAttrs } from 'vue'
 
@@ -65,13 +66,13 @@ function handleInput(e: Event) {
       <template v-if="prefix">
         <ol-icon
           :icon="prefix"
-          :class="ns.e('icon-prefix')"
+          :class="clsx(ns.e('icon'), ns.e('icon-prefix'))"
         />
       </template>
       <template v-else-if="suffix">
         <ol-icon
           :icon="suffix"
-          :class="ns.e('icon-suffix')"
+          :class="clsx(ns.e('icon'), ns.e('icon-suffix'))"
         />
       </template>
       <input

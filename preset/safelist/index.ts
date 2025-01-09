@@ -4,6 +4,7 @@ import { defaultCls } from './default'
 import { flipSafelist } from './flip'
 import { IconSafeList } from './icon'
 import { imageSafelist } from './image'
+import { inputSafelist } from './input'
 import { marqueeSafelist } from './marquee'
 import { popoverSafelist } from './popover'
 import { progressSafelist } from './progress'
@@ -13,6 +14,7 @@ import { switchSafelist } from './switch'
 
 export function getSafelist(range: number = 20) {
   return [
+    inputSafelist,
     defaultCls,
     IconSafeList,
     imageSafelist,

@@ -11,6 +11,7 @@ import { progressSafelist } from './progress'
 import { scrollbarSafelist } from './scrollbar'
 import { sliderSafelist } from './slider'
 import { switchSafelist } from './switch'
+import { typingSaftlist } from './typing'
 
 export function getSafelist(range: number = 20) {
   return [
@@ -26,6 +27,7 @@ export function getSafelist(range: number = 20) {
     popoverSafelist,
     sliderSafelist,
     switchSafelist,
+    typingSaftlist,
     ...getBtnSafelist(range),
   ]
 }

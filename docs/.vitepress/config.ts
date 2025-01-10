@@ -11,6 +11,7 @@ const VisualInteractionItems = [
   { text: 'Halo', link: '/components/halo' },
   { text: 'Image', link: '/components/image' },
   { text: 'PixelImage', link: '/components/pixelImage' },
+  { text: 'TypingText', link: '/components/typingText' },
 ]
 
 const ContentDisplayItems = [
@@ -60,6 +61,7 @@ const VisualInteractionItemsZh = [
   { text: 'Halo 光晕背景', link: '/zh/components/halo' },
   { text: 'Image 图片', link: '/zh/components/image' },
   { text: 'PixelImage 像素图片', link: '/zh/components/pixelImage' },
+  { text: 'TypingText 打字机效果文本', link: '/zh/components/typingText' },
 ]
 
 const ContentDisplayItemsZh = [

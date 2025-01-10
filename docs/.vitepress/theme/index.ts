@@ -27,6 +27,7 @@ const modules = [
   'OlSlider',
   'OlText3D',
   'OlSwitch',
+  'OlTypingText',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

@@ -12,14 +12,14 @@
   "keywords": ["vue3", "components", "ui-library", "unocss"],
   "exports": {
     ".": {
-      "types": "./es/onionl-ui/index.d.ts",
+      "types": "./es/types/components/index.d.ts",
       "import": "./es/onionl-ui/index.mjs",
       "require": "./lib/onionl-ui/index.cjs"
     }
   },
   "main": "lib/onionl-ui/index.cjs",
   "module": "es/onionl-ui/index.mjs",
-  "types": "es/onionl-ui/index.d.ts",
+  "types": "es/types/components/index.d.ts",
   "peerDependencies": {
     "vue": ">=3.3.0"
   },

@@ -15,6 +15,7 @@ import { OlPopover } from '../components/popover'
 import { OlProgress } from '../components/progress'
 import { OlScrollbar, OlScrollSnap } from '../components/scrollbar'
 import { OlSlider } from '../components/slider'
+import { OlSwap, OlSwapItem } from '../components/swap'
 import { OlSwitch } from '../components/switch'
 import { OlText3D } from '../components/text3d'
 import { OlTooltip } from '../components/tooltip'
@@ -46,4 +47,6 @@ export const Components = [
   OlTooltip,
   OlSwitch,
   OlTypingText,
+  OlSwap,
+  OlSwapItem,
 ] as Plugin[]

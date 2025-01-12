@@ -1,12 +1,19 @@
 <script lang="ts" setup>
-import { OlSwitch } from '@onionl-ui/components'
-import { ref } from 'vue'
-
-const checked = ref(false)
+import { OlSwap, OlSwapItem } from '@onionl-ui/components'
 </script>
 
 <template>
-  <div class="w-screen h-screen flex gap-2 justify-center items-center">
-    <ol-switch v-model="checked" />
-  </div>
+  <OlSwap>
+    <OlSwapItem>1</OlSwapItem>
+    <OlSwapItem>2</OlSwapItem>
+    <OlSwapItem>3</OlSwapItem>
+    <OlSwapItem>4</OlSwapItem>
+    <OlSwapItem>5</OlSwapItem>
+  </OlSwap>
 </template>
+
+<style scoped>
+.dragging {
+  opacity: 0.5;
+}
+</style>

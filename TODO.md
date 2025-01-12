@@ -16,7 +16,6 @@
 - [ ] DatePicker
 - [ ] Dialog
 - [ ] Drawer
-- [ ] DynamicList
 - [x] FlipCard
 - [x] Halo
 - [x] Image
@@ -30,6 +29,7 @@
 - [ ] Radio
 - [x] Scrollbar
 - [x] Slider
+- [ ] Swap
 - [x] Switch
 - [ ] Table
 - [ ] Tabs

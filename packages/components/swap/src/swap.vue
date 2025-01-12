@@ -1,13 +1,33 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import type { HTMLAttributes } from 'vue'
+import { useNamespace } from '@onionl-ui/utils'
+import clsx from 'clsx'
+import { computed, ref } from 'vue'
 
-const dragRef = ref<HTMLElement | null>(null)
-const draggingElement = ref<HTMLElement | null>(null)
+defineOptions({
+  name: 'OlSwap',
+})
+
+const props = defineProps<{
+  class?: HTMLAttributes['class']
+}>()
+
+const ns = useNamespace('swap')
+
+const swapCls = computed(() => {
+  return clsx(ns.namespace, props.class)
+})
+
+const DragListEl = ref<HTMLElement | null>(null)
+const DraggingEl = ref<HTMLElement | null>(null)
 
 function handleDragStart(e: DragEvent) {
-  draggingElement.value = e.target as HTMLElement
+  DraggingEl.value = e.target as HTMLElement
+
   setTimeout(() => {
-    draggingElement.value!.classList.add('dragging')
+    if (!DraggingEl.value)
+      return
+    DraggingEl.value.classList.add('dragging')
   }, 0)
 }
 
@@ -16,26 +36,29 @@ function handleDragEnd(e: DragEvent) {
 }
 
 function handleDragEnter(e: DragEvent) {
-  const children = Array.from(dragRef.value!.children)
-  const sourceIndex = children.indexOf(draggingElement.value!)
-  const targetElement = e.target as HTMLElement
-  const targetIndex = children.indexOf(targetElement)
-  if (targetElement === dragRef.value || draggingElement.value === targetElement)
+  const targetEl = e.target as HTMLElement
+
+  if (!DragListEl.value || !DraggingEl.value || targetEl === DragListEl.value || DraggingEl.value === targetEl)
     return
 
-  if (sourceIndex > targetIndex) {
-    dragRef.value!.insertBefore(draggingElement.value!, targetElement)
-  }
-  else {
-    dragRef.value!.insertBefore(draggingElement.value!, targetElement.nextElementSibling)
-  }
+  const children = Array.from(DragListEl.value.children)
+  const sourceIndex = children.indexOf(DraggingEl.value)
+  const targetIndex = children.indexOf(targetEl)
+  if (targetIndex === -1)
+    return
+
+  const referenceNode = sourceIndex > targetIndex
+    ? targetEl
+    : targetEl.nextElementSibling
+
+  DragListEl.value.insertBefore(DraggingEl.value, referenceNode)
 }
 </script>
 
 <template>
   <div
-    ref="dragRef"
-    class="flex flex-col gap-1"
+    ref="DragListEl"
+    :class="swapCls"
     @dragenter.prevent="handleDragEnter"
     @dragend="handleDragEnd"
     @dragstart="handleDragStart"
@@ -44,9 +67,3 @@ function handleDragEnter(e: DragEvent) {
     <slot />
   </div>
 </template>
-
-<style scoped>
-.dragging {
-  opacity: 0.3;
-}
-</style>

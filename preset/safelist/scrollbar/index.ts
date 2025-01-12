@@ -1,4 +1,5 @@
 const elementKeys = [
+  'ol-scrollbar',
   'ol-scrollbar__snap-both',
   'ol-scrollbar__snap-x',
   'ol-scrollbar__snap-y',

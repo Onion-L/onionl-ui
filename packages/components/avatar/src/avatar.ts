@@ -6,6 +6,13 @@ export interface AvatarProps {
   src?: string
   alt?: string
 
+  // Outlined props
+  outlined?: boolean
+  outlineColor?: string
+  outlineWidth?: number
+  outlineStyle?: 'solid' | 'gradient'
+  outlineGradient?: string // For custom gradient
+
   // Fallback props
   initials?: string
   icon?: string

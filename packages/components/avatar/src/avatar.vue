@@ -11,6 +11,11 @@ const props = withDefaults(defineProps<AvatarProps>(), {
   size: 'md',
   shape: 'circle',
   clickable: false,
+  outlined: false,
+  outlineColor: '#ccc',
+  outlineWidth: 3,
+  outlineStyle: 'solid',
+  outlineGradient: 'linear-gradient(45deg, #3b82f6, #8b5cf6)',
 })
 
 const emit = defineEmits<AvatarEmits>()
@@ -18,17 +23,35 @@ const hasError = ref(false)
 
 const isUsingNumericSize = computed(() => typeof Number(props.size) === 'number')
 
+const outlineStyles = computed(() => {
+  if (!props.outlined)
+    return {}
+
+  return {
+    border: props.outlineStyle === 'solid'
+      ? `${props.outlineWidth}px solid ${props.outlineColor}`
+      : `${props.outlineWidth}px solid transparent`,
+    backgroundImage: props.outlineStyle === 'gradient'
+      ? `linear-gradient(#fff, #fff), ${props.outlineGradient || 'linear-gradient(45deg, #3b82f6, #8b5cf6)'}`
+      : undefined,
+    backgroundOrigin: props.outlineStyle === 'gradient' ? 'border-box' : undefined,
+    backgroundClip: props.outlineStyle === 'gradient' ? 'padding-box, border-box' : undefined,
+  }
+})
+
 const classes = computed(() => [
   'ol-avatar',
   `ol-avatar--${props.shape}`,
   isUsingNumericSize.value ? `ol-avatar--${props.size}` : '',
   { 'ol-avatar--clickable': props.clickable },
+  { 'ol-avatar--outlined': props.outlined },
 ])
 
 const styles = computed(() => ({
-  backgroundColor: props.backgroundColor ?? '#101',
-  borderRadius: props.borderRadius ?? `${props.borderRadius}px`,
+  backgroundColor: props.backgroundColor ?? '#000',
+  borderRadius: props.borderRadius ? `${props.borderRadius}px` : undefined,
   cursor: props.clickable ? 'pointer' : 'default',
+  ...outlineStyles.value,
 }))
 
 const imgStyles = computed(() => ({

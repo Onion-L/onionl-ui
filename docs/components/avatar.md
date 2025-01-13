@@ -36,6 +36,11 @@ The `icon` property allows you to display an icon instead of an image.
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/icon.vue"  />
 
+### Outlined
+The `outlined` property allows you to display an outlined avatar.
+
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/outline.vue"  />
+
 ## Customization
 Besides preset sizes, you can pass in numbers to customize Avatar sizes. The default range is 1-20, which can be modified by setting the range field in the component preset.
 ```JavaScript

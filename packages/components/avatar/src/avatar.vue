@@ -10,24 +10,30 @@ defineOptions({
 const props = withDefaults(defineProps<AvatarProps>(), {
   size: 'md',
   shape: 'circle',
-  backgroundColor: '#ccc',
   clickable: false,
 })
 
 const emit = defineEmits<AvatarEmits>()
 const hasError = ref(false)
 
+const isUsingNumericSize = computed(() => typeof Number(props.size) === 'number')
+
 const classes = computed(() => [
   'ol-avatar',
-  `ol-avatar--${props.size}`,
   `ol-avatar--${props.shape}`,
+  isUsingNumericSize.value ? `ol-avatar--${props.size}` : '',
   { 'ol-avatar--clickable': props.clickable },
 ])
 
 const styles = computed(() => ({
-  backgroundColor: props.backgroundColor,
-  borderRadius: props.shape ?? props.borderRadius,
-  cursor: props.clickable ? 'pointer' : undefined,
+  backgroundColor: props.backgroundColor ?? '#101',
+  borderRadius: props.borderRadius ?? `${props.borderRadius}px`,
+  cursor: props.clickable ? 'pointer' : 'default',
+}))
+
+const imgStyles = computed(() => ({
+  width: isUsingNumericSize.value ? `${props.size}px` : '100%',
+  height: isUsingNumericSize.value ? `${props.size}px` : '100%',
 }))
 
 function getFallbackContent() {
@@ -63,13 +69,12 @@ function handleClick(event: MouseEvent) {
       v-if="src && !hasError"
       :src="src"
       :alt="alt || ariaLabel"
-      class="overflow-hidden"
+      :style="imgStyles"
       @error="handleError"
     >
     <ol-icon
       v-else-if="icon"
-      :icon="icon"
-      class="ol-avatar__icon"
+      :class="icon"
     />
     <span
       v-else-if="getFallbackContent()"
@@ -77,11 +82,6 @@ function handleClick(event: MouseEvent) {
     >
       {{ getFallbackContent() }}
     </span>
-    <ol-icon
-      v-else
-      icon="i-mi-person"
-      class="ol-avatar__icon"
-    />
   </div>
 </template>
 
@@ -92,12 +92,19 @@ function handleClick(event: MouseEvent) {
   justify-content: center;
   overflow: hidden;
   transition: all 0.2s ease;
+  aspect-ratio: 1/1;
 }
 
 .ol-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.ol-avatar--xs {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
 }
 
 .ol-avatar--sm {
@@ -118,23 +125,35 @@ function handleClick(event: MouseEvent) {
   font-size: 18px;
 }
 
+.ol-avatar--xl {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+}
+
+.ol-avatar--2xl {
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
+}
+
+.ol-avatar--3xl {
+  width: 72px;
+  height: 72px;
+  font-size: 28px;
+}
+
 .ol-avatar--circle {
   border-radius: 50%;
 }
 
 .ol-avatar--square {
-  border-radius: 4px;
+  border-radius: none;
 }
 
 .ol-avatar--clickable:hover {
   transform: scale(1.05);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.ol-avatar__icon {
-  width: 60%;
-  height: 60%;
-  color: var(--ol-gray-500);
 }
 
 .ol-avatar__fallback {

@@ -10,7 +10,7 @@ defineOptions({
 const props = withDefaults(defineProps<AvatarProps>(), {
   size: 'md',
   shape: 'circle',
-  backgroundColor: 'var(--ol-gray-100)',
+  backgroundColor: '#ccc',
   clickable: false,
 })
 
@@ -26,7 +26,7 @@ const classes = computed(() => [
 
 const styles = computed(() => ({
   backgroundColor: props.backgroundColor,
-  borderRadius: props.shape === 'custom' ? props.borderRadius : undefined,
+  borderRadius: props.shape ?? props.borderRadius,
   cursor: props.clickable ? 'pointer' : undefined,
 }))
 
@@ -44,9 +44,10 @@ function handleError() {
 }
 
 function handleClick(event: MouseEvent) {
-  if (props.clickable) {
-    emit('click', event)
+  if (!props.clickable) {
+    return
   }
+  emit('click', event)
 }
 </script>
 
@@ -62,6 +63,7 @@ function handleClick(event: MouseEvent) {
       v-if="src && !hasError"
       :src="src"
       :alt="alt || ariaLabel"
+      class="overflow-hidden"
       @error="handleError"
     >
     <ol-icon

@@ -1,5 +1,5 @@
-export type AvatarSize = 'sm' | 'md' | 'lg'
-export type AvatarShape = 'circle' | 'square' | 'custom'
+export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
+export type AvatarShape = 'circle' | 'square'
 
 export interface AvatarProps {
   // Image props

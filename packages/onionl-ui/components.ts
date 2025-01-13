@@ -1,6 +1,6 @@
 import type { Plugin } from 'vue'
-import { OlAvatar } from '@onionl-ui/components/avatar'
 import { OlAudioRecorder } from '../components/audioRecorder'
+import { OlAvatar } from '../components/avatar'
 import { OlButton } from '../components/button'
 import { OlCard, OlCardContent, OlCardFooter, OlCardHeader } from '../components/card'
 import { OlContextMenu, OlContextMenuItem } from '../components/contextMenu'

@@ -7,6 +7,7 @@ const NavLink: DefaultTheme.NavItemWithLink[] = [
 ]
 
 const VisualInteractionItems = [
+  { text: 'Avatar', link: '/components/avatar' },
   { text: 'FlipCard', link: '/components/flipCard' },
   { text: 'Halo', link: '/components/halo' },
   { text: 'Image', link: '/components/image' },

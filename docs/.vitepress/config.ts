@@ -7,6 +7,7 @@ const NavLink: DefaultTheme.NavItemWithLink[] = [
 ]
 
 const VisualInteractionItems = [
+  { text: 'DraggableList', link: '/components/draggable' },
   { text: 'FlipCard', link: '/components/flipCard' },
   { text: 'Halo', link: '/components/halo' },
   { text: 'Image', link: '/components/image' },
@@ -57,6 +58,7 @@ const NavLinkZh: DefaultTheme.NavItemWithLink[] = [
 ]
 
 const VisualInteractionItemsZh = [
+  { text: 'DraggableList 可拖拽列表', link: '/zh/components/draggable' },
   { text: 'FlipCard 翻转卡片', link: '/zh/components/flipCard' },
   { text: 'Halo 光晕背景', link: '/zh/components/halo' },
   { text: 'Image 图片', link: '/zh/components/image' },

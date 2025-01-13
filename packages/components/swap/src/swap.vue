@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { HTMLAttributes } from 'vue'
 import { useNamespace } from '@onionl-ui/utils'
+import { useEventListener } from '@vueuse/core'
 import clsx from 'clsx'
 import { computed, ref } from 'vue'
 
@@ -23,12 +24,18 @@ const DraggingEl = ref<HTMLElement | null>(null)
 
 function handleDragStart(e: DragEvent) {
   DraggingEl.value = e.target as HTMLElement
-
   setTimeout(() => {
     if (!DraggingEl.value)
       return
     DraggingEl.value.classList.add('dragging')
   }, 0)
+}
+
+function cleanUpTransition(element: HTMLElement) {
+  useEventListener(element, 'transitionend', () => {
+    element.style.transition = ''
+    element.style.transform = ''
+  }, { once: true })
 }
 
 function handleDragEnd(e: DragEvent) {
@@ -47,11 +54,22 @@ function handleDragEnter(e: DragEvent) {
   if (targetIndex === -1)
     return
 
-  const referenceNode = sourceIndex > targetIndex
-    ? targetEl
-    : targetEl.nextElementSibling
+  const firstTragetEl = targetEl.getBoundingClientRect()
 
-  DragListEl.value.insertBefore(DraggingEl.value, referenceNode)
+  if (sourceIndex > targetIndex) {
+    DragListEl.value.insertBefore(DraggingEl.value, targetEl)
+  }
+  else {
+    DragListEl.value.insertBefore(DraggingEl.value, targetEl.nextSibling)
+  }
+
+  const lastTragetEl = targetEl.getBoundingClientRect()
+  targetEl.style.transform = `translateY(${firstTragetEl.top - lastTragetEl.top}px)`
+  requestAnimationFrame(() => {
+    targetEl.style.transition = 'transform 300ms'
+    cleanUpTransition(targetEl)
+    targetEl.style.transform = ''
+  })
 }
 </script>
 

@@ -9,33 +9,32 @@ Avatar styles can be defined through the `size`, `shape`, `backgroundColor`, `bo
 ### Size
 Avatars come in 7 preset sizes: `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`. The default size is `md`.
 
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/Avatar" vue="../demo/avatar/size.vue"  />
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/size.vue"  />
 
 ### Shape
 There are two types of Avatars: `circle`, and `square`. The default type is `circle`.
 
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/Avatar" vue="../demo/avatar/shape.vue"  />
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/shape.vue"  />
 
 ### Background Color
 The `backgroundColor` property allows you to set the background color of the avatar.
 
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/Avatar" vue="../demo/avatar/backgroundColor.vue"  />
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/backgroundColor.vue"  />
 
 ### Border Radius
 The `borderRadius` property allows you to set the border radius of the avatar.
 
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/Avatar" vue="../demo/avatar/borderRadius.vue"  />
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/borderRadius.vue"  />
 
 ### Fallback Text
 The `fallbackText` property allows you to display a fallback text if the image fails to load.
 
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/Avatar" vue="../demo/avatar/fallback.vue"  />
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/fallback.vue"  />
 
 ### Icon
-
 The `icon` property allows you to display an icon instead of an image.
 
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/Avatar" vue="../demo/avatar/icon.vue"  />
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/icon.vue"  />
 
 ## Customization
 Besides preset sizes, you can pass in numbers to customize Avatar sizes. The default range is 1-20, which can be modified by setting the range field in the component preset.
@@ -43,7 +42,7 @@ Besides preset sizes, you can pass in numbers to customize Avatar sizes. The def
     onionlUIPreset({ range: 25 }),
 ```
 
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/Avatar" vue="../demo/avatar/custom.vue"  />
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/custom.vue"  />
 
 ## Properties
 
@@ -67,9 +66,3 @@ Besides preset sizes, you can pass in numbers to customize Avatar sizes. The def
 |------|-------------|------------|
 | click | Triggered when clicked (only if clickable is true) | (event: MouseEvent) |
 | error | Triggered when image fails to load | - |
-
-### Slots
-
-| Name | Description |
-|------|-------------|
-| default | Custom content for avatar |

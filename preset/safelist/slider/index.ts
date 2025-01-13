@@ -1,4 +1,5 @@
 export const sliderSafelist = [
+  'ol-slider',
   'ol-slider--vertical',
   'ol-slider__progress',
   'ol-slider__thumb',

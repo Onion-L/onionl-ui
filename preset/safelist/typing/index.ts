@@ -1,1 +1,1 @@
-export const typingSaftlist = ['ol-typing__text']
+export const typingSaftlist = ['ol-typing', 'ol-typing__text']

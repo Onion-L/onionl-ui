@@ -7,7 +7,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<{
-  flipped: boolean
+  flipped?: boolean
   class?: HTMLAttributes['class']
 }>(), {
   flipped: false,

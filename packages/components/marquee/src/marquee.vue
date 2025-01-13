@@ -45,7 +45,10 @@ const innerCls = computed(() => {
 </script>
 
 <template>
-  <div class="group" :class="marqueeCls">
+  <div
+    class="group"
+    :style="{ '--onl-marquee-duration': duration, '--onl-marquee-gap': gap }" :class="marqueeCls"
+  >
     <div
       v-for="i in repeat"
       ref="marqueeRef"
@@ -58,11 +61,6 @@ const innerCls = computed(() => {
 </template>
 
 <style scoped>
- .ol-marquee {
-  --onl-marquee-duration: v-bind(duration);
-  --onl-marquee-gap: v-bind(gap);
-}
-
 .ol-marquee__animate {
   animation: marquee var(--onl-marquee-duration) linear infinite;
 }

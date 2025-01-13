@@ -1,4 +1,5 @@
 export const popoverSafelist = [
+  'ol-popover',
   'ol-popover__content',
   'ol-popover__content--arrow',
   'ol-popover__arrow--top',

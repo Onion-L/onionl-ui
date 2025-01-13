@@ -273,9 +273,6 @@ importers:
       '@onionl-ui/preset':
         specifier: workspace:*
         version: link:../preset
-      onionl-ui:
-        specifier: workspace:*
-        version: link:../packages/onionl-ui
       vue:
         specifier: ^3.5.12
         version: 3.5.13(typescript@5.6.3)

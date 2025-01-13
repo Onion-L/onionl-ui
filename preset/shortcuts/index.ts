@@ -2,6 +2,7 @@ import type { Shortcut } from 'unocss'
 import { buttonShortcuts } from './button'
 import { cardShortcuts } from './card'
 import { contextMenuShortcuts } from './contextMenu'
+import { draggableShortcuts } from './draggable'
 import { flipShortcuts } from './flip'
 import { generalShortcuts } from './general'
 import { imageShortcuts } from './image'
@@ -31,6 +32,7 @@ const shortcuts: Shortcut[] = [
   ...sliderShortcuts,
   ...switchShortcuts,
   ...typingShortcuts,
+  ...draggableShortcuts,
 ]
 
 export { shortcuts }

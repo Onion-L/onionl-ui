@@ -34,8 +34,10 @@ export const buildConfig = [{
   outPath: 'dist/lib',
   format: 'cjs' as const,
   extend: 'cjs',
+  DTS: false,
 }, {
   outPath: 'dist/es',
   format: 'es' as const,
   extend: 'mjs',
+  DTS: true,
 }]

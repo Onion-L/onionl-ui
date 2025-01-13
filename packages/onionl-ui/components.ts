@@ -3,6 +3,7 @@ import { OlAudioRecorder } from '../components/audioRecorder'
 import { OlButton } from '../components/button'
 import { OlCard, OlCardContent, OlCardFooter, OlCardHeader } from '../components/card'
 import { OlContextMenu, OlContextMenuItem } from '../components/contextMenu'
+import { OlDraggableItem, OlDraggableList } from '../components/draggableList'
 import { OlFlipCard } from '../components/flipCard'
 import { OlFlipControl } from '../components/flipControl'
 import { OlHalo } from '../components/halo'
@@ -46,4 +47,6 @@ export const Components = [
   OlTooltip,
   OlSwitch,
   OlTypingText,
+  OlDraggableItem,
+  OlDraggableList,
 ] as Plugin[]

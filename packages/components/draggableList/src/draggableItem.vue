@@ -5,16 +5,16 @@ import clsx from 'clsx'
 import { computed } from 'vue'
 
 defineOptions({
-  name: 'OlSwapItem',
+  name: 'OlDraggableItem',
 })
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
 }>()
 
-const ns = useNamespace('swap-item')
+const ns = useNamespace('draggable-item')
 
-const swapItemCls = computed(() => {
+const draggableItemCls = computed(() => {
   return clsx(ns.namespace, props.class)
 })
 </script>
@@ -22,7 +22,7 @@ const swapItemCls = computed(() => {
 <template>
   <div
     draggable="true"
-    :class="swapItemCls"
+    :class="draggableItemCls"
   >
     <slot />
   </div>

@@ -1,37 +1,37 @@
 import { mount } from '@vue/test-utils'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { nextTick } from 'vue'
-import Swap from '../src/swap.vue'
-import SwapItem from '../src/swapItem.vue'
+import DraggableItem from '../src/draggableItem.vue'
+import DraggableList from '../src/draggableList.vue'
 
-describe('swap', () => {
+describe('draggableList', () => {
   let wrapper: ReturnType<typeof mount>
 
   beforeEach(() => {
-    wrapper = mount(Swap, {
+    wrapper = mount(DraggableList, {
       slots: {
         default: [
-          '<ol-swap-item>Item 1</ol-swap-item>',
-          '<ol-swap-item>Item 2</ol-swap-item>',
-          '<ol-swap-item>Item 3</ol-swap-item>',
+          '<ol-draggable-item>Item 1</ol-draggable-item>',
+          '<ol-draggable-item>Item 2</ol-draggable-item>',
+          '<ol-draggable-item>Item 3</ol-draggable-item>',
         ],
       },
       global: {
         components: {
-          'ol-swap-item': SwapItem,
+          'ol-draggable-item': DraggableItem,
         },
       },
     })
   })
 
   it('renders correctly', () => {
-    expect(wrapper.find('.ol-swap').exists()).toBe(true)
-    expect(wrapper.findAll('.ol-swap-item')).toHaveLength(3)
+    expect(wrapper.find('.ol-draggable-list').exists()).toBe(true)
+    expect(wrapper.findAll('.ol-draggable-item')).toHaveLength(3)
   })
 
   it('custom class', () => {
     const customClass = 'custom-class'
-    const wrapper = mount(Swap, {
+    const wrapper = mount(DraggableList, {
       props: {
         class: customClass,
       },
@@ -40,7 +40,7 @@ describe('swap', () => {
   })
 
   it('adds dragging class on drag start', async () => {
-    const firstItem = wrapper.find('.ol-swap-item')
+    const firstItem = wrapper.find('.ol-draggable-item')
     await firstItem.trigger('dragstart')
 
     await new Promise(resolve => setTimeout(resolve, 0))
@@ -50,7 +50,7 @@ describe('swap', () => {
   })
 
   it('removes dragging class on drag end', async () => {
-    const firstItem = wrapper.find('.ol-swap-item')
+    const firstItem = wrapper.find('.ol-draggable-item')
     await firstItem.trigger('dragstart')
     await new Promise(resolve => setTimeout(resolve, 0))
     await nextTick()
@@ -59,14 +59,14 @@ describe('swap', () => {
   })
 
   it('swaps positions on drag', async () => {
-    const items = wrapper.findAll('.ol-swap-item')
+    const items = wrapper.findAll('.ol-draggable-item')
     const firstItem = items[0]
     const secondItem = items[1]
 
     await firstItem.trigger('dragstart')
     await secondItem.trigger('dragenter')
 
-    const newItems = wrapper.findAll('.ol-swap-item')
+    const newItems = wrapper.findAll('.ol-draggable-item')
     expect(newItems[1].text()).toBe('Item 1')
     expect(newItems[0].text()).toBe('Item 2')
   })

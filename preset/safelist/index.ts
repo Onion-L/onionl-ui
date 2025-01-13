@@ -1,5 +1,6 @@
 import { getBtnSafelist } from './button'
 import { contextmenuSafelist } from './contextmenu'
+import { draggableSafelist } from './draggable'
 import { flipSafelist } from './flip'
 import { globalSafelist } from './global'
 import { iconSafelist } from './icon'
@@ -11,7 +12,6 @@ import { popoverSafelist } from './popover'
 import { progressSafelist } from './progress'
 import { scrollbarSafelist } from './scrollbar'
 import { sliderSafelist } from './slider'
-import { swapSafelist } from './swap'
 import { switchSafelist } from './switch'
 import { typingSaftlist } from './typing'
 
@@ -30,7 +30,7 @@ export function getSafelist(range: number = 20) {
     sliderSafelist,
     switchSafelist,
     typingSaftlist,
-    swapSafelist,
+    draggableSafelist,
     pixelImageSafelist,
     ...getBtnSafelist(range),
   ]

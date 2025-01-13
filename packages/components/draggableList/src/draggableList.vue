@@ -6,16 +6,16 @@ import clsx from 'clsx'
 import { computed, ref } from 'vue'
 
 defineOptions({
-  name: 'OlSwap',
+  name: 'OlDraggableList',
 })
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
 }>()
 
-const ns = useNamespace('swap')
+const ns = useNamespace('draggable-list')
 
-const swapCls = computed(() => {
+const draggableListCls = computed(() => {
   return clsx(ns.namespace, props.class)
 })
 
@@ -76,7 +76,7 @@ function handleDragEnter(e: DragEvent) {
 <template>
   <div
     ref="DragListEl"
-    :class="swapCls"
+    :class="draggableListCls"
     @dragenter.prevent="handleDragEnter"
     @dragend="handleDragEnd"
     @dragstart="handleDragStart"

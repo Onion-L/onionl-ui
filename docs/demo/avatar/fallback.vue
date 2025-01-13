@@ -4,21 +4,21 @@
     <ol-avatar
       src="/invalid-image.jpg"
       initials="JD"
-      background-color="var(--ol-primary-100)"
+      background-color="#0ea5e9"
     />
 
     <!-- Image error will show icon -->
     <ol-avatar
       src="/invalid-image.jpg"
-      icon="i-mi-person"
-      background-color="var(--ol-success-100)"
+      icon="i-mi-user"
+      background-color="#10b981"
     />
 
     <!-- Image error will show text -->
     <ol-avatar
       src="/invalid-image.jpg"
       fallback-text="User"
-      background-color="var(--ol-warning-100)"
+      background-color="#f59e0b"
     />
   </div>
 </template>

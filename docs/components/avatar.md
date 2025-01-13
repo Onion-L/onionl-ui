@@ -52,11 +52,11 @@ Besides preset sizes, you can pass in numbers to customize Avatar sizes. The def
 | alt | Alternative text for image | string | - | - |
 | initials | Initials to show when no image | string | - | - |
 | icon | Icon name to display | string | - | - |
-| fallbackText | Fallback text | string | - | - |
-| size | Avatar size | string | 'sm' / 'md' / 'lg' | 'md' |
-| shape | Avatar shape | string | 'circle' / 'square' / 'custom' | 'circle' |
-| backgroundColor | Background color | string | - | 'var(--ol-gray-100)' |
-| borderRadius | Border radius when shape is 'custom' | string | - | - |
+| fallbackContent | Fallback content | string | - | - |
+| size | Avatar size | string | 'xs' / 'sm' / 'md' / 'lg' / 'xl' / '2xl' / '3xl' / number | 'md' |
+| shape | Avatar shape | string | 'circle' / 'square' | 'circle' |
+| backgroundColor | Background color | string | - | '#101' |
+| borderRadius | Custom border radius | string / number | - | - |
 | clickable | Whether avatar is interactive | boolean | true / false | false |
 | ariaLabel | ARIA label for accessibility | string | - | - |
 

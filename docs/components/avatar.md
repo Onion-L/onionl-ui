@@ -62,6 +62,11 @@ Besides preset sizes, you can pass in numbers to customize Avatar sizes. The def
 | shape | Avatar shape | string | 'circle' / 'square' | 'circle' |
 | backgroundColor | Background color | string | - | '#101' |
 | borderRadius | Custom border radius | string / number | - | - |
+| outlined | Whether avatar is outlined | boolean | true / false | false |
+| outlineColor | Outline color | string | - | '#ccc' |
+| outlineWidth | Outline width | number | - | 3 |
+| outlineStyle | Outline style | string | 'solid' / 'gradient' | 'solid' |
+| outlineGradient | Outline gradient | string | - | 'linear-gradient(45deg, #3b82f6, #8b5cf6)' |
 | clickable | Whether avatar is interactive | boolean | true / false | false |
 | ariaLabel | ARIA label for accessibility | string | - | - |
 

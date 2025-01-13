@@ -2,6 +2,7 @@ import type { Shortcut } from 'unocss'
 import { buttonShortcuts } from './button'
 import { cardShortcuts } from './card'
 import { contextMenuShortcuts } from './contextMenu'
+import { draggableShortcuts } from './draggable'
 import { flipShortcuts } from './flip'
 import { generalShortcuts } from './general'
 import { imageShortcuts } from './image'
@@ -13,6 +14,7 @@ import { progressShortcuts } from './progress'
 import { scrollbarShortcuts } from './scrollbar'
 import { sliderShortcuts } from './slider'
 import { switchShortcuts } from './switch'
+import { typingShortcuts } from './typing'
 
 const shortcuts: Shortcut[] = [
   ...inputShortcuts,
@@ -29,6 +31,8 @@ const shortcuts: Shortcut[] = [
   ...popoverShortcuts,
   ...sliderShortcuts,
   ...switchShortcuts,
+  ...typingShortcuts,
+  ...draggableShortcuts,
 ]
 
 export { shortcuts }

@@ -2,6 +2,8 @@
 import type { InputProps } from './input'
 import { MODEL_VALUE_UPDATE } from '@onionl-ui/components/constant'
 import { OlIcon } from '@onionl-ui/components/icon'
+import { useNamespace } from '@onionl-ui/utils'
+import clsx from 'clsx'
 import IMask from 'imask'
 import { computed, onMounted, ref, useAttrs } from 'vue'
 
@@ -32,6 +34,7 @@ onMounted(() => {
 })
 
 const attrs = useAttrs()
+const ns = useNamespace('input')
 
 const filteredAttrs = computed(() => {
   const { style, mask, ...rest } = attrs
@@ -63,13 +66,13 @@ function handleInput(e: Event) {
       <template v-if="prefix">
         <ol-icon
           :icon="prefix"
-          class="ol-input__icon-prefix"
+          :class="clsx(ns.e('icon'), ns.e('icon-prefix'))"
         />
       </template>
       <template v-else-if="suffix">
         <ol-icon
           :icon="suffix"
-          class="ol-input__icon-suffix"
+          :class="clsx(ns.e('icon'), ns.e('icon-suffix'))"
         />
       </template>
       <input
@@ -77,8 +80,7 @@ function handleInput(e: Event) {
         :value="modelValue"
         :placeholder="placeholder"
         v-bind="filteredAttrs"
-        class="ol-input"
-        :class="{ ' pl-10': prefix, 'is-disabled': disabled }"
+        :class="[{ ' pl-10': prefix, 'pr-10': suffix, 'is-disabled': disabled }, ns.namespace]"
         @focus="handleFocus"
         @blur="handleBlur"
         @input="handleInput"

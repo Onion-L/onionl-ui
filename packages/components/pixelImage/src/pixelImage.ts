@@ -1,12 +1,12 @@
 import type { Ref } from 'vue'
 
 export interface PixelImageProps {
-  pixelGap: number | string
-  pixelSize: number | string
-  width: string | number
-  height: string | number
-  viewportWidth: number
-  viewportHeight: number
+  pixelGap?: number | string
+  pixelSize?: number | string
+  width?: string | number
+  height?: string | number
+  viewportWidth?: number
+  viewportHeight?: number
 }
 
 export const defaultProps: Partial<PixelImageProps> = {
@@ -33,8 +33,8 @@ export class PixelImage {
   private canvas: HTMLCanvasElement
   private context: CanvasRenderingContext2D | null
   private particles: Particle[] = []
-  private viewportWidth: number
-  private viewportHeight: number
+  private viewportWidth: number | undefined
+  private viewportHeight: number | undefined
   private pixelGap: number
   private pixelSize: number
 

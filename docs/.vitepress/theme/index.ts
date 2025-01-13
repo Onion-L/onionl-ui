@@ -28,6 +28,9 @@ const modules = [
   'OlText3D',
   'OlSwitch',
   'OlAvatar',
+  'OlTypingText',
+  'OlDraggableList',
+  'OlDraggableItem',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

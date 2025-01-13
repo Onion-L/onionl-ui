@@ -1,4 +1,5 @@
 export const switchSafelist = [
+  'ol-switch',
   'ol-switch__checked',
   'ol-switch--small',
   'ol-switch--default',

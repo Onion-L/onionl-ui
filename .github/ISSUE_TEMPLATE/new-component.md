@@ -3,7 +3,7 @@ name: New Component
 about: Describe the component you want to build
 title: "[Component]"
 labels: new component
-assignees: Onion-L
+assignees: ''
 
 ---
 

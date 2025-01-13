@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: OnionlUI
+  name: Onionl UI
   text: 轻量的 Vue3 组件库
   tagline: 注重交互细节的现代化 UI 组件集
   image:
     src: /logo2x.png
-    alt: OnionlUI
+    alt: Onionl UI
   actions:
     - theme: brand
       text: 快速开始

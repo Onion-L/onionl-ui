@@ -1,20 +1,25 @@
 import { getBtnSafelist } from './button'
 import { contextmenuSafelist } from './contextmenu'
-import { defaultCls } from './default'
+import { draggableSafelist } from './draggable'
 import { flipSafelist } from './flip'
-import { IconSafeList } from './icon'
+import { globalSafelist } from './global'
+import { iconSafelist } from './icon'
 import { imageSafelist } from './image'
+import { inputSafelist } from './input'
 import { marqueeSafelist } from './marquee'
+import { pixelImageSafelist } from './pixelImage'
 import { popoverSafelist } from './popover'
 import { progressSafelist } from './progress'
 import { scrollbarSafelist } from './scrollbar'
 import { sliderSafelist } from './slider'
 import { switchSafelist } from './switch'
+import { typingSaftlist } from './typing'
 
 export function getSafelist(range: number = 20) {
   return [
-    defaultCls,
-    IconSafeList,
+    inputSafelist,
+    globalSafelist,
+    iconSafelist,
     imageSafelist,
     contextmenuSafelist,
     scrollbarSafelist,
@@ -24,6 +29,9 @@ export function getSafelist(range: number = 20) {
     popoverSafelist,
     sliderSafelist,
     switchSafelist,
+    typingSaftlist,
+    draggableSafelist,
+    pixelImageSafelist,
     ...getBtnSafelist(range),
   ]
 }

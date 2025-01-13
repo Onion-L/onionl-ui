@@ -7,7 +7,9 @@ describe('olFlipControl', () => {
   let wrapper: VueWrapper
 
   beforeEach(() => {
-    wrapper = mount(OlFlipControl)
+    wrapper = mount(OlFlipControl, { props: {
+      flipped: false,
+    } })
   })
 
   it('should render the component correctly', () => {

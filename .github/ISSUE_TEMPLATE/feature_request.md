@@ -3,7 +3,7 @@ name: Feature request
 about: Suggest an idea for this project
 title: "[Component]"
 labels: enhancement
-assignees: Onion-L
+assignees: ''
 
 ---
 

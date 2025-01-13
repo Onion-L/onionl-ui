@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: OnionlUI
+  name: Onionl UI
   text: Lightweight Vue3 Component Library
   tagline: Modern UI components with elegant interactions
   image:

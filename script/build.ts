@@ -31,7 +31,7 @@ export async function copyFiles() {
     onlyFiles: true,
   }))
 
-  buildConfig.forEach(async ({ outPath, format, extend }) => {
+  buildConfig.forEach(async ({ outPath, format, extend, DTS }) => {
     await build({
       build: {
         rollupOptions,
@@ -45,13 +45,15 @@ export async function copyFiles() {
           fileName: () => `[name].${extend}`,
         },
       },
-      plugins: [vue(), vueJsx(), UnoCSS(), dts({
-        include: ['packages/**/**/*.{vue,ts,tsx}'],
-        exclude: ['packages/**/test/**', 'packages/**/*.test.ts'],
-        outDir: 'dist/es',
-        staticImport: true,
-        insertTypesEntry: true,
-      })],
+      plugins: [vue(), vueJsx(), UnoCSS(), DTS
+        ? dts({
+          include: ['packages/components/**/*.{vue,ts,tsx}'],
+          exclude: ['packages/**/test/**', 'packages/**/*.test.ts'],
+          outDir: `${outPath}/types`,
+          staticImport: true,
+          insertTypesEntry: true,
+        })
+        : null],
     })
   })
 

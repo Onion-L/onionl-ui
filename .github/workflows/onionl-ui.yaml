@@ -47,14 +47,18 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Run test
+        run: pnpm run test
+
       - name: Run test with coverage
         run: pnpm run coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
+        continue-on-error: true
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
+          fail_ci_if_error: false
 
   build:
     runs-on: ubuntu-latest

@@ -27,6 +27,7 @@ const modules = [
   'OlSlider',
   'OlText3D',
   'OlSwitch',
+  'OlAvatar',
   'OlTypingText',
   'OlDraggableList',
   'OlDraggableItem',

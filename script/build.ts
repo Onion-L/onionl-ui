@@ -27,7 +27,7 @@ export function excludeFiles(files: string[]) {
       build: {
         rollupOptions,
         minify: false,
-        cssCodeSplit: true,
+        cssCodeSplit: false,
         sourcemap: true,
         outDir: resolve(rootPath, outPath),
         lib: {

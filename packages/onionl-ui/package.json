@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/Onion-L/onionl-ui.git"
   },
-  "keywords": ["vue3", "components", "ui-library", "unocss"],
+  "keywords": ["vue3", "components", "ui-library", "unocss", "typescript", "vue", "ui", "library"],
   "exports": {
     ".": {
       "types": "./es/types/components/index.d.ts",
@@ -20,6 +20,15 @@
   "main": "lib/onionl-ui/index.cjs",
   "module": "es/onionl-ui/index.mjs",
   "types": "es/types/components/index.d.ts",
+  "files": [
+    "README.md",
+    "es",
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "peerDependencies": {
     "vue": ">=3.3.0"
   },

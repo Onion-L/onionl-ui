@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { AvatarEmits, AvatarProps } from './avatar'
 import { OlIcon } from '@onionl-ui/components/icon'
+import { useNamespace } from '@onionl-ui/utils'
+import initials from 'initials'
 import { computed, ref } from 'vue'
 
 defineOptions({
@@ -17,9 +19,10 @@ const props = withDefaults(defineProps<AvatarProps>(), {
   outlineStyle: 'solid',
   outlineGradient: 'linear-gradient(45deg, #3b82f6, #8b5cf6)',
 })
-
 const emit = defineEmits<AvatarEmits>()
+const ns = useNamespace('avatar')
 const hasError = ref(false)
+const DEFAULT_ICON = 'i-mi-user'
 
 const isUsingNumericSize = computed(() => typeof Number(props.size) === 'number')
 
@@ -40,15 +43,15 @@ const outlineStyles = computed(() => {
 })
 
 const classes = computed(() => [
-  'ol-avatar',
-  `ol-avatar--${props.shape}`,
-  isUsingNumericSize.value ? `ol-avatar--${props.size}` : '',
-  { 'ol-avatar--clickable': props.clickable },
-  { 'ol-avatar--outlined': props.outlined },
+  ns.namespace,
+  ns.m(props.shape),
+  isUsingNumericSize.value ? ns.m(props.size) : '',
+  { [ns.m('clickable')]: props.clickable },
+  { [ns.m('outlined')]: props.outlined },
 ])
 
 const styles = computed(() => ({
-  backgroundColor: props.backgroundColor ?? '#000',
+  backgroundColor: props.backgroundColor ?? 'var(--onl-primary)',
   borderRadius: props.borderRadius ? `${props.borderRadius}px` : undefined,
   cursor: props.clickable ? 'pointer' : 'default',
   ...outlineStyles.value,
@@ -59,13 +62,11 @@ const imgStyles = computed(() => ({
   height: isUsingNumericSize.value ? `${props.size}px` : '100%',
 }))
 
-function getFallbackContent() {
-  if (props.initials)
-    return props.initials.slice(0, 2).toUpperCase()
-  if (props.fallbackText)
-    return props.fallbackText
-  return null
-}
+const fallbackContent = computed(() => {
+  return props.initials
+    ? initials(props.initials)
+    : (props.fallbackText || null)
+})
 
 function handleError() {
   hasError.value = true
@@ -73,9 +74,8 @@ function handleError() {
 }
 
 function handleClick(event: MouseEvent) {
-  if (!props.clickable) {
+  if (!props.clickable)
     return
-  }
   emit('click', event)
 }
 </script>
@@ -90,6 +90,8 @@ function handleClick(event: MouseEvent) {
   >
     <img
       v-if="src && !hasError"
+      :class="ns.e('img')"
+      class="w-full h-full object-cover"
       :src="src"
       :alt="alt || ariaLabel"
       :style="imgStyles"
@@ -97,33 +99,23 @@ function handleClick(event: MouseEvent) {
     >
     <ol-icon
       v-else-if="icon"
-      :class="icon"
+      :icon="icon"
     />
     <span
-      v-else-if="getFallbackContent()"
-      class="ol-avatar__fallback"
+      v-else-if="props.initials || props.fallbackText"
+      :class="ns.e('fallback')"
+      class="text-light-50 font-500 leading-none"
     >
-      {{ getFallbackContent() }}
+      {{ fallbackContent }}
     </span>
+    <ol-icon
+      v-else
+      :icon="DEFAULT_ICON"
+    />
   </div>
 </template>
 
 <style>
-.ol-avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: all 0.2s ease;
-  aspect-ratio: 1/1;
-}
-
-.ol-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .ol-avatar--xs {
   width: 24px;
   height: 24px;
@@ -164,24 +156,5 @@ function handleClick(event: MouseEvent) {
   width: 72px;
   height: 72px;
   font-size: 28px;
-}
-
-.ol-avatar--circle {
-  border-radius: 50%;
-}
-
-.ol-avatar--square {
-  border-radius: none;
-}
-
-.ol-avatar--clickable:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.ol-avatar__fallback {
-  color: var(--ol-gray-700);
-  font-weight: 500;
-  line-height: 1;
 }
 </style>

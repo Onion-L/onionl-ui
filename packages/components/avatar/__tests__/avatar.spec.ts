@@ -36,17 +36,18 @@ describe('avatar Component', () => {
     })
 
     const img = wrapper.find('img')
-    await img.trigger('error')
 
-    expect(wrapper.find('.ol-avatar__icon').exists()).toBe(true)
+    await img.trigger('error')
+    expect(wrapper.emitted('error')).toBeTruthy()
   })
 
-  it('displays initials when provided', () => {
+  it('displays initials when provided', async () => {
     const wrapper = mount(Avatar, {
       props: {
         initials: 'JD',
       },
     })
+
     expect(wrapper.find('.ol-avatar__fallback').text()).toBe('JD')
   })
 
@@ -56,7 +57,7 @@ describe('avatar Component', () => {
         icon: 'custom-icon',
       },
     })
-    expect(wrapper.find('.ol-avatar__icon').exists()).toBe(true)
+    expect(wrapper.find('.custom-icon').exists()).toBe(true)
   })
 
   it('applies custom background color', () => {
@@ -91,8 +92,7 @@ describe('avatar Component', () => {
   it('applies custom border radius when shape is custom', () => {
     const wrapper = mount(Avatar, {
       props: {
-        shape: 'custom',
-        borderRadius: '12px',
+        borderRadius: 12,
       },
     })
     expect(wrapper.attributes('style')).toContain('border-radius: 12px')

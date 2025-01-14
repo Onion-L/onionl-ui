@@ -22,7 +22,7 @@ export interface AvatarProps {
   size?: AvatarSize
   shape?: AvatarShape
   backgroundColor?: string
-  borderRadius?: string
+  borderRadius?: number
 
   // Interactive props
   clickable?: boolean

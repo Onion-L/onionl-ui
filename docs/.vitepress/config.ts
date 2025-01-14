@@ -59,6 +59,7 @@ const NavLinkZh: DefaultTheme.NavItemWithLink[] = [
 ]
 
 const VisualInteractionItemsZh = [
+  { text: 'Avatar 头像', link: '/zh/components/avatar' },
   { text: 'DraggableList 可拖拽列表', link: '/zh/components/draggable' },
   { text: 'FlipCard 翻转卡片', link: '/zh/components/flipCard' },
   { text: 'Halo 光晕背景', link: '/zh/components/halo' },

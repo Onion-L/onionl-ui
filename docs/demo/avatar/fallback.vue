@@ -3,7 +3,13 @@
     <!-- Image error will show initials -->
     <ol-avatar
       src="/invalid-image.jpg"
-      initials="JD"
+      initials="Buzz Lightyear"
+      background-color="#0ea5e9"
+    />
+
+    <ol-avatar
+      src="/invalid-image.jpg"
+      initials="Buzz-Light_Year"
       background-color="#0ea5e9"
     />
 

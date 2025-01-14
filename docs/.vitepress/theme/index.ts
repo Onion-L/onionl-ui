@@ -27,10 +27,10 @@ const modules = [
   'OlSlider',
   'OlText3D',
   'OlSwitch',
-  'OlAvatar',
   'OlTypingText',
   'OlDraggableList',
   'OlDraggableItem',
+  'OlAvatar',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

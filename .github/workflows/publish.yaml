@@ -56,7 +56,10 @@ jobs:
       - name: Copy package.json to dist
         run: |
           cp packages/onionl-ui/package.json dist/
+          VERSION=${GITHUB_REF#refs/tags/v}
+          sed -i "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" dist/package.json
           cp README.md dist/ || true
+          cp LICENSE dist/ || true
 
       - name: Publish to NPM
         working-directory: dist

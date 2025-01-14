@@ -10,7 +10,7 @@ export const componentPath = resolve(pkgPath, 'components')
 export const onionlPath = resolve(pkgPath, 'onionl-ui')
 
 export const rollupOptions = {
-  external: ['vue', 'clsx', '@floating-ui/vue', 'vue-demi', 'imask', '@vueuse/core'],
+  external: ['vue', 'clsx', '@floating-ui/vue', 'vue-demi', 'imask', '@vueuse/core', 'initials'],
   output: {
     globals: {
       vue: 'Vue',

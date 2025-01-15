@@ -60,7 +60,7 @@ const innerCls = computed(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .ol-marquee__animate {
   animation: marquee var(--onl-marquee-duration) linear infinite;
 }

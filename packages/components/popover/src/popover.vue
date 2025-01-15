@@ -94,7 +94,7 @@ const onMouseLeave = handleTrigger(props.trigger, 'hover', () => {
     >
       <slot name="trigger" />
     </div>
-    <transition name="fade">
+    <transition name="popover-fade">
       <div
         v-if="props.show || showContent"
         ref="floating"
@@ -118,13 +118,13 @@ const onMouseLeave = handleTrigger(props.trigger, 'hover', () => {
 </template>
 
 <style>
-.fade-enter-active,
-.fade-leave-active {
+.popover-fade-enter-active,
+.popover-fade-leave-active {
   transition: opacity v-bind(duration) ease;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.popover-fade-enter-from,
+.popover-fade-leave-to {
   opacity: 0;
 }
 </style>

@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<TypingTextProps>(), {
 const ns = useNamespace('typing')
 
 const textLength = computed(() => props.text.length)
-const typingTextCls = computed(() => clsx(ns.e('text'), props.class, 'typing-text'))
+const typingTextCls = computed(() => clsx(ns.e('text'), props.class))
 </script>
 
 <template>
@@ -32,8 +32,8 @@ const typingTextCls = computed(() => clsx(ns.e('text'), props.class, 'typing-tex
   </span>
 </template>
 
-<style scoped>
-.typing-text {
+<style>
+.ol-typing__text {
   animation: typing var(--typing-duration) steps(var(--typing-steps), end) infinite,
     cursor-blink 0.3s step-end infinite alternate;
 }

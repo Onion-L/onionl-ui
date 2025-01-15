@@ -36,7 +36,7 @@ const textShadow = computed(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .ol-text-3d {
   --onl-text-shadow-color: v-bind('shadowColor || "var(--onl-purple-900)"');
   --onl-text-color: v-bind('color || "var(--onl-primary)"');

@@ -39,7 +39,7 @@ describe('typingText', () => {
       },
     })
 
-    expect(wrapper.classes()).toContain('typing-text')
+    expect(wrapper.classes()).toContain('ol-typing__text')
     expect(wrapper.classes()).toContain('custom-class')
   })
 

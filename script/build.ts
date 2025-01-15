@@ -4,6 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import glob from 'fast-glob'
 import UnoCSS from 'unocss/vite'
 import { build } from 'vite'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import dts from 'vite-plugin-dts'
 import { buildConfig, pkgPath, rollupOptions, rootPath } from './config-info'
 
@@ -29,6 +30,7 @@ export function excludeFiles(files: string[]) {
         minify: false,
         cssCodeSplit: false,
         sourcemap: true,
+        emptyOutDir: true,
         outDir: resolve(rootPath, outPath),
         lib: {
           entry: input,
@@ -36,7 +38,11 @@ export function excludeFiles(files: string[]) {
           fileName: () => `[name].${extend}`,
         },
       },
-      plugins: [vue(), vueJsx(), UnoCSS(), DTS
+      plugins: [vue(), vueJsx(), UnoCSS(), cssInjectedByJsPlugin({
+        relativeCSSInjection: true,
+        // 给注入的样式添加唯一标识
+        styleId: () => `onionl-ui-${Date.now()}`,
+      }), DTS
         ? dts({
           include: ['packages/components/**/*.{vue,ts,tsx}'],
           exclude: ['packages/**/test/**', 'packages/**/*.test.ts'],

@@ -36,6 +36,13 @@ For component usage, please check the [Documentation](https://onionl-ui.netlify.
 
 Check the [TODO](./TODO.md) file to view the development plan of Onionl-UI. Suggestions, ideas or code contributions are welcome!
 
+## 🧑‍💻Contributors
+
+<a href="https://github.com/Onion-L/onionl-ui/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Onion-L/onionl-ui" />
+</a>
+
+
 ## 📄 License
 
 [MIT](./LICENSE) License © 2024 XL

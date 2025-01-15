@@ -42,7 +42,6 @@ Check the [TODO](./TODO.md) file to view the development plan of Onionl-UI. Sugg
   <img src="https://contrib.rocks/image?repo=Onion-L/onionl-ui" />
 </a>
 
-
 ## 📄 License
 
 [MIT](./LICENSE) License © 2024 XL

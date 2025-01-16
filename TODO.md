@@ -3,7 +3,7 @@
 > UI component library focused on content display and visual interaction enhancement
 
 - [ ] Accordion
-- [ ] Avatar
+- [x] Avatar
 - [ ] Badge
 - [x] Button
 - [ ] Calendar
@@ -15,6 +15,7 @@
 - [x] Contextmenu
 - [ ] DatePicker
 - [ ] Dialog
+- [x] DraggableList
 - [ ] Drawer
 - [x] FlipCard
 - [x] Halo
@@ -29,7 +30,6 @@
 - [ ] Radio
 - [x] Scrollbar
 - [x] Slider
-- [ ] Swap
 - [x] Switch
 - [ ] Table
 - [ ] Tabs

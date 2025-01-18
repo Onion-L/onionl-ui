@@ -54,6 +54,15 @@ export default defineComponent({
       })
     }
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!Ele || !Ele.contains(event.target as HTMLElement)) {
+        handleClose()
+      }
+    }
+
+    useEventListener(document, 'contextmenu', handleClickOutside)
+    useEventListener(document, 'scroll', handleClose)
+
     onMounted(async () => {
       await nextTick()
       Ele = props.target || document

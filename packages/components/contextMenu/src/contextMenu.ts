@@ -1,6 +1,6 @@
 import type { PropType } from 'vue'
 import { onClickOutside, useEventListener } from '@vueuse/core'
-import { defineComponent, h, nextTick, onMounted, ref } from 'vue'
+import { defineComponent, h, nextTick, onMounted, provide, ref } from 'vue'
 
 const ContextMenuProps = {
   target: {
@@ -21,6 +21,8 @@ export default defineComponent({
     const clientY = ref<number | undefined>()
     const showMenu = ref(false)
     let Ele: HTMLElement | Document
+
+    provide('contextMenu', 'this')
 
     const handleClickMenu = (e: MouseEvent) => {
       e.stopPropagation()

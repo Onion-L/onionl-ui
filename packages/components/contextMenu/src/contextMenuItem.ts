@@ -1,5 +1,5 @@
 import type { PropType } from 'vue'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, inject } from 'vue'
 
 export default defineComponent({
   name: 'OlContextMenuItem',
@@ -10,17 +10,22 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const contextMenu = inject<string | undefined>('contextMenu', undefined)
     const handleClick = () => {
       if (props.click) {
         props.click()
       }
     }
 
-    return { handleClick }
+    return { handleClick, contextMenu }
   },
 
   render() {
-    const { handleClick } = this
+    const { handleClick, contextMenu } = this
+    if (!contextMenu) {
+      console.warn('ol-content-menu-item must be used as a sub component of ol-content-menu')
+      return null
+    }
 
     return h('li', { class: 'ol-context-menu-item', onClick: handleClick }, {
       default: () => this.$slots,

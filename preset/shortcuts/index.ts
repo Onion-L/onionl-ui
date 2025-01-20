@@ -3,6 +3,7 @@ import { avatarShortcuts } from './avatar'
 import { buttonShortcuts } from './button'
 import { cardShortcuts } from './card'
 import { contextMenuShortcuts } from './contextMenu'
+import { dialogShortcuts } from './dialog'
 import { draggableShortcuts } from './draggable'
 import { flipShortcuts } from './flip'
 import { generalShortcuts } from './general'
@@ -24,6 +25,7 @@ const shortcuts: Shortcut[] = [
   ...generalShortcuts,
   ...imageShortcuts,
   ...contextMenuShortcuts,
+  ...dialogShortcuts,
   ...pixelImageShortcuts,
   ...scrollbarShortcuts,
   ...flipShortcuts,

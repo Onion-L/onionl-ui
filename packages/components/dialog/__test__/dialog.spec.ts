@@ -1,17 +1,17 @@
 import { mount } from '@vue/test-utils'
-import { describe, expect, test, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { nextTick } from 'vue'
 import Dialog from '../src/dialog.vue'
 
-describe('Dialog.vue', () => {
-  test('renders dialog correctly when show is true', async () => {
+describe('dialog.vue', () => {
+  it('renders dialog correctly when show is true', async () => {
     const wrapper = mount(Dialog, {
       props: {
-        show: true
+        show: true,
       },
       slots: {
-        default: '<div class="test-content">测试内容</div>'
-      }
+        default: '<div class="test-content">测试内容</div>',
+      },
     })
 
     expect(wrapper.find('.ol-dialog').isVisible()).toBe(true)
@@ -19,45 +19,43 @@ describe('Dialog.vue', () => {
     expect(wrapper.find('.test-content').exists()).toBe(true)
   })
 
-  test('emits update:show and close events when mask is clicked', async () => {
+  it('emits update:show and close events when mask is clicked', async () => {
     const wrapper = mount(Dialog, {
       props: {
-        show: true
-      }
+        show: true,
+      },
     })
 
     await wrapper.find('.ol-dialog-mask').trigger('click')
-    
+
     expect(wrapper.emitted('update:show')?.[0]).toEqual([false])
     expect(wrapper.emitted('close')?.[0]).toEqual(['maskClick'])
   })
 
-
-  test('updates isShow when show prop changes', async () => {
+  it('updates isShow when show prop changes', async () => {
     const wrapper = mount(Dialog, {
       props: {
-        show: false
-      }
+        show: false,
+      },
     })
 
     await wrapper.setProps({ show: true })
     await new Promise(resolve => requestAnimationFrame(resolve))
     await nextTick()
-    
+
     expect(wrapper.find('.ol-dialog').isVisible()).toBe(true)
   })
 
-
-  test('removes event listener on unmount', async () => {
+  it('removes event listener on unmount', async () => {
     const wrapper = mount(Dialog, {
       props: {
-        show: true
-      }
+        show: true,
+      },
     })
 
     const removeEventListenerSpy = vi.spyOn(window, 'removeEventListener')
     wrapper.unmount()
-    
+
     expect(removeEventListenerSpy).toHaveBeenCalledWith('click', expect.any(Function))
   })
 })

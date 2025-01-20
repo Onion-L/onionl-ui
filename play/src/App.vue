@@ -8,9 +8,15 @@ const show1 = ref(false)
 
 <template>
   <div style="display: flex;justify-content: space-between;">
-    <button @click="show = !show" style="height: 100px;">show:{{ show }}</button>
-    <button @click="show1 = !show1" style="width: 300px;height: 300px;">show1x:{{ show1 }}</button>
-    <button @click="show = !show" style="height: 200px;">show3:{{ show }}</button>
+    <button style="height: 100px;" @click="show = !show">
+      show:{{ show }}
+    </button>
+    <button style="width: 300px;height: 300px;" @click="show1 = !show1">
+      show1x:{{ show1 }}
+    </button>
+    <button style="height: 200px;" @click="show = !show">
+      show3:{{ show }}
+    </button>
   </div>
   <Dialog v-model:show="show" :coherent="true">
     <div style="background-color: #fff; padding: 20px 120px;">

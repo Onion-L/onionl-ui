@@ -1,57 +1,60 @@
 <script setup lang="ts">
-import {
-  defineProps,
-  defineEmits,
-  ref,
+import type {
   CSSProperties,
+} from 'vue'
+import {
+  defineEmits,
+  defineProps,
   onMounted,
   onUnmounted,
+  ref,
   watch,
-} from 'vue';
+} from 'vue'
 
 const props = defineProps({
   show: Boolean,
   // coherent: Boolean, // TODO: coherent 使弹窗在 原始触发元素的基础上 丝滑变形
-});
+})
 
-const emits = defineEmits(['update:show', 'close']);
+const emits = defineEmits(['update:show', 'close'])
 
-const modalStyle = ref<CSSProperties>();
-const targetRect = ref<DOMRect>();
-const isShow = ref(props.show);
-const willClose = ref(false);
-const duration = 300;
+const modalStyle = ref<CSSProperties>()
+const targetRect = ref<DOMRect>()
+const isShow = ref(props.show)
+const willClose = ref(false)
+const duration = 300
 
 function maskClick() {
-  willClose.value = true;
+  willClose.value = true
   beforeEnter().then(() => {
-    close('maskClick');
-  });
+    close('maskClick')
+  })
 }
 function close(reason: string) {
-  emits('close', reason);
-  emits('update:show', false);
-  willClose.value = false;
+  emits('close', reason)
+  emits('update:show', false)
+  willClose.value = false
 }
-const beforeEnter = (incomDuration = 0) => {
-  const rect = targetRect.value;
-  if (!rect) return Promise.resolve();
-  const startX = rect.left;
-  const startY = rect.top;
+function beforeEnter(incomDuration = 0) {
+  const rect = targetRect.value
+  if (!rect)
+    return Promise.resolve()
+  const startX = rect.left
+  const startY = rect.top
   modalStyle.value = {
     position: 'fixed',
     top: `${startY}px`,
     left: `${startX}px`,
     transform: 'translate(0, 0) scale(0.2)',
     opacity: 0,
-  };
+  }
   return new Promise<void>((resolve) => {
     setTimeout(() => {
-      resolve();
-    }, incomDuration || duration);
-  });
-};
-const onEnter = () => {
+      resolve()
+    }, incomDuration || duration)
+  })
+}
+function onEnter() {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       modalStyle.value = {
@@ -59,46 +62,46 @@ const onEnter = () => {
         left: '50%',
         transform: 'translate(-50%, -50%) scale(1)',
         opacity: 1,
-      };
-    });
-  });
-};
+      }
+    })
+  })
+}
 
-const handleGlobalClick = (event: MouseEvent) => {
-  if (isShow.value || !props.show) return;
-  const clickTarget = event.target as Element;
-  targetRect.value = clickTarget.getBoundingClientRect();
+function handleGlobalClick(event: MouseEvent) {
+  if (isShow.value || !props.show)
+    return
+  const clickTarget = event.target as Element
+  targetRect.value = clickTarget.getBoundingClientRect()
   if (props.show) {
     beforeEnter()
-    onEnter();
+    onEnter()
   }
-};
+}
 
 onMounted(() => {
-  window.removeEventListener('click', handleGlobalClick);
-  window.addEventListener('click', handleGlobalClick);
-});
+  window.removeEventListener('click', handleGlobalClick)
+  window.addEventListener('click', handleGlobalClick)
+})
 
 onUnmounted(() => {
-  window.removeEventListener('click', handleGlobalClick);
-});
+  window.removeEventListener('click', handleGlobalClick)
+})
 
 watch(
   () => props.show,
   (newVal) => {
     requestAnimationFrame(() => {
-      isShow.value = newVal;
-    });
-  }
-);
+      isShow.value = newVal
+    })
+  },
+)
 </script>
 
 <template>
   <div v-show="isShow" class="ol-dialog">
-    <div class="ol-dialog-mask" :class="{ fadeOut: willClose }" @click.stop="maskClick">
-    </div>
+    <div class="ol-dialog-mask" :class="{ fadeOut: willClose }" @click.stop="maskClick" />
     <div class="ol-dialog-container" :style="modalStyle">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

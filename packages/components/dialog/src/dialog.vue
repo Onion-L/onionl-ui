@@ -3,7 +3,6 @@ import type {
   CSSProperties,
 } from 'vue'
 import {
-  defineEmits,
   defineProps,
   onMounted,
   onUnmounted,
@@ -11,20 +10,29 @@ import {
   watch,
 } from 'vue'
 
-const props = defineProps({
-  show: Boolean,
-  // coherent: Boolean, // TODO: coherent 使弹窗在 原始触发元素的基础上 丝滑变形
-})
+interface DialogProps {
+  show: boolean
+  mask?: boolean
+  maskClickClose?: boolean
+}
+
+const {
+  show = false,
+  mask = true,
+  maskClickClose = true,
+} = defineProps<DialogProps>()
 
 const emits = defineEmits(['update:show', 'close'])
 
 const modalStyle = ref<CSSProperties>()
 const targetRect = ref<DOMRect>()
-const isShow = ref(props.show)
+const isShow = ref(show)
 const willClose = ref(false)
 const duration = 300
 
 function maskClick() {
+  if (!maskClickClose)
+    return
   willClose.value = true
   beforeEnter().then(() => {
     close('maskClick')
@@ -68,11 +76,11 @@ function onEnter() {
 }
 
 function handleGlobalClick(event: MouseEvent) {
-  if (isShow.value || !props.show)
+  if (isShow.value || !show)
     return
   const clickTarget = event.target as Element
   targetRect.value = clickTarget.getBoundingClientRect()
-  if (props.show) {
+  if (show) {
     beforeEnter()
     onEnter()
   }
@@ -88,7 +96,7 @@ onUnmounted(() => {
 })
 
 watch(
-  () => props.show,
+  () => show,
   (newVal) => {
     requestAnimationFrame(() => {
       isShow.value = newVal
@@ -99,7 +107,7 @@ watch(
 
 <template>
   <div v-show="isShow" class="ol-dialog">
-    <div class="ol-dialog-mask" :class="{ fadeOut: willClose }" @click.stop="maskClick" />
+    <div v-if="mask" class="ol-dialog-mask" :class="{ fadeOut: willClose }" @click.stop="maskClick" />
     <div class="ol-dialog-container" :style="modalStyle">
       <slot />
     </div>

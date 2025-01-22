@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-
+import { OlImage } from '@onionl-ui/components'
 </script>
 
 <template>
-  <div />
+  <OlImage src="/logo4x.png" preview />
 </template>
 
 <style>

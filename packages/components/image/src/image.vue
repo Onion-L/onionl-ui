@@ -214,7 +214,7 @@ onUnmounted(() => {
         </slot>
       </div>
       <img
-        v-if="imageSrc !== undefined && !previewVisible"
+        v-if="imageSrc !== undefined"
         ref="imageRef"
         :class="imgCls"
         :src="imageSrc"

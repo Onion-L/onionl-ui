@@ -11,4 +11,7 @@ export default defineConfig({
       '@onionl-ui/preset': resolve(__dirname, '../preset'),
     },
   },
+  server: {
+    hmr: true,
+  },
 })

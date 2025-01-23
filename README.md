@@ -19,7 +19,6 @@ English | [中文](./README-zh.md)
 
 </div>
 
-
 ## ✨ Why Onionl-UI?
 
 - 🛠️ **Modern Stack** - Vue 3 + TypeScript with full type safety
@@ -45,7 +44,7 @@ Thank you to every contributor who has shared their time and talent! Your unique
 
 ## 🌟 Join the Journey
 
-![Star🌟](https://api.star-history.com/svg?repos=Onion-L/onionl-ui&type=Date) 
+![Star🌟](https://api.star-history.com/svg?repos=Onion-L/onionl-ui&type=Date)
 
 ## 📄 License
 

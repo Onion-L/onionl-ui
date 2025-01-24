@@ -25,7 +25,7 @@ const {
   showClose = true,
 } = defineProps<DialogProps>()
 
-const emits = defineEmits(['update:show', 'close'])
+const emits = defineEmits(['update:show', 'close', 'open'])
 
 const modalStyle = ref<CSSProperties>()
 const targetRect = ref<DOMRect>()
@@ -58,6 +58,10 @@ function close(reason: string) {
   emits('update:show', false)
   willClose.value = false
   isShow.value = false
+}
+function open() {
+  isShow.value = true
+  emits('open')
 }
 function beforeEnter(incomDuration = 0) {
   const rect = targetRect.value
@@ -119,7 +123,7 @@ watch(
         closeByCustom()
       }
       else {
-        isShow.value = newVal
+        open()
       }
     })
   },

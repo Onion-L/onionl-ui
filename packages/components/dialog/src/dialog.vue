@@ -121,6 +121,7 @@ watch(
       }
     })
   },
+  { immediate: true },
 )
 </script>
 

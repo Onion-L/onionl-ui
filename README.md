@@ -1,9 +1,9 @@
 <div align="center">
   <img src="./public/logo4x.png" alt="onionl-ui logo" style="width: 240px;" />
 
-  <h1>Onionl UI🚀</h1>
+  <h1>Onionl-UI</h1>
 
-  <h4>A modern lightweight component library based on Vue 3.</h4>
+  <h3>A modern lightweight component library based on Vue 3.</h3>
 
 [![NPM version](https://img.shields.io/npm/v/onionl-ui.svg)](https://npmjs.org/package/onionl-ui)
 [![Coverage](https://img.shields.io/codecov/c/github/Onion-L/onionl-ui)](https://codecov.io/gh/Onion-L/onionl-ui)
@@ -15,13 +15,11 @@
 
 English | [中文](./README-zh.md)
 
+<h5>🌱 Actively Growing: We're building the most customizable Vue 3 component library</h5>
+
 </div>
 
-⚠️ This project is still in its early stages of development.
-
-🌱 This is my first open source project. As a beginner in open source, I'm learning and growing with this project. Any feedback and contributions are warmly welcomed!
-
-## ✨ Features
+## ✨ Why Onionl-UI?
 
 - 🛠️ **Modern Stack** - Vue 3 + TypeScript with full type safety
 - 🎨 **Atomic CSS** - Powered by UnoCSS for flexible styling
@@ -38,9 +36,15 @@ Check the [TODO](./TODO.md) file to view the development plan of Onionl-UI. Sugg
 
 ## 🧑‍💻Contributors
 
+Thank you to every contributor who has shared their time and talent! Your unique perspectives could inspire our next amazing feature. 💡
+
 <a href="https://github.com/Onion-L/onionl-ui/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Onion-L/onionl-ui" />
 </a>
+
+## 🌟 Join the Journey
+
+![Star🌟](https://api.star-history.com/svg?repos=Onion-L/onionl-ui&type=Date)
 
 ## 📄 License
 

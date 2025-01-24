@@ -14,12 +14,15 @@ interface DialogProps {
   show: boolean
   mask?: boolean
   maskClickClose?: boolean
+  title?: string
+  showClose?: boolean
 }
 
 const {
   show = false,
   mask = true,
   maskClickClose = true,
+  showClose = true,
 } = defineProps<DialogProps>()
 
 const emits = defineEmits(['update:show', 'close'])
@@ -38,10 +41,23 @@ function maskClick() {
     close('maskClick')
   })
 }
+function closeByClick() {
+  willClose.value = true
+  beforeEnter().then(() => {
+    close('closeByClick')
+  })
+}
+function closeByCustom() {
+  willClose.value = true
+  beforeEnter().then(() => {
+    close('closeByCustom')
+  })
+}
 function close(reason: string) {
   emits('close', reason)
   emits('update:show', false)
   willClose.value = false
+  isShow.value = false
 }
 function beforeEnter(incomDuration = 0) {
   const rect = targetRect.value
@@ -99,7 +115,12 @@ watch(
   () => show,
   (newVal) => {
     requestAnimationFrame(() => {
-      isShow.value = newVal
+      if (!newVal) {
+        closeByCustom()
+      }
+      else {
+        isShow.value = newVal
+      }
     })
   },
 )
@@ -109,7 +130,16 @@ watch(
   <div v-show="isShow" class="ol-dialog">
     <div v-if="mask" class="ol-dialog-mask" :class="{ fadeOut: willClose }" @click.stop="maskClick" />
     <div class="ol-dialog-container" :style="modalStyle">
+      <slot name="header">
+        <div v-if="title || showClose" class="ol-dialog-header">
+          <span>{{ title }}</span>
+          <span v-if="showClose" class="ol-dialog-header-close" @click="closeByClick">×</span>
+        </div>
+      </slot>
       <slot />
+      <div class="ol-dialog-footer">
+        <slot name="footer" />
+      </div>
     </div>
   </div>
 </template>
@@ -140,15 +170,40 @@ watch(
   opacity: 1;
   transition: 0.3s;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.ol-dialog .ol-dialog-container {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
+.ol-dialog-header,
+.ol-dialog-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6px 12px;
+  background-color: #fff;
+  gap: 12px;
+  margin: -1px;
+}
+
+.ol-dialog-footer {
+  justify-content: flex-end;
+}
+
+.ol-dialog-footer:empty {
+  display: none;
+}
+
+.ol-dialog-header-close {
+  cursor: pointer;
+  font-size: 20px;
+  color: #909399;
+}
+
+.ol-dialog-header-close:hover {
+  color: #303133;
 }
 
 .dialog-fly-enter-active .ol-dialog-container>* {

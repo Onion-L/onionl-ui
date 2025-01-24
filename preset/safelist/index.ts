@@ -1,6 +1,7 @@
 import { avatarSafelist } from './avatar'
 import { getBtnSafelist } from './button'
 import { contextmenuSafelist } from './contextmenu'
+import { dialogSafelist } from './dialog'
 import { draggableSafelist } from './draggable'
 import { flipSafelist } from './flip'
 import { globalSafelist } from './global'
@@ -34,6 +35,7 @@ export function getSafelist(range: number = 20) {
     draggableSafelist,
     pixelImageSafelist,
     avatarSafelist,
+    dialogSafelist,
     ...getBtnSafelist(range),
   ]
 }

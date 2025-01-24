@@ -2,21 +2,14 @@
 import type {
   CSSProperties,
 } from 'vue'
+import type { DialogProps } from './dialog'
+import { useNamespace } from '@onionl-ui/utils'
 import {
-  defineProps,
   onMounted,
   onUnmounted,
   ref,
   watch,
 } from 'vue'
-
-interface DialogProps {
-  show: boolean
-  mask?: boolean
-  maskClickClose?: boolean
-  title?: string
-  showClose?: boolean
-}
 
 const {
   show = false,
@@ -27,6 +20,7 @@ const {
 
 const emits = defineEmits(['update:show', 'close', 'open'])
 
+const ns = useNamespace('dialog')
 const modalStyle = ref<CSSProperties>()
 const targetRect = ref<DOMRect>()
 const isShow = ref(show)
@@ -127,21 +121,22 @@ watch(
       }
     })
   },
+  { immediate: true },
 )
 </script>
 
 <template>
-  <div v-show="isShow" class="ol-dialog">
-    <div v-if="mask" class="ol-dialog-mask" :class="{ fadeOut: willClose }" @click.stop="maskClick" />
-    <div class="ol-dialog-container" :style="modalStyle">
+  <div v-show="isShow" :class="ns.namespace">
+    <div v-if="mask" :class="[{ [ns.m('fade-out')]: willClose }, ns.e('mask')]" @click.stop="maskClick" />
+    <div :class="[ns.e('container'), ns.em('container', 'transition')]" :style="modalStyle">
       <slot name="header">
-        <div v-if="title || showClose" class="ol-dialog-header">
+        <div v-if="title || showClose" :class="ns.e('header')">
           <span>{{ title }}</span>
-          <span v-if="showClose" class="ol-dialog-header-close" @click="closeByClick">×</span>
+          <span v-if="showClose" :class="ns.em('header', 'close')" @click="closeByClick">×</span>
         </div>
       </slot>
       <slot />
-      <div class="ol-dialog-footer">
+      <div :class="ns.e('footer')">
         <slot name="footer" />
       </div>
     </div>
@@ -149,92 +144,37 @@ watch(
 </template>
 
 <style>
-.ol-dialog-mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.3s;
+.ol-dialog__mask {
+  animation: dialog-fade-in 0.3s;
 }
 
-.fadeOut {
-  animation: fadeOut 0.3s forwards;
-}
-
-.ol-dialog-container {
-  transform-origin: 0 0;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  max-height: 100vh;
-  max-width: 100vw;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  transition: 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.ol-dialog-header,
-.ol-dialog-footer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 6px 12px;
-  background-color: #fff;
-  gap: 12px;
-  margin: -1px;
-}
-
-.ol-dialog-footer {
-  justify-content: flex-end;
-}
-
-.ol-dialog-footer:empty {
-  display: none;
-}
-
-.ol-dialog-header-close {
-  cursor: pointer;
-  font-size: 20px;
-  color: #909399;
-}
-
-.ol-dialog-header-close:hover {
-  color: #303133;
-}
-
-.dialog-fly-enter-active .ol-dialog-container>* {
+.dialog-fly-enter-active .ol-dialog__container>* {
   height: 100% !important;
   width: 100% !important;
 }
 
-.ol-dialog-container>* {
+.ol-dialog__container>* {
   transition: 0.3s;
   box-sizing: border-box;
 }
 
-@keyframes fadeIn {
+.ol-dialog--fade-out {
+  animation: dialog-fade-out 0.3s forwards;
+}
+
+@keyframes dialog-fade-in {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
 
-@keyframes fadeOut {
+@keyframes dialog-fade-out {
   from {
     opacity: 1;
   }
-
   to {
     opacity: 0;
   }

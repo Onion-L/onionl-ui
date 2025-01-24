@@ -39,7 +39,7 @@ Check the [TODO](./TODO.md) file to view the development plan of Onionl-UI. Sugg
 Thank you to every contributor who has shared their time and talent! Your unique perspectives could inspire our next amazing feature. 💡
 
 <a href="https://github.com/Onion-L/onionl-ui/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Onion-L/onionl-ui" />
+  <img src="https://contrib.nn.ci/api?repo=Onion-L/onionl-ui" />
 </a>
 
 ## 🌟 Join the Journey

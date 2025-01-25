@@ -3,7 +3,7 @@ import type { Shortcut } from 'unocss'
 export const avatarShortcuts: Shortcut[] = [
   ['ol-avatar', 'inline-flex items-center justify-center overflow-hidden transition-all duration-200 ease aspect-square'],
   ['ol-avatar--circle', 'rounded-1/2'],
-  ['ol-avatar--square', 'rounded-md'],
+  ['ol-avatar--square', 'rounded-square'],
   ['ol-avatar--clickable', 'hover:scale-105 hover:shadow-sm transition-transform duration-200'],
   // Avatar sizes
   ['ol-avatar--xs', 'w-6 h-6 text-xs'],

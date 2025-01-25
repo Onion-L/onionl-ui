@@ -1,7 +1,7 @@
 import type { Shortcut } from 'unocss'
 
 export const buttonShortcuts: Shortcut[] = [
-  ['ol-button', 'inline-flex justify-center items-center rounded-lg border-0 cursor-pointer transition-colors border-solid'],
+  ['ol-button', 'inline-flex justify-center items-center rounded-button-square border-0 cursor-pointer transition-colors border-solid'],
   ['ol-button__size-xs', 'px-2 py-1 text-xs'],
   ['ol-button__size-sm', 'px-3 py-1.5 text-sm'],
   ['ol-button__size-md', 'px-4 py-2 text-base'],

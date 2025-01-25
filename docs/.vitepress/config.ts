@@ -6,50 +6,50 @@ const NavLink: DefaultTheme.NavItemWithLink[] = [
   { text: 'Get Started', link: '/guide/getting-started' },
 ]
 
-const VisualInteractionItems = [
+// Sort components alphabetically
+const BasicComponents = [
   { text: 'Avatar', link: '/components/avatar' },
-  { text: 'DraggableList', link: '/components/draggable' },
-  { text: 'FlipCard', link: '/components/flipCard' },
-  { text: 'Halo', link: '/components/halo' },
-  { text: 'Image', link: '/components/image' },
-  { text: 'PixelImage', link: '/components/pixelImage' },
-  { text: 'TypingText', link: '/components/typingText' },
-]
-
-const ContentDisplayItems = [
-  { text: 'Card', link: '/components/card' },
-  { text: 'Marquee', link: '/components/marquee' },
-  { text: 'Popover', link: '/components/popover' },
-  { text: 'Progress', link: '/components/progress' },
-  { text: 'Scrollbar', link: '/components/scrollbar' },
-  { text: 'Text3D', link: '/components/text3d' },
-  { text: 'Tooltip', link: '/components/tooltip' },
-]
-
-const FormInteractionItems = [
   { text: 'Button', link: '/components/button' },
-  { text: 'Contextmenu', link: '/components/contextmenu' },
+  { text: 'Image', link: '/components/image' },
   { text: 'Input', link: '/components/input' },
   { text: 'Slider', link: '/components/slider' },
   { text: 'Switch', link: '/components/switch' },
+]
 
+const InteractionComponents = [
+  { text: 'Card', link: '/components/card' },
+  { text: 'Contextmenu', link: '/components/contextmenu' },
+  { text: 'Popover', link: '/components/popover' },
+  { text: 'Progress', link: '/components/progress' },
+  { text: 'Scrollbar', link: '/components/scrollbar' },
+  { text: 'Tooltip', link: '/components/tooltip' },
+]
+
+const AdvancedComponents = [
+  { text: 'DraggableList', link: '/components/draggable' },
+  { text: 'FlipCard', link: '/components/flipCard' },
+  { text: 'Halo', link: '/components/halo' },
+  { text: 'Marquee', link: '/components/marquee' },
+  { text: 'PixelImage', link: '/components/pixelImage' },
+  { text: 'Text3D', link: '/components/text3d' },
+  { text: 'TypingText', link: '/components/typingText' },
 ]
 
 const Components = [
   {
     text: 'Basic',
     collapsed: false,
-    items: FormInteractionItems,
+    items: BasicComponents,
   },
   {
-    text: 'Content Display',
+    text: 'Interaction',
     collapsed: false,
-    items: ContentDisplayItems,
+    items: InteractionComponents,
   },
   {
-    text: 'Visual Interaction',
+    text: 'Advanced',
     collapsed: false,
-    items: VisualInteractionItems,
+    items: AdvancedComponents,
   },
 ]
 
@@ -58,49 +58,50 @@ const NavLinkZh: DefaultTheme.NavItemWithLink[] = [
   { text: '快速开始', link: '/zh/guide/getting-started' },
 ]
 
-const VisualInteractionItemsZh = [
-  { text: 'Avatar 头像', link: '/zh/components/avatar' },
-  { text: 'DraggableList 可拖拽列表', link: '/zh/components/draggable' },
-  { text: 'FlipCard 翻转卡片', link: '/zh/components/flipCard' },
-  { text: 'Halo 光晕背景', link: '/zh/components/halo' },
-  { text: 'Image 图片', link: '/zh/components/image' },
-  { text: 'PixelImage 像素图片', link: '/zh/components/pixelImage' },
-  { text: 'TypingText 打字机效果文本', link: '/zh/components/typingText' },
+// Sort components alphabetically for Chinese version
+const BasicComponentsZh = [
+  { text: 'Avatar', link: '/zh/components/avatar' },
+  { text: 'Button', link: '/zh/components/button' },
+  { text: 'Image', link: '/zh/components/image' },
+  { text: 'Input', link: '/zh/components/input' },
+  { text: 'Slider', link: '/zh/components/slider' },
+  { text: 'Switch', link: '/zh/components/switch' },
 ]
 
-const ContentDisplayItemsZh = [
-  { text: 'Card 卡片', link: '/zh/components/card' },
-  { text: 'Marquee 跑马灯', link: '/zh/components/marquee' },
-  { text: 'Popover 弹出框', link: '/zh/components/popover' },
-  { text: 'Progress 进度条', link: '/zh/components/progress' },
-  { text: 'Scrollbar 滚动条', link: '/zh/components/scrollbar' },
-  { text: 'Text3D 3D文字', link: '/zh/components/text3d' },
-  { text: 'Tooltip 文字提示', link: '/zh/components/tooltip' },
+const InteractionComponentsZh = [
+  { text: 'Card', link: '/zh/components/card' },
+  { text: 'Contextmenu', link: '/zh/components/contextmenu' },
+  { text: 'Popover', link: '/zh/components/popover' },
+  { text: 'Progress', link: '/zh/components/progress' },
+  { text: 'Scrollbar', link: '/zh/components/scrollbar' },
+  { text: 'Tooltip', link: '/zh/components/tooltip' },
 ]
 
-const FormInteractionItemsZh = [
-  { text: 'Button 按钮', link: '/zh/components/button' },
-  { text: 'Contextmenu 右键菜单', link: '/zh/components/contextmenu' },
-  { text: 'Input 输入框', link: '/zh/components/input' },
-  { text: 'Slider 滑块', link: '/zh/components/slider' },
-  { text: 'Switch 开关', link: '/zh/components/switch' },
+const AdvancedComponentsZh = [
+  { text: 'DraggableList', link: '/zh/components/draggable' },
+  { text: 'FlipCard', link: '/zh/components/flipCard' },
+  { text: 'Halo', link: '/zh/components/halo' },
+  { text: 'Marquee', link: '/zh/components/marquee' },
+  { text: 'PixelImage', link: '/zh/components/pixelImage' },
+  { text: 'Text3D', link: '/zh/components/text3d' },
+  { text: 'TypingText', link: '/zh/components/typingText' },
 ]
 
 const ComponentsZh = [
   {
     text: 'Basic 基础',
     collapsed: false,
-    items: FormInteractionItemsZh,
+    items: BasicComponentsZh,
   },
   {
-    text: 'Content 内容展示',
+    text: 'Interaction 交互',
     collapsed: false,
-    items: ContentDisplayItemsZh,
+    items: InteractionComponentsZh,
   },
   {
-    text: 'Visual Interaction 视觉交互',
+    text: 'Advanced 高级',
     collapsed: false,
-    items: VisualInteractionItemsZh,
+    items: AdvancedComponentsZh,
   },
 ]
 

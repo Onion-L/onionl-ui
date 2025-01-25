@@ -107,13 +107,13 @@ const ComponentsZh = [
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'OnionlUI',
+  title: 'Onionl UI',
   description: 'A component library',
   head: [
     ['meta', { name: 'author', content: 'Onion-L' }],
-    ['meta', { name: 'keywords', content: 'Vue3, Component Library, UI Framework, TypeScript, OnionlUI' }],
+    ['meta', { name: 'keywords', content: 'Vue3, Component Library, UI Framework, TypeScript, Onionl UI' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'OnionlUI - Modern Vue 3 Component Library' }],
+    ['meta', { property: 'og:title', content: 'Onionl UI - Modern Vue 3 Component Library' }],
     ['meta', { property: 'og:description', content: 'A Vue 3 component library with modern design and smooth interactions' }],
     ['meta', { property: 'og:image', content: 'https://onionl-ui.netlify.app/logo2x.png' }],
     ['meta', { property: 'og:url', content: 'https://onionl-ui.netlify.app' }],

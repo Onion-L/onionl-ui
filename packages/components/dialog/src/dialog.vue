@@ -1,21 +1,13 @@
 <script setup lang="ts">
-import type {
-  CSSProperties,
-} from 'vue'
+import type { CSSProperties } from 'vue'
 import type { DialogProps } from './dialog'
 import { useNamespace } from '@onionl-ui/utils'
-import {
-  onMounted,
-  onUnmounted,
-  ref,
-  watch,
-} from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 
 const {
   show = false,
   mask = true,
   maskClickClose = true,
-  showClose = true,
 } = defineProps<DialogProps>()
 
 const emits = defineEmits(['update:show', 'close', 'open'])
@@ -35,28 +27,26 @@ function maskClick() {
     close('maskClick')
   })
 }
-function closeByClick() {
-  willClose.value = true
-  beforeEnter().then(() => {
-    close('closeByClick')
-  })
-}
+
 function closeByCustom() {
   willClose.value = true
   beforeEnter().then(() => {
     close('closeByCustom')
   })
 }
+
 function close(reason: string) {
   emits('close', reason)
   emits('update:show', false)
   willClose.value = false
   isShow.value = false
 }
+
 function open() {
   isShow.value = true
   emits('open')
 }
+
 function beforeEnter(incomDuration = 0) {
   const rect = targetRect.value
   if (!rect)
@@ -76,6 +66,7 @@ function beforeEnter(incomDuration = 0) {
     }, incomDuration || duration)
   })
 }
+
 function onEnter() {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
@@ -129,16 +120,7 @@ watch(
   <div v-show="isShow" :class="ns.namespace">
     <div v-if="mask" :class="[{ [ns.m('fade-out')]: willClose }, ns.e('mask')]" @click.stop="maskClick" />
     <div :class="[ns.e('container'), ns.em('container', 'transition')]" :style="modalStyle">
-      <slot name="header">
-        <div v-if="title || showClose" :class="ns.e('header')">
-          <span>{{ title }}</span>
-          <span v-if="showClose" :class="ns.em('header', 'close')" @click="closeByClick">×</span>
-        </div>
-      </slot>
       <slot />
-      <div :class="ns.e('footer')">
-        <slot name="footer" />
-      </div>
     </div>
   </div>
 </template>

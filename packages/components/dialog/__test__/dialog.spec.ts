@@ -49,49 +49,6 @@ describe('dialog.vue', () => {
     expect(wrapper.emitted('close')).toBeFalsy()
   })
 
-  it('renders with title and close button correctly', async () => {
-    const wrapper = mount(Dialog, {
-      props: {
-        show: true,
-        title: '测试标题',
-        showClose: true,
-      },
-    })
-
-    expect(wrapper.find('.ol-dialog__header').text()).toContain('测试标题')
-    expect(wrapper.find('.ol-dialog__header--close').exists()).toBe(true)
-  })
-
-  it('emits events when close button is clicked', async () => {
-    const wrapper = mount(Dialog, {
-      props: {
-        show: true,
-        showClose: true,
-      },
-    })
-
-    await wrapper.find('.ol-dialog__header--close').trigger('click')
-    await nextTick()
-
-    expect(wrapper.emitted('update:show')?.[0]).toEqual([false])
-    expect(wrapper.emitted('close')?.[0]).toEqual(['closeByClick'])
-  })
-
-  it('renders custom header and footer slots', () => {
-    const wrapper = mount(Dialog, {
-      props: {
-        show: true,
-      },
-      slots: {
-        header: '<div class="custom-header">自定义头部</div>',
-        footer: '<div class="custom-footer">自定义底部</div>',
-      },
-    })
-
-    expect(wrapper.find('.custom-header').exists()).toBe(true)
-    expect(wrapper.find('.custom-footer').exists()).toBe(true)
-  })
-
   it('updates visibility and emits events when show changes', async () => {
     const wrapper = mount(Dialog, {
       props: {

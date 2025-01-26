@@ -49,5 +49,10 @@ export const theme = {
     'btn-y-xl': '1rem',
     'btn-y-2xl': '1.25rem',
     'btn-y-3xl': '1.5rem',
+    'card-header': '1.5rem',
+    'card-content': '1.5rem',
+    'card-footer': '1.5rem',
+    'card-top': '0',
   },
+
 }

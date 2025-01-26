@@ -1,3 +1,1 @@
-import { buttonRules } from './button'
-
-export const rules = [...buttonRules]
+export const rules = []

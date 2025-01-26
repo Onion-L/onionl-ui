@@ -1,5 +1,5 @@
 import { avatarSafelist } from './avatar'
-import { getBtnSafelist } from './button'
+import { btnSafelist } from './button'
 import { contextmenuSafelist } from './contextmenu'
 import { dialogSafelist } from './dialog'
 import { draggableSafelist } from './draggable'
@@ -17,25 +17,23 @@ import { sliderSafelist } from './slider'
 import { switchSafelist } from './switch'
 import { typingSaftlist } from './typing'
 
-export function getSafelist(range: number = 20) {
-  return [
-    inputSafelist,
-    globalSafelist,
-    iconSafelist,
-    imageSafelist,
-    contextmenuSafelist,
-    scrollbarSafelist,
-    flipSafelist,
-    progressSafelist,
-    marqueeSafelist,
-    popoverSafelist,
-    sliderSafelist,
-    switchSafelist,
-    typingSaftlist,
-    draggableSafelist,
-    pixelImageSafelist,
-    avatarSafelist,
-    dialogSafelist,
-    ...getBtnSafelist(range),
-  ]
-}
+export const safelist: string[] = [
+  ...inputSafelist,
+  ...globalSafelist,
+  ...iconSafelist,
+  ...imageSafelist,
+  ...contextmenuSafelist,
+  ...scrollbarSafelist,
+  ...flipSafelist,
+  ...progressSafelist,
+  ...marqueeSafelist,
+  ...popoverSafelist,
+  ...sliderSafelist,
+  ...switchSafelist,
+  ...typingSaftlist,
+  ...draggableSafelist,
+  ...pixelImageSafelist,
+  ...avatarSafelist,
+  ...dialogSafelist,
+  ...btnSafelist,
+]

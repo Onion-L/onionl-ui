@@ -34,14 +34,6 @@
 :::
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/button" vue="../../demo/button/icon.vue"  />
 
-## 自定义
-除了预设尺寸外,你还可以传入数字来自定义按钮大小，默认是1-20，可以通过在组件的预设中设置range字段来改变按钮大小的范围。
-```JavaScript
-    onionlUIPreset({ range: 25 }),
-```
-
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/button" vue="../../demo/button/custom.vue"  />
-
 ## 属性
 
 |属性名     | 说明                                   | 类型                        | 默认值 |

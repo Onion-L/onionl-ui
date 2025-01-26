@@ -18,7 +18,7 @@ Onionl UI is a modern component library built with Vue 3 and TypeScript. It prov
 
 ## Installation
 
-Install OnionlUI and its dependencies using your preferred package manager:
+Install Onionl UI and its dependencies using your preferred package manager:
 
 ::: code-group
 ```bash [npm]

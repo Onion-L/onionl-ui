@@ -41,34 +41,26 @@ The `outlined` property allows you to display an outlined avatar.
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/outline.vue"  />
 
-## Customization
-Besides preset sizes, you can pass in numbers to customize Avatar sizes. The default range is 1-20, which can be modified by setting the range field in the component preset.
-```JavaScript
-    onionlUIPreset({ range: 25 }),
-```
-
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/custom.vue"  />
-
 ## Properties
 
-| Property | Description | Type | Accepted Values | Default |
-|----------|-------------|------|-----------------|---------|
-| src | Image URL | string | - | - |
-| alt | Alternative text for image | string | - | - |
-| initials | Initials to show when no image | string | - | - |
-| icon | Icon name to display | string | - | - |
-| fallbackContent | Fallback content | string | - | - |
-| size | Avatar size | string | 'xs' / 'sm' / 'md' / 'lg' / 'xl' / '2xl' / '3xl' / number | 'md' |
-| shape | Avatar shape | string | 'circle' / 'square' | 'circle' |
-| backgroundColor | Background color | string | - | '#101' |
-| borderRadius | Custom border radius | string / number | - | - |
-| outlined | Whether avatar is outlined | boolean | true / false | false |
-| outlineColor | Outline color | string | - | '#ccc' |
-| outlineWidth | Outline width | number | - | 3 |
-| outlineStyle | Outline style | string | 'solid' / 'gradient' | 'solid' |
-| outlineGradient | Outline gradient | string | - | 'linear-gradient(45deg, #3b82f6, #8b5cf6)' |
-| clickable | Whether avatar is interactive | boolean | true / false | false |
-| ariaLabel | ARIA label for accessibility | string | - | - |
+| Property | Description | Type | Default |
+| -------- | ----------- | ---- | ------- |
+| src | Image URL | `string` | `-` |
+| alt | Alternative text for image | `string` | `-` |
+| initials | Initials to show when no image | `string` | `-` |
+| icon | Icon name to display | `string` | `-` |
+| fallbackContent | Fallback content | `string` | `-` |
+| size | Avatar size, can be `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl` | `string \| number` | `md` |
+| shape | Avatar shape, can be `circle` or `square` | `string` | `circle` |
+| backgroundColor | Background color | `string` | `#101` |
+| borderRadius | Custom border radius | `string / number` | `-` |
+| outlined | Whether avatar is outlined | `boolean` | `false` |
+| outlineColor | Outline color | `string` | `#ccc` |
+| outlineWidth | Outline width | `number` | `3` |
+| outlineStyle | Outline style, can be `solid` or `gradient` | `string` | `solid` |
+| outlineGradient | Outline gradient | `string` | `linear-gradient(45deg, #3b82f6, #8b5cf6)` |
+| clickable | Whether avatar is interactive | `boolean` | `false` |
+| ariaLabel | ARIA label for accessibility | `string` | `-` |
 
 ### Events
 

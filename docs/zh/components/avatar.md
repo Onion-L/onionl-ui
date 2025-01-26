@@ -41,35 +41,26 @@
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../../demo/avatar/outline.vue"  />
 
-## 自定义
-除了预设尺寸，您还可以通过传递数字来自定义头像尺寸。默认范围是1-20，可以通过在组件预设中设置`range`字段来修改。
-
-```JavaScript
-    onionlUIPreset({ range: 25 }),
-```
-
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../../demo/avatar/custom.vue"  />
-
 ## 属性
 
-| 属性 | 描述 | 类型 | 接受的值 | 默认值 |
-|----------|-------------|------|-----------------|---------|
-| src | 图像URL | string | - | - |
-| alt | 图像的替代文本 | string | - | - |
-| initials | 没有图像时显示的首字母 | string | - | - |
-| icon | 要显示的图标名称 | string | - | - |
-| fallbackContent | 回退内容 | string | - | - |
-| size | 头像尺寸 | string | 'xs' / 'sm' / 'md' / 'lg' / 'xl' / '2xl' / '3xl' / number | 'md' |
-| shape | 头像形状 | string | 'circle' / 'square' | 'circle' |
-| backgroundColor | 背景颜色 | string | - | '#101' |
-| borderRadius | 自定义边框半径 | string / number | - | - |
-| outlined | 头像是否有轮廓 | boolean | true / false | false |
-| outlineColor | 轮廓颜色 | string | - | '#ccc' |
-| outlineWidth | 轮廓宽度 | number | - | 3 |
-| outlineStyle | 轮廓样式 | string | 'solid' / 'gradient' | 'solid' |
-| outlineGradient | 轮廓渐变 | string | - | 'linear-gradient(45deg, #3b82f6, #8b5cf6)' |
-| clickable | 头像是否可交互 | boolean | true / false | false |
-| ariaLabel | 辅助功能的ARIA标签 | string | - | - |
+| 属性 | 描述 | 类型 | 默认值 |
+| -------- | ----------- | ---- | ------- |
+| src | 图像URL | `string` | `-` |
+| alt | 图像的替代文本 | `string` | `-` |
+| initials | 没有图像时显示的首字母 | `string` | `-` |
+| icon | 要显示的图标名称 | `string` | `-` |
+| fallbackContent | 回退内容 | `string` | `-` |
+| size | 头像尺寸 | `string \| number` | `md` |
+| shape | 头像形状 | `string` | `circle` |
+| backgroundColor | 背景颜色 | `string` | `#101` |
+| borderRadius | 自定义边框半径 | `string / number` | `-` |
+| outlined | 头像是否有轮廓 | `boolean` | `false` |
+| outlineColor | 轮廓颜色 | `string` | `#ccc` |
+| outlineWidth | 轮廓宽度 | `number` | `3` |
+| outlineStyle | 轮廓样式 | `string` | `solid` |
+| outlineGradient | 轮廓渐变 | `string` | `linear-gradient(45deg, #3b82f6, #8b5cf6)` |
+| clickable | 头像是否可交互 | `boolean` | `false` |
+| ariaLabel | 辅助功能的ARIA标签 | `string` | `-` |
 
 ### 事件
 

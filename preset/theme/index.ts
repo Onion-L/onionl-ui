@@ -1,7 +1,6 @@
-import type { Theme } from '@unocss/preset-mini'
 import { colors } from './colors'
 
-export const theme: Theme = {
+export const theme = {
   colors,
   borderRadius: {
     'circle': '50%',
@@ -34,5 +33,21 @@ export const theme: Theme = {
     'avatar-md': '14px',
     'avatar-sm': '12px',
     'avatar-xs': '10px',
+  },
+  spacing: {
+    'btn-x-xs': '0.5rem',
+    'btn-x-sm': '0.75rem',
+    'btn-x-md': '1rem',
+    'btn-x-lg': '1.5rem',
+    'btn-x-xl': '2rem',
+    'btn-x-2xl': '2.5rem',
+    'btn-x-3xl': '3rem',
+    'btn-y-xs': '0.25rem',
+    'btn-y-sm': '0.375rem',
+    'btn-y-md': '0.5rem',
+    'btn-y-lg': '0.75rem',
+    'btn-y-xl': '1rem',
+    'btn-y-2xl': '1.25rem',
+    'btn-y-3xl': '1.5rem',
   },
 }

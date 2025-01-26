@@ -34,14 +34,6 @@ To use icons, you need to install the Mono Icons icon set first
 :::
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/button" vue="../demo/button/icon.vue"  />
 
-## Customization
-Besides preset sizes, you can pass in numbers to customize button sizes. The default range is 1-20, which can be modified by setting the range field in the component preset.
-```JavaScript
-    onionlUIPreset({ range: 25 }),
-```
-
-<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/button" vue="../demo/button/custom.vue"  />
-
 ## Properties
 
 | Property | Description | Type | Default |

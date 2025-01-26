@@ -3,20 +3,15 @@ import type { Preset } from 'unocss'
 import { presetIcons, presetUno } from 'unocss'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
 import { getCSSVariable } from './preflights/css'
-import { getSafelist } from './safelist'
+import { safelist } from './safelist'
 import { shortcuts } from './shortcuts'
 import { theme } from './theme'
 
 /**
  * @description onionl-ui preset
- * @param oprtions - The configuration options
- * @param oprtions.range - The numeric range value for generating safelist
  * @returns Preset
  */
-export function onionlUIPreset(oprtions?: { range: number }) {
-  const range = oprtions?.range
-  const safelist = getSafelist(range)
-
+export function onionlUIPreset() {
   return {
     name: '@onionl-ui/preset',
     presets: [presetUno(), presetScrollbar(), presetIcons({

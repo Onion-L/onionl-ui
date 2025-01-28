@@ -14,7 +14,7 @@ import { theme } from './theme'
 export function onionlUIPreset() {
   return {
     name: '@onionl-ui/preset',
-    presets: [presetUno(), presetScrollbar(), presetIcons({
+    presets: [presetUno(), presetScrollbar({ noCompatible: false }), presetIcons({
       scale: 1.2,
       warn: true,
       extraProperties: {

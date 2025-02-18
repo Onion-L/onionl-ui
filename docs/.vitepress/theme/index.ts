@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 import theme from 'vitepress/theme'
 import './custom.css'
+
 import 'uno.css'
 
 const modules = [
@@ -31,6 +32,8 @@ const modules = [
   'OlDraggableList',
   'OlDraggableItem',
   'OlAvatar',
+  'OlDialog',
+  'OlDialogCard',
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

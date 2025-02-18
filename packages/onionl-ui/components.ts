@@ -4,6 +4,7 @@ import { OlAvatar } from '../components/avatar'
 import { OlButton } from '../components/button'
 import { OlCard, OlCardContent, OlCardFooter, OlCardHeader } from '../components/card'
 import { OlContextMenu, OlContextMenuItem } from '../components/contextMenu'
+import { OlDialog, OlDialogCard } from '../components/dialog'
 import { OlDraggableItem, OlDraggableList } from '../components/draggableList'
 import { OlFlipCard } from '../components/flipCard'
 import { OlFlipControl } from '../components/flipControl'
@@ -51,4 +52,6 @@ export const Components = [
   OlTypingText,
   OlDraggableItem,
   OlDraggableList,
+  OlDialog,
+  OlDialogCard,
 ] as Plugin[]

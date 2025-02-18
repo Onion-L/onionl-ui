@@ -19,14 +19,14 @@ const show2 = ref(false)
     </ol-button>
   </div>
   <ol-dialog v-model:show="show">
-    <ol-dialog-card class="w-120 min-w-80 shadow-lg rounded-lg overflow-hidden" @close="show = !show">
+    <ol-dialog-card class="w-120 min-w-80 shadow-lg rounded-lg" @close="show = !show">
       <template #header>
-        <div class="text-xl font-bold border-b border-gray-200">
+        <div class="text-xl font-bold">
           Title for custom
         </div>
       </template>
       <template #content>
-        <div class="p-4 text-gray-600 leading-6">
+        <div class="p-4 text-gray-600 dark:text-gray-200 leading-6">
           Here is some content and the content is very long, and you can put everything you want here.
         </div>
       </template>
@@ -43,14 +43,14 @@ const show2 = ref(false)
     </ol-dialog-card>
   </ol-dialog>
   <ol-dialog v-model:show="show1">
-    <ol-dialog-card class="w-120 min-w-80 shadow-lg rounded-lg overflow-hidden" @close="show1 = !show1">
+    <ol-dialog-card class="w-120 min-w-80 shadow-lg rounded-lg" @close="show1 = !show1">
       <template #header>
         <div class="text-xl font-bold border-b border-gray-200">
           Title for custom
         </div>
       </template>
       <template #content>
-        <div class="p-4 text-gray-600 leading-6">
+        <div class="p-4 text-gray-600 dark:text-gray-200 leading-6">
           Here is some content and the content is very long, and you can put everything you want here.
         </div>
       </template>
@@ -67,14 +67,14 @@ const show2 = ref(false)
     </ol-dialog-card>
   </ol-dialog>
   <ol-dialog v-model:show="show2">
-    <ol-dialog-card class="w-120 min-w-80 shadow-lg rounded-lg overflow-hidden" @close="show2 = !show2">
+    <ol-dialog-card class="w-120 min-w-80 shadow-lg rounded-lg" @close="show2 = !show2">
       <template #header>
         <div class="text-xl font-bold border-b border-gray-200">
           Title for custom
         </div>
       </template>
       <template #content>
-        <div class="p-4 text-gray-600 leading-6">
+        <div class="p-4 text-gray-600 dark:text-gray-200 leading-6">
           Here is some content and the content is very long, and you can put everything you want here.
         </div>
       </template>

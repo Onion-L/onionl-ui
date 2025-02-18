@@ -15,7 +15,7 @@ function handleClose() {
 <template>
   <div class="relative">
     <OlButton icon="i-mi-close" link class="color-gray-500 hover:color-primary text-xl absolute top-2 right-2" @click="handleClose" />
-    <OlCard class="bg-white">
+    <OlCard class="bg-white dark:bg-[#1f1f1f]">
       <OlCardHeader>
         <slot name="header" />
       </OlCardHeader>

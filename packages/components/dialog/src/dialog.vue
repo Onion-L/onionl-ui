@@ -4,6 +4,10 @@ import type { DialogProps } from './dialog'
 import { useNamespace } from '@onionl-ui/utils'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 
+defineOptions({
+  name: 'OlDialog',
+})
+
 const {
   show = false,
   mask = true,

@@ -19,6 +19,7 @@ const BasicComponents = [
 const InteractionComponents = [
   { text: 'Card', link: '/components/card' },
   { text: 'Contextmenu', link: '/components/contextmenu' },
+  { text: 'Dialog', link: '/components/dialog' },
   { text: 'Popover', link: '/components/popover' },
   { text: 'Progress', link: '/components/progress' },
   { text: 'Scrollbar', link: '/components/scrollbar' },
@@ -71,6 +72,7 @@ const BasicComponentsZh = [
 const InteractionComponentsZh = [
   { text: 'Card', link: '/zh/components/card' },
   { text: 'Contextmenu', link: '/zh/components/contextmenu' },
+  { text: 'Dialog', link: '/zh/components/dialog' },
   { text: 'Popover', link: '/zh/components/popover' },
   { text: 'Progress', link: '/zh/components/progress' },
   { text: 'Scrollbar', link: '/zh/components/scrollbar' },

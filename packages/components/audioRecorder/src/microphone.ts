@@ -2,11 +2,11 @@ import { useUserMedia } from '@vueuse/core'
 
 /**
  * @description Audio Recorder
- * @function getMicrophonePermission 获取麦克风权限
- * @function startRecording 开始录音
- * @function stopRecording 停止录音
- * @function saveAudio 保存音频
- * @function createWavBuffer 创建WAV音频
+ * @function getMicrophonePermission
+ * @function startRecording
+ * @function stopRecording
+ * @function saveAudio
+ * @function createWavBuffer
  */
 export function useMicrophone() {
   const { isSupported } = useUserMedia({

@@ -1,5 +1,4 @@
 import type { Plugin } from 'vue'
-import { OlAudioRecorder } from '../components/audioRecorder'
 import { OlAvatar } from '../components/avatar'
 import { OlButton } from '../components/button'
 import { OlCard, OlCardContent, OlCardFooter, OlCardHeader } from '../components/card'
@@ -25,7 +24,6 @@ import { OlTypingText } from '../components/typing'
 
 export const Components = [
   OlAvatar,
-  OlAudioRecorder,
   OlButton,
   OlCard,
   OlCardContent,

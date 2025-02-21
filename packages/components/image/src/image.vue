@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { SetupContext } from 'vue'
 import type { ImageProps } from './image'
 import { useNamespace } from '@onionl-ui/utils'
 import clsx from 'clsx'
@@ -25,7 +26,7 @@ const imageSrc = ref<string | undefined>()
 const loadError = ref(false)
 const isLoading = ref(true)
 const previewVisible = ref(false)
-const attr = useAttrs()
+const attr: SetupContext['attrs'] = useAttrs()
 let observer: IntersectionObserver | null = null
 
 const imgViewEl = ref<HTMLImageElement>()

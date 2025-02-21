@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type { Ref } from 'vue'
-import type { PixelImageProps } from './pixelImage'
+import type { ComputedRef, Ref, SetupContext } from 'vue'
+import type { FilterAttrs, PixelImageProps } from './pixelImage'
 import { computed, onMounted, onUnmounted, ref, useAttrs } from 'vue'
 import { defaultProps, PixelImage } from './pixelImage'
 
@@ -10,11 +10,11 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<PixelImageProps>(), defaultProps)
-const attrs = useAttrs()
+const attrs: SetupContext['attrs'] = useAttrs()
 const imgRef = ref<HTMLImageElement>()
 let pixelImageInstance: PixelImage | null = null
 
-const filterAttrs = computed(() => {
+const filterAttrs: ComputedRef<FilterAttrs> = computed(() => {
   const { src, alt } = attrs
   return { src: src as string, alt: alt as string }
 })

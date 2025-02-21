@@ -1,5 +1,7 @@
 import type { Ref } from 'vue'
 
+export interface FilterAttrs { src: string, alt: string }
+
 export interface PixelImageProps {
   pixelGap?: number | string
   pixelSize?: number | string

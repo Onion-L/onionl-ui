@@ -61,30 +61,28 @@ function handleInput(e: Event) {
 </script>
 
 <template>
-  <div class="relative inline-block">
-    <div>
-      <template v-if="prefix">
-        <ol-icon
-          :icon="prefix"
-          :class="clsx(ns.e('icon'), ns.e('icon-prefix'))"
-        />
-      </template>
-      <template v-else-if="suffix">
-        <ol-icon
-          :icon="suffix"
-          :class="clsx(ns.e('icon'), ns.e('icon-suffix'))"
-        />
-      </template>
-      <input
-        ref="InputRef"
-        :value="modelValue"
-        :placeholder="placeholder"
-        v-bind="filteredAttrs"
-        :class="[{ ' pl-10': prefix, 'pr-10': suffix, 'is-disabled': disabled }, ns.namespace]"
-        @focus="handleFocus"
-        @blur="handleBlur"
-        @input="handleInput"
-      >
-    </div>
+  <div :class="ns.e('wrap')">
+    <template v-if="prefix">
+      <ol-icon
+        :icon="prefix"
+        :class="clsx(ns.e('icon'), ns.e('icon-prefix'))"
+      />
+    </template>
+    <template v-else-if="suffix">
+      <ol-icon
+        :icon="suffix"
+        :class="clsx(ns.e('icon'), ns.e('icon-suffix'))"
+      />
+    </template>
+    <input
+      ref="InputRef"
+      :value="modelValue"
+      :placeholder="placeholder"
+      v-bind="filteredAttrs"
+      :class="[{ ' pl-10': prefix, 'pr-10': suffix, 'is-disabled': disabled }, ns.namespace]"
+      @focus="handleFocus"
+      @blur="handleBlur"
+      @input="handleInput"
+    >
   </div>
 </template>

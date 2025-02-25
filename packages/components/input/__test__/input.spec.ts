@@ -13,7 +13,7 @@ describe('input Component', () => {
 
     expect(wrapper.find('input').exists()).toBe(true)
     expect(wrapper.find('input').attributes('placeholder')).toBe('请输入')
-    expect(wrapper.classes()).toContain('relative')
+    expect(wrapper.classes()).toContain('ol-input__wrap')
   })
 
   it('handles model value correctly', () => {

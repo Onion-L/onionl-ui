@@ -120,7 +120,7 @@
     "vite-plugin-dts": "^4.3.0",
     "vitepress": "^1.5.0",
     "vitepress-demo-plugin": "^1.2.0",
-    "vitest": "^2.1.5",
+    "vitest": "^2.1.9",
     "vue": "^3.5.13"
   },
   "lint-staged": {

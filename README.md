@@ -30,10 +30,6 @@ English | [中文](./README-zh.md)
 
 For component usage, please check the [Documentation](https://onionl-ui.netlify.app/).
 
-## 📝 To-Do List
-
-Check the [TODO](./TODO.md) file to view the development plan of Onionl-UI. Suggestions, ideas or code contributions are welcome!
-
 ## 🧑‍💻Contributors
 
 Thank you to every contributor who has shared their time and talent! Your unique perspectives could inspire our next amazing feature. 💡

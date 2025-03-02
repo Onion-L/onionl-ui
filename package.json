@@ -54,6 +54,7 @@
     "@onionl-ui/utils": "workspace:*",
     "@vueuse/core": "^12.0.0",
     "clsx": "^2.1.1",
+    "driver.js": "^1.3.5",
     "eslint-compat-utils": "^0.6.3",
     "eslint-config-flat-gitignore": "^0.3.0",
     "eslint-flat-config-utils": "^0.4.0",

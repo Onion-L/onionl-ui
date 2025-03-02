@@ -19,10 +19,10 @@ const props = defineProps({
 
 const emit = defineEmits(['update:active'])
 
-const provider = ref()
+const provider = ref<HTMLElement | null>(null)
 const tourSteps = ref<TourSteps[]>([])
 
-provide(TOUR_STEP_EVENT, (index: string | number, element: string, title: string, description: string) => {
+provide(TOUR_STEP_EVENT, (index: number | string, element: string, title: string, description: string) => {
   tourSteps.value.push({
     index,
     element,

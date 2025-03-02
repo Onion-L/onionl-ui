@@ -24,14 +24,14 @@ const props = defineProps({
 })
 
 const ns = useNamespace('tour-step')
-const elementRef = ref()
+const stepRef = ref<HTMLElement | null>(null)
 const uniqueClass = ns.m(`${props.index}`)
 
-const registerTourStep = inject(TOUR_STEP_EVENT, null) as RegisterStep
+const registerTourStep = inject<RegisterStep | null>(TOUR_STEP_EVENT, null)
 
 onMounted(() => {
-  if (registerTourStep && elementRef.value) {
-    elementRef.value.classList.add(uniqueClass)
+  if (registerTourStep && stepRef.value) {
+    stepRef.value.classList.add(uniqueClass)
     registerTourStep(
       Number(props.index),
       uniqueClass,
@@ -46,7 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="registerTourStep" ref="elementRef" :class="$attrs.class">
+  <div v-if="registerTourStep" ref="stepRef" :class="$attrs.class">
     <slot />
   </div>
 </template>

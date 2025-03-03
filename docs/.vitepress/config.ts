@@ -24,6 +24,7 @@ const InteractionComponents = [
   { text: 'Progress', link: '/components/progress' },
   { text: 'Scrollbar', link: '/components/scrollbar' },
   { text: 'Tooltip', link: '/components/tooltip' },
+  { text: 'Tour', link: '/components/tour' }
 ]
 
 const AdvancedComponents = [
@@ -77,6 +78,7 @@ const InteractionComponentsZh = [
   { text: 'Progress', link: '/zh/components/progress' },
   { text: 'Scrollbar', link: '/zh/components/scrollbar' },
   { text: 'Tooltip', link: '/zh/components/tooltip' },
+  { text: 'Tour', link: '/zh/components/tour' }
 ]
 
 const AdvancedComponentsZh = [

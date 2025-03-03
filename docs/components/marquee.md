@@ -14,9 +14,9 @@ Setting the `vertical` attribute can achieve vertical scrolling.
 
 <demo vue="../demo/marquee/vertical.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/marquee" />
 
-## Properties
+## Attributes
 
-| Property | Description | Type | Default |
+| Attribute | Description | Type | Default |
 |--------|------|------|---------|
 | duration | Time required for one scroll (seconds) | `number` | `20` |
 | reverse | Whether to scroll in reverse | `boolean` | `false` |

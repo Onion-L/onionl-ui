@@ -10,25 +10,25 @@ The most basic tooltip.
 
 ## Trigger Methods
 
-The `trigger` property can be used to set different trigger methods.
+The `trigger` attribute can be used to set different trigger methods.
 
 <demo vue="../demo/tooltip/trigger.vue" github="https://github.com/Onion-L/onionl-ui/tree/feat/popper/packages/components/tooltip" />
 
 ## Tooltip Style
 
-The `content-class` property can be used to set the style of the tooltip.
+The `content-class` attribute can be used to set the style of the tooltip.
 
 <demo vue="../demo/tooltip/content.vue" github="https://github.com/Onion-L/onionl-ui/tree/feat/popper/packages/components/tooltip" />
 
 ## Arrow
 
-The `arrow` property can be used to set whether to display the arrow.
+The `arrow` attribute can be used to set whether to display the arrow.
 
 <demo vue="../demo/tooltip/arrow.vue" github="https://github.com/Onion-L/onionl-ui/tree/feat/popper/packages/components/tooltip" />
 
-## Properties
+## Attributes
 
-| Property Name | Description | Type | Default Value |
+| Attribute Name | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | content-class | Content class name | `string` | `-` |
 | content | Content to display | `string` | `-` |

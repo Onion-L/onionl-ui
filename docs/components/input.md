@@ -19,13 +19,13 @@ Create a password input box by setting `type="password"`.
 <demo vue="../demo/input/password.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/input" />
 
 ## Disabled State
-Set the input box to a disabled state by setting the `disabled` property.
+Set the input box to a disabled state by setting the `disabled` attribute.
 
 <demo vue="../demo/input/disabled.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/input" />
 
 ## Formatted Input
 
-Format the input content by setting the `mask` property. For example, it can be used to format phone numbers, dates, etc. (Setting the `mask` property requires setting `type='text'`).
+Format the input content by setting the `mask` attribute. For example, it can be used to format phone numbers, dates, etc. (Setting the `mask` attribute requires setting `type='text'`).
 
 <demo vue="../demo/input/mask.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/input" />
 
@@ -35,9 +35,9 @@ You can limit the format of the input content using regular expressions. For exa
 
 <demo vue="../demo/input/mask-regex.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/input" />
 
-## Properties
+## Attributes
 
-| Property Name      | Description           | Type                | Default Value  |
+| Attribute Name      | Description           | Type                | Default Value  |
 |-------------------|-----------------------|---------------------|---------------|
 | type               | Input box type        | `'text' \| 'password'`| `'text'`      |
 | placeholder        | Input box placeholder text | `string`            | `-`          |

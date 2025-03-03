@@ -4,13 +4,13 @@ The FlipCard component provides a flipable card interface, supporting the displa
 
 ## Basic Usage
 
-Control the flip state of the card using the `flipped` property, and set the content of both sides using the `front` and `back` properties respectively.
+Control the flip state of the card using the `flipped` attribute, and set the content of both sides using the `front` and `back` properties respectively.
 
 <demo vue="../demo/flipCard/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/flipCard" />
 
-## Properties
+## Attributes
 
-| Property Name | Type | Default Value | Description |
+| Attribute Name | Type | Default Value | Description |
 |---------------|------|--------------|-------------|
 | flipped | `boolean` | `false` | Controls whether the card is flipped |
 | class | `string \| object \| array` | - | Custom class |

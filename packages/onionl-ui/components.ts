@@ -20,6 +20,7 @@ import { OlSlider } from '../components/slider'
 import { OlSwitch } from '../components/switch'
 import { OlText3D } from '../components/text3d'
 import { OlTooltip } from '../components/tooltip'
+import { OlTourProvider, OlTourStep } from '../components/tour'
 import { OlTypingText } from '../components/typing'
 
 export const Components = [
@@ -52,4 +53,6 @@ export const Components = [
   OlDraggableList,
   OlDialog,
   OlDialogCard,
+  OlTourProvider,
+  OlTourStep,
 ] as Plugin[]

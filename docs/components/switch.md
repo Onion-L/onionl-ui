@@ -26,9 +26,9 @@ Use the `before-switch` attribute to execute specific logic before switching. Th
 
 <demo vue="../demo/switch/before.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/switch"/>
 
-## Properties
+## Attributes
 
-| Property Name | Description | Type | Default Value |
+| Attribute Name | Description | Type | Default Value |
 |---------------|-------------|------|---------------|
 | v-model | Bound value | `boolean` | `false` |
 | disabled | Whether disabled | `boolean` | `false` |

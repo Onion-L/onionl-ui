@@ -14,7 +14,7 @@
 - [ ] ColorPicker
 - [x] Contextmenu
 - [ ] DatePicker
-- [ ] Dialog
+- [x] Dialog
 - [x] DraggableList
 - [ ] Drawer
 - [x] FlipCard
@@ -35,3 +35,4 @@
 - [ ] Tabs
 - [x] Text3D
 - [x] Tooltip
+- [x] Tour

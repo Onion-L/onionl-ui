@@ -10,13 +10,13 @@ By providing an image URL, you can create a basic pixelated image.
 
 ## Custom Spacing
 
-You can control the spacing between pixel blocks using the `pixelGap` property.
+You can control the spacing between pixel blocks using the `pixelGap` attribute.
 
 <demo vue="../demo/pixelImage/gap.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/pixelImage" />
 
 ## Custom Pixel Size
 
-You can control the degree of pixelation using the `pixelSize` property. The larger the value, the larger the pixel blocks.
+You can control the degree of pixelation using the `pixelSize` attribute. The larger the value, the larger the pixel blocks.
 
 <demo vue="../demo/pixelImage/size.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/pixelImage" />
 
@@ -26,9 +26,9 @@ You can customize the viewport size using the `viewport-width` and `viewport-hei
 
 <demo vue="../demo/pixelImage/viewport.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/pixelImage" />
 
-## Properties
+## Attributes
 
-| Property Name | Description | Type | Default Value |
+| Attribute Name | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | width | Image width | `number` | `200` |
 | height | Image height | `number` | `200` |

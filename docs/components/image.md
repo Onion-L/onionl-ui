@@ -18,9 +18,9 @@ The `OlImage` component supports lazy loading. By setting the `loading` attribut
 
 <demo vue="../demo/image/lazy.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/image" />
 
-## Properties
+## Attributes
 
-| Property Name | Description       | Type                | Default Value |
+| Attribute Name | Description       | Type                | Default Value |
 |---------------|-------------------|---------------------|---------------|
 | src           | Image source URL  | `string`            | `-`           |
 | fit           | Image fit mode    | `'fill' \| 'contain' \| 'cover' \| 'none' \| 'scale-down'` | `'fill'`     |

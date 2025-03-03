@@ -17,33 +17,33 @@ There are two types of Avatars: `circle`, and `square`. The default type is `cir
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/shape.vue"  />
 
 ### Background Color
-The `backgroundColor` property allows you to set the background color of the avatar.
+The `backgroundColor` attribute allows you to set the background color of the avatar.
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/backgroundColor.vue"  />
 
 ### Border Radius
-The `borderRadius` property allows you to set the border radius of the avatar.
+The `borderRadius` attribute allows you to set the border radius of the avatar.
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/borderRadius.vue"  />
 
 ### Fallback Text
-The `fallbackText` property allows you to display a fallback text if the image fails to load.
+The `fallbackText` attribute allows you to display a fallback text if the image fails to load.
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/fallback.vue"  />
 
 ### Icon
-The `icon` property allows you to display an icon instead of an image.
+The `icon` attribute allows you to display an icon instead of an image.
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/icon.vue"  />
 
 ### Outlined
-The `outlined` property allows you to display an outlined avatar.
+The `outlined` attribute allows you to display an outlined avatar.
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/outline.vue"  />
 
-## Properties
+## Attributes
 
-| Property | Description | Type | Default |
+| Attribute | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
 | src | Image URL | `string` | `-` |
 | alt | Alternative text for image | `string` | `-` |

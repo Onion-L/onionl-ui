@@ -16,25 +16,25 @@ Use the `trigger` slot to define the trigger element, and the popover content ca
 
 ## Arrow and Position
 
-Use the `placement` property to define the position of the popover, and use the `arrow` property to define whether the arrow is displayed.
+Use the `placement` attribute to define the position of the popover, and use the `arrow` attribute to define whether the arrow is displayed.
 
 <demo vue="../demo/popover/arrow.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/popover" />
 
 ## Animation Time
 
-Use the `duration` property to define the animation time of the popover.
+Use the `duration` attribute to define the animation time of the popover.
 
 <demo vue="../demo/popover/duration.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/popover" />
 
 ## Offset
 
-Use the `offset` property to define the offset of the popover.
+Use the `offset` attribute to define the offset of the popover.
 
 <demo vue="../demo/popover/offset.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/popover" />
 
-## Properties
+## Attributes
 
-| Property | Description | Type | Default |
+| Attribute | Description | Type | Default |
 |------|------|------|--------|
 | trigger | Trigger method | `'hover' \| 'click' \| 'focus'` | `'click'` |
 | placement | Popover position | `'top' \| 'bottom' \| 'left' \| 'right'` | `'bottom'` |

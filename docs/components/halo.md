@@ -32,9 +32,9 @@ You can pass offset values to set the offset position of the glow effect. Adjust
 
 <demo vue="../demo/halo/offset.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/halo" />
 
-## Properties
+## Attributes
 
-| Property Name | Description | Type | Default Value |
+| Attribute Name | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | is | The HTML tag to render | `string` | `'div'` |
 | halo-color | Glow color, can be a single color or an array of colors | `string \| string[]` | `-` |

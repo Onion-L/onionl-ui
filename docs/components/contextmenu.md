@@ -3,8 +3,8 @@
 ## Basic Usage
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/contextMenu" vue="../demo/contextmenu/basic.vue"  />
-## Properties
+## Attributes
 
-| Property Name | Description | Type | Default Value |
+| Attribute Name | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | target | Menu target | `HTMLElement` | - |

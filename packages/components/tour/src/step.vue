@@ -46,7 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="registerTourStep" ref="stepRef" :class="$attrs.class">
+  <div v-if="registerTourStep" ref="stepRef" class="inline-block" :class="$attrs.class">
     <slot />
   </div>
 </template>

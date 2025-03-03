@@ -3,7 +3,7 @@ import type { DriveStep } from 'driver.js'
 import type { DriverObj, TourSteps } from './tour'
 import { TOUR_STEP_EVENT } from '@onionl-ui/components/constant'
 import { driver } from 'driver.js'
-import { onUnmounted, provide, ref, watch } from 'vue'
+import { provide, ref, watch } from 'vue'
 import 'driver.js/dist/driver.css'
 
 defineOptions({
@@ -49,6 +49,7 @@ function initDriver() {
   driverObj = driver({
     showProgress: true,
     steps,
+    onDestroyed: onTourFinish,
   })
 }
 
@@ -75,10 +76,6 @@ watch(
 function onTourFinish() {
   emit('update:active', false)
 }
-
-onUnmounted(() => {
-  onTourFinish()
-})
 </script>
 
 <template>

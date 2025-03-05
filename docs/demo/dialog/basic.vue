@@ -32,10 +32,10 @@ const show2 = ref(false)
       </template>
       <template #footer>
         <div class="flex justify-end space-x-2">
-          <ol-button type="secondary">
+          <ol-button type="secondary" @click="show = !show">
             Cancel
           </ol-button>
-          <ol-button type="primary">
+          <ol-button type="primary" @click="show = !show">
             Confirm
           </ol-button>
         </div>
@@ -56,10 +56,10 @@ const show2 = ref(false)
       </template>
       <template #footer>
         <div class="flex justify-end space-x-2">
-          <ol-button type="secondary">
+          <ol-button type="secondary" @click="show1 = !show1">
             Cancel
           </ol-button>
-          <ol-button type="primary">
+          <ol-button type="primary" @click="show1 = !show1">
             Confirm
           </ol-button>
         </div>
@@ -80,10 +80,10 @@ const show2 = ref(false)
       </template>
       <template #footer>
         <div class="flex justify-end space-x-2">
-          <ol-button type="secondary">
+          <ol-button type="secondary" @click="show2 = !show2">
             Cancel
           </ol-button>
-          <ol-button type="primary">
+          <ol-button type="primary" @click="show2 = !show2">
             Confirm
           </ol-button>
         </div>

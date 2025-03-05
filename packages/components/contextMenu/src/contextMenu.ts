@@ -1,4 +1,5 @@
 import type { PropType } from 'vue'
+import { CONTEXTMENU_EVENT } from '@onionl-ui/components/constant'
 import { onClickOutside, useElementSize, useEventListener } from '@vueuse/core'
 import { defineComponent, h, nextTick, onMounted, provide, ref, watch } from 'vue'
 
@@ -23,7 +24,7 @@ export default defineComponent({
     const menuEl = ref(null)
     let Ele: HTMLElement | Document
 
-    provide('contextMenu', 'this')
+    provide(CONTEXTMENU_EVENT, 'this')
 
     const handleClickMenu = (e: MouseEvent) => {
       e.stopPropagation()

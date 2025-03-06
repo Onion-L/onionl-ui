@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import type { CSSProperties } from 'vue'
 import type { AvatarEmits, AvatarProps } from './avatar'
+import { AVATAR_GROUP_OVERLAP } from '@onionl-ui/components/constant'
 import { OlIcon } from '@onionl-ui/components/icon'
 import { useNamespace } from '@onionl-ui/utils'
 import initials from 'initials'
-import { computed, ref } from 'vue'
+import { computed, inject, ref } from 'vue'
 
 defineOptions({
   name: 'OlAvatar',
@@ -24,9 +26,11 @@ const ns = useNamespace('avatar')
 const hasError = ref(false)
 const DEFAULT_ICON = 'i-mi-user'
 
+const overlap = inject<string | undefined>(AVATAR_GROUP_OVERLAP, undefined)
+
 const isUsingNumericSize = computed(() => typeof Number(props.size) === 'number')
 
-const outlineStyles = computed(() => {
+const outlineStyles = computed<CSSProperties>(() => {
   if (!props.outlined)
     return {}
 
@@ -42,25 +46,27 @@ const outlineStyles = computed(() => {
   }
 })
 
+const styles = computed<CSSProperties>(() => ({
+  backgroundColor: props.backgroundColor ?? 'var(--onl-primary)',
+  borderRadius: props.borderRadius ? `${props.borderRadius}px` : undefined,
+  cursor: props.clickable ? 'pointer' : 'default',
+  marginLeft: overlap ? `-${overlap}px` : 0,
+  ...outlineStyles.value,
+}))
+
+const imgStyles = computed<CSSProperties>(() => ({
+  width: isUsingNumericSize.value ? `${props.size}px` : '100%',
+  height: isUsingNumericSize.value ? `${props.size}px` : '100%',
+}))
+
 const classes = computed(() => [
   ns.namespace,
   ns.m(props.shape),
   isUsingNumericSize.value ? ns.m(props.size) : '',
   { [ns.m('clickable')]: props.clickable },
   { [ns.m('outlined')]: props.outlined },
+  overlap ? ns.m('overlap') : '',
 ])
-
-const styles = computed(() => ({
-  backgroundColor: props.backgroundColor ?? 'var(--onl-primary)',
-  borderRadius: props.borderRadius ? `${props.borderRadius}px` : undefined,
-  cursor: props.clickable ? 'pointer' : 'default',
-  ...outlineStyles.value,
-}))
-
-const imgStyles = computed(() => ({
-  width: isUsingNumericSize.value ? `${props.size}px` : '100%',
-  height: isUsingNumericSize.value ? `${props.size}px` : '100%',
-}))
 
 const fallbackContent = computed(() => {
   return props.initials

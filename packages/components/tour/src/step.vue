@@ -23,9 +23,9 @@ const props = defineProps({
   },
 })
 
-const ns = useNamespace('tour-step')
+const ns = useNamespace('tour')
 const stepRef = ref<HTMLElement | null>(null)
-const uniqueClass = ns.m(`${props.index}`)
+const uniqueClass = ns.bm('step', `${props.index}`)
 
 const registerTourStep = inject<RegisterStep | null>(TOUR_STEP_EVENT, null)
 

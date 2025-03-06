@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<Text3DProps>(), {
   layer: 5,
 })
 
-const ns = useNamespace('text-3d')
+const ns = useNamespace('text')
 
 const textShadow = computed(() => {
   const layerCount = Math.abs(props.layer!)
@@ -31,7 +31,7 @@ const textShadow = computed(() => {
 </script>
 
 <template>
-  <div :class="ns.namespace" :style="{ textShadow }">
+  <div :class="ns.b('3d')" :style="{ textShadow }">
     {{ text }}
   </div>
 </template>

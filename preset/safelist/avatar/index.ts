@@ -1,4 +1,5 @@
 export const avatarSafelist = [
+  'ol-avatar-group',
   'ol-avatar',
   'ol-avatar--circle',
   'ol-avatar--square',
@@ -11,4 +12,5 @@ export const avatarSafelist = [
   'ol-avatar--xl',
   'ol-avatar--2xl',
   'ol-avatar--3xl',
+  'ol-avatar--overlap',
 ]

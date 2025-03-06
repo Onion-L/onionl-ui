@@ -1,3 +1,4 @@
+import { TOUR_STEP_EVENT } from '@onionl-ui/components/constant'
 import { mount } from '@vue/test-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { nextTick } from 'vue'
@@ -127,5 +128,54 @@ describe('tour Component', () => {
     await nextTick()
 
     expect(wrapper.vm.showTour).toBe(false)
+  })
+
+  it('should render slot content', () => {
+    const wrapper = mount(TourStep, {
+      props: { index: 1 },
+      slots: { default: '<div>test</div>' },
+      global: {
+        provide: {
+          [TOUR_STEP_EVENT]: vi.fn(),
+        },
+      },
+    })
+    expect(wrapper.html()).toContain('<div>test</div>')
+  })
+
+  it('should apply class attribute', () => {
+    const wrapper = mount(TourStep, {
+      props: { index: 1 },
+      attrs: { class: 'custom-class' },
+      global: {
+        provide: {
+          [TOUR_STEP_EVENT]: vi.fn(),
+        },
+      },
+    })
+    expect(wrapper.classes()).toContain('custom-class')
+  })
+
+  it('should display warning', () => {
+    const warn = vi.spyOn(console, 'warn')
+    mount(TourStep, {
+      props: { index: 1 },
+    })
+    expect(warn).toHaveBeenCalledWith(expect.stringContaining('OlTourProvider'))
+  })
+
+  it('should correctly register step', async () => {
+    const registerMock = vi.fn()
+    const wrapper = mount(TourStep, {
+      props: { index: 1, title: 'test', description: 'desc' },
+      global: {
+        provide: {
+          [TOUR_STEP_EVENT]: registerMock,
+        },
+      },
+    })
+
+    await wrapper.vm.$nextTick()
+    expect(registerMock).toHaveBeenCalledWith(1, expect.any(String), 'test', 'desc')
   })
 })

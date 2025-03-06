@@ -41,6 +41,12 @@ The `outlined` attribute allows you to display an outlined avatar.
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/outline.vue"  />
 
+### Avatar Group
+
+Avatar Group is used to display a group of avatars in a single component.It is particularly suitable for displaying a group of people or entities in a compact and visually appealing way.
+
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../demo/avatar/group.vue"  />
+
 ## Attributes
 
 | Attribute | Description | Type | Default |
@@ -62,9 +68,15 @@ The `outlined` attribute allows you to display an outlined avatar.
 | clickable | Whether avatar is interactive | `boolean` | `false` |
 | ariaLabel | ARIA label for accessibility | `string` | `-` |
 
+### Avatar Group
+
+| Attribute | Description | Type | Default |
+| ------------- | --------------- | -------- | ------- |
+| overlap | Overlap size between avatars | `string` | `30`|
+
 ### Events
 
 | Name | Description | Parameters |
 |------|-------------|------------|
-| click | Triggered when clicked (only if clickable is true) | (event: MouseEvent) |
-| error | Triggered when image fails to load | - |
+| click | Triggered when clicked (only if clickable is true) | `(event: MouseEvent)` |
+| error | Triggered when image fails to load | `-` |

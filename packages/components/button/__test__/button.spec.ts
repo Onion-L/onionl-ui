@@ -12,8 +12,8 @@ describe('button Component', () => {
 
     expect(wrapper.classes()).toContain('ol-button')
     expect(wrapper.text()).toBe('Button Text')
-    expect(wrapper.classes()).toContain('ol-button__size-sm')
-    expect(wrapper.classes()).toContain('ol-button__type-primary')
+    expect(wrapper.classes()).toContain('ol-button__size--sm')
+    expect(wrapper.classes()).toContain('ol-button__type--primary')
   })
 
   it('renders different button types', () => {
@@ -26,7 +26,7 @@ describe('button Component', () => {
           default: 'Button',
         },
       })
-      expect(wrapper.classes()).toContain(`ol-button__type-${type}`)
+      expect(wrapper.classes()).toContain(`ol-button__type--${type}`)
     })
   })
 
@@ -40,7 +40,7 @@ describe('button Component', () => {
           default: 'Button',
         },
       })
-      expect(wrapper.classes()).toContain(`ol-button__size-${size}`)
+      expect(wrapper.classes()).toContain(`ol-button__size--${size}`)
     })
   })
 
@@ -56,7 +56,7 @@ describe('button Component', () => {
 
     expect(wrapper.element.tagName).toBe('A')
     expect(wrapper.attributes('href')).toBe('https://example.com')
-    expect(wrapper.classes()).toContain('ol-button__type-link')
+    expect(wrapper.classes()).toContain('ol-button__type--link')
   })
 
   it('renders button with icon', () => {
@@ -85,7 +85,7 @@ describe('button Component', () => {
       },
     })
 
-    expect(wrapper.classes()).toContain('ol-button__type-link')
+    expect(wrapper.classes()).toContain('ol-button__type--link')
   })
 
   it('renders slot content correctly', () => {

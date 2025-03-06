@@ -18,15 +18,15 @@ const emit = defineEmits(['click'])
 
 const ns = useNamespace('button')
 
-const defaultBtn = clsx('ol-button')
+const defaultBtn = clsx(ns.namespace)
 
 const customeStyles = computed(() => {
-  const sizeCls = props.size ? `ol-button__size-${props.size}` : ''
+  const sizeCls = props.size ? ns.em('size', `${props.size}`) : ''
   if (props.to || props.link) {
-    const linkCls = 'ol-button__type-link'
+    const linkCls = ns.em('type', 'link')
     return clsx(sizeCls, linkCls)
   }
-  const typeCls = props.type ? `ol-button__type-${props.type}` : ''
+  const typeCls = props.type ? ns.em('type', `${props.type}`) : ''
   return clsx(defaultBtn, sizeCls, typeCls)
 })
 

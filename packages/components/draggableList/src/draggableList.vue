@@ -13,10 +13,10 @@ const props = defineProps<{
   class?: HTMLAttributes['class']
 }>()
 
-const ns = useNamespace('draggable-list')
+const ns = useNamespace('draggable')
 
 const draggableListCls = computed(() => {
-  return clsx(ns.namespace, props.class)
+  return clsx(ns.b('list'), props.class)
 })
 
 const DragListEl = ref<HTMLElement | null>(null)

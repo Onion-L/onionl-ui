@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
 import type { AvatarEmits, AvatarProps } from './avatar'
-import { AVATAR_GROUP_EVENT } from '@onionl-ui/components/constant'
+import { AVATAR_GROUP_OVERLAP } from '@onionl-ui/components/constant'
 import { OlIcon } from '@onionl-ui/components/icon'
 import { useNamespace } from '@onionl-ui/utils'
 import initials from 'initials'
@@ -26,7 +26,7 @@ const ns = useNamespace('avatar')
 const hasError = ref(false)
 const DEFAULT_ICON = 'i-mi-user'
 
-const isAvatarGroup = inject<boolean>(AVATAR_GROUP_EVENT, false)
+const overlap = inject<string | undefined>(AVATAR_GROUP_OVERLAP, undefined)
 
 const isUsingNumericSize = computed(() => typeof Number(props.size) === 'number')
 
@@ -50,6 +50,7 @@ const styles = computed<CSSProperties>(() => ({
   backgroundColor: props.backgroundColor ?? 'var(--onl-primary)',
   borderRadius: props.borderRadius ? `${props.borderRadius}px` : undefined,
   cursor: props.clickable ? 'pointer' : 'default',
+  marginLeft: overlap ? `-${overlap}px` : 0,
   ...outlineStyles.value,
 }))
 
@@ -64,8 +65,7 @@ const classes = computed(() => [
   isUsingNumericSize.value ? ns.m(props.size) : '',
   { [ns.m('clickable')]: props.clickable },
   { [ns.m('outlined')]: props.outlined },
-  isAvatarGroup ? ns.m('overlap') : '',
-
+  overlap ? ns.m('overlap') : '',
 ])
 
 const fallbackContent = computed(() => {

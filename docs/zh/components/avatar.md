@@ -41,7 +41,15 @@
 
 <demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../../demo/avatar/outline.vue"  />
 
+### 头像组
+
+Avatar Group用于在单个组件中显示一组头像。特别适合以紧凑和视觉上吸引人的方式展示一组人或实体。
+
+<demo github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/avatar" vue="../../demo/avatar/group.vue"  />
+
 ## 属性
+
+### Avatar
 
 | 属性 | 描述 | 类型 | 默认值 |
 | -------- | ----------- | ---- | ------- |
@@ -62,9 +70,15 @@
 | clickable | 头像是否可交互 | `boolean` | `false` |
 | ariaLabel | 辅助功能的ARIA标签 | `string` | `-` |
 
+### Avatar Group
+
+| 属性 | 描述 | 类型 | 默认值 |
+| ------------- | --------------- | -------- | ------- |
+| overlap | 头像之间的覆盖大小 | `string` | `30`|
+
 ### 事件
 
 | 名称 | 描述 | 参数 |
 |------|-------------|------------|
-| click | 点击时触发（仅当`clickable`为true时） | (event: MouseEvent) |
-| error | 图像加载失败时触发 | - |
+| click | 点击时触发（仅当`clickable`为true时） | `(event: MouseEvent)` |
+| error | 图像加载失败时触发 | `-` |

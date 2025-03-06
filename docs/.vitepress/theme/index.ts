@@ -35,7 +35,8 @@ const modules = [
   'OlDialog',
   'OlDialogCard',
   'OlTourProvider',
-  'OlTourStep'
+  'OlTourStep',
+  'OlAvatarGroup'
 ]
 
 export default { ...theme, async enhanceApp({ app }) {

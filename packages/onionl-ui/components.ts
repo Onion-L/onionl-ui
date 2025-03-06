@@ -1,5 +1,5 @@
 import type { Plugin } from 'vue'
-import { OlAvatar } from '../components/avatar'
+import { OlAvatar, OlAvatarGroup } from '../components/avatar'
 import { OlButton } from '../components/button'
 import { OlCard, OlCardContent, OlCardFooter, OlCardHeader } from '../components/card'
 import { OlContextMenu, OlContextMenuItem } from '../components/contextMenu'
@@ -25,6 +25,7 @@ import { OlTypingText } from '../components/typing'
 
 export const Components = [
   OlAvatar,
+  OlAvatarGroup,
   OlButton,
   OlCard,
   OlCardContent,

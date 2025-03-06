@@ -98,4 +98,22 @@ describe('button Component', () => {
     expect(wrapper.find('.custom-content').exists()).toBe(true)
     expect(wrapper.text()).toBe('Custom Content')
   })
+
+  it('disables click event when disabled', async () => {
+    const wrapper = mount(Button, {
+      props: {
+        disabled: true,
+      },
+    })
+
+    await wrapper.trigger('click')
+    expect(wrapper.emitted('click')).toBeUndefined()
+  })
+
+  it('triggers click event in normal state', async () => {
+    const wrapper = mount(Button)
+
+    await wrapper.trigger('click')
+    expect(wrapper.emitted('click')).toHaveLength(1)
+  })
 })

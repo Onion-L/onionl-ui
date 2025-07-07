@@ -36,10 +36,6 @@ Thank you to every contributor who has shared their time and talent! Your unique
   <img src="https://contrib.nn.ci/api?repo=Onion-L/onionl-ui" />
 </a>
 
-## 🌟 Join the Journey
-
-![Star🌟](https://api.star-history.com/svg?repos=Onion-L/onionl-ui&type=Date)
-
 ## 📄 License
 
 [MIT](./LICENSE) License © 2024 XL

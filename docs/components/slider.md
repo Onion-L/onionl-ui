@@ -8,6 +8,10 @@ Select a value by dragging the slider.
 
 <demo vue="../demo/slider/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/slider" />
 
+## Dual Range
+
+<demo vue="../demo/slider/DualRangeSlider.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/slider"/>
+
 ## Attributes
 
 | Attribute Name | Description | Type | Default Value |

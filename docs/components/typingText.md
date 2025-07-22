@@ -8,6 +8,14 @@ Specify the text content to be displayed by setting the `text` attribute, and co
 
 <demo vue="../demo/typing/basic.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/typing" />
 
+## Animate
+
+<demo vue="../demo/typing/animate.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/typing" />
+
+## Multiple
+
+<demo vue="../demo/typing/multiple.vue" github="https://github.com/Onion-L/onionl-ui/tree/main/packages/components/typing" />
+
 ## Attributes
 
 | Attribute Name | Description | Type | Default Value |

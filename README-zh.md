@@ -23,7 +23,7 @@
 - 🔧 提供丰富的组件和 Hooks
 - 📚 详尽的文档和示例
 
-更多组件用法请查看[组件文档](https://onionl-ui.vercel.app/)。
+更多组件用法请查看[组件文档](https://onionl-ui.netlify.app/)。
 
 ## 📄 许可证
 
